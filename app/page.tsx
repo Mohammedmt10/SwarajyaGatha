@@ -7,6 +7,7 @@ import BackgroundImageDesktop from '../images/BackgroundDesktopVersion.png';
 import { useState } from 'react';
 import Multiplayer from "../images/MultiplayerScreen.png"
 import Singleplayer from "../images/SinglePlayer.png"
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [isMenu , SetIsMenu] = useState(true);
@@ -14,6 +15,19 @@ export default function Home() {
   const [isSingleplayer,SetIsSingleplayer] = useState(false);
   const [botsEnabled , SetBotsEnabled] = useState(false);
   const [noOfPeople , SetNoOfPeople] = useState("1P");
+  const [result , SetResult] = useState("");
+  const router = useRouter();
+
+  function randomString(length : number) { 
+    var res = "";
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length
+    for ( var i = 0; i < length; i++ ) { 
+        res += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    SetResult(res); 
+  }
+
   return (
     <div className="w-screen h-screen relative flex pl-8 items-center overflow-hidden">
       <div className="float-start z-99 translate-y-15">
@@ -58,13 +72,13 @@ export default function Home() {
           className="block lg:hidden"
         />}
         {isMultiplayer && <div>
-          <input type="text" className='absolute translate-y-48.5 lg:translate-y-58 translate-x-17.5 lg:translate-x-20.5 h-7 lg:h-8.5 w-50 lg:w-60.5 outline-0 rounded px-2 z-999' />
-          <div className='absolute border-2 h-9 lg:h-11 w-19 lg:w-22 rounded-xl lg:rounded-2xl cursor-pointer translate-x-31 lg:translate-x-38 translate-y-77 lg:translate-y-92'></div>
-          <div className='absolute border-2 h-12 lg:h-13.5 w-28 lg:w-33.5 rounded-3xl lg:rounded-3xl cursor-pointer translate-x-26.5 lg:translate-x-32 translate-y-93 lg:translate-y-112'></div> 
+          <input type="text" className='absolute translate-y-48.5 lg:translate-y-58 translate-x-17.5 lg:translate-x-20.5 h-7 lg:h-8.5 w-50 lg:w-60.5 outline-0 rounded px-2 z-999' value={result} onChange={(event) => {SetResult(event.currentTarget.value)}} />
+          <div onClick={() => randomString(5)} className='absolute hover:border-2 border-yellow-300 h-9 lg:h-11 w-19 lg:w-22 rounded-xl lg:rounded-2xl cursor-pointer translate-x-31 lg:translate-x-38 translate-y-77 lg:translate-y-92'></div>
+          <div onClick={() => router.push(`/${result}`)} className='absolute hover:border-2 border-yellow-300 h-12 lg:h-13.5 w-28 lg:w-33.5 rounded-3xl lg:rounded-3xl cursor-pointer translate-x-26.5 lg:translate-x-32 translate-y-93 lg:translate-y-112'></div> 
           <div onClick={() => {
             SetIsMenu(c => !c)
             SetIsMultiplayer(c => !c)
-          }} className='absolute border-2 h-11 lg:h-12.5 w-11 lg:w-12.5 rounded-full cursor-pointer translate-x-13 lg:translate-x-16 translate-y-94 lg:translate-y-113'></div>
+          }} className='absolute hover:border-2 border-yellow-300 h-11 lg:h-12.5 w-11 lg:w-12.5 rounded-full cursor-pointer translate-x-13 lg:translate-x-16 translate-y-94 lg:translate-y-113'></div>
         </div>}
         {isMultiplayer && <Image 
           src={Multiplayer}
