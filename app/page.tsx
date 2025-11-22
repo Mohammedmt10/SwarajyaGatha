@@ -14,7 +14,7 @@ export default function Home() {
   const [isMultiplayer,SetIsMultiplayer] = useState(false);
   const [isSingleplayer,SetIsSingleplayer] = useState(false);
   const [botsEnabled , SetBotsEnabled] = useState(false);
-  const [noOfPeople , SetNoOfPeople] = useState("1P");
+  const [noOfPeople , SetNoOfPeople] = useState(1);
   const [result , SetResult] = useState("");
   const router = useRouter();
 
@@ -99,23 +99,25 @@ export default function Home() {
               SetBotsEnabled(c => !c)
             }} className="absolute h-11.5 w-29 lg:h-15 lg:w-34 rounded-4xl cursor-pointer border-2 translate-y-36 lg:translate-y-43 translate-x-28 lg:translate-x-34"></div>
             <div onClick={() => {
-              SetNoOfPeople("1P")
-            }} className={`absolute h-19 lg:h-22.5 w-20 lg:w-23.5 cursor-pointer ${noOfPeople == "1P" ? "border-2 border-yellow-300" : ""} rounded-2xl translate-y-50 lg:translate-y-60 translate-x-20.5 lg:translate-x-25`}></div>
+              SetNoOfPeople(1)
+            }} className={`absolute h-19 lg:h-22.5 w-20 lg:w-23.5 cursor-pointer ${noOfPeople == 1 ? "border-2 border-yellow-300" : ""} rounded-2xl translate-y-50 lg:translate-y-60 translate-x-20.5 lg:translate-x-25`}></div>
             <div onClick={() => {
-              SetNoOfPeople("2P")
-            }} className={`absolute h-19 lg:h-22.5 w-20.5 lg:w-23.5 cursor-pointer ${noOfPeople == "2P" ? "border-2 border-yellow-300" : ""} rounded-2xl translate-y-50 lg:translate-y-60 translate-x-41 lg:translate-x-50`}></div>
+              SetNoOfPeople(2)
+            }} className={`absolute h-19 lg:h-22.5 w-20.5 lg:w-23.5 cursor-pointer ${noOfPeople == 2 ? "border-2 border-yellow-300" : ""} rounded-2xl translate-y-50 lg:translate-y-60 translate-x-41 lg:translate-x-50`}></div>
             <div onClick={() => {
-              SetNoOfPeople("3P")
-            }} className={`absolute h-19 lg:h-22.5 w-20  lg:w-23.5 cursor-pointer ${noOfPeople == "3P" ? "border-2 border-yellow-300" : ""} rounded-2xl translate-y-71.5 lg:translate-y-86 translate-x-20.5 lg:translate-x-25`}></div>
+              SetNoOfPeople(3)
+            }} className={`absolute h-19 lg:h-22.5 w-20  lg:w-23.5 cursor-pointer ${noOfPeople == 3 ? "border-2 border-yellow-300" : ""} rounded-2xl translate-y-71.5 lg:translate-y-86 translate-x-20.5 lg:translate-x-25`}></div>
             <div onClick={() => {
-              SetNoOfPeople("4P")
-            }} className={`absolute h-19 lg:h-22.5 w-19  lg:w-23.5 cursor-pointer ${noOfPeople == "4P" ? "border-2 border-yellow-300" : ""} rounded-2xl translate-y-72 translate-x-42 lg:translate-y-86 lg:translate-x-50`}></div>
+              SetNoOfPeople(4)
+            }} className={`absolute h-19 lg:h-22.5 w-19  lg:w-23.5 cursor-pointer ${noOfPeople == 4 ? "border-2 border-yellow-300" : ""} rounded-2xl translate-y-72 translate-x-42 lg:translate-y-86 lg:translate-x-50`}></div>
             <div onClick={() => {
               SetIsMenu(true)
               SetIsSingleplayer(false)
             }} className='hover:border-2 border-yellow-300 h-10 w-10 lg:h-13 lg:w-13 rounded-full cursor-pointer absolute translate-y-94.5 lg:translate-y-113 translate-x-13 lg:translate-x-15'></div>
             
-          <div className='absolute hover:border-2 border-yellow-300 h-12 lg:h-13.5 w-28 lg:w-33.5 rounded-3xl lg:rounded-3xl cursor-pointer translate-x-26.5 lg:translate-x-32 translate-y-93 lg:translate-y-112'></div> 
+          <div onClick={() => {
+            router.push(`/SinglePlayer/${noOfPeople}`)
+          }} className='absolute hover:border-2 border-yellow-300 h-12 lg:h-13.5 w-28 lg:w-33.5 rounded-3xl lg:rounded-3xl cursor-pointer translate-x-26.5 lg:translate-x-32 translate-y-93 lg:translate-y-112'></div> 
         </div>}
 
         {isSingleplayer && <Image 
