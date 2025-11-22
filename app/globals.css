@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@theme {
+  --background-image-gold-coin: url('../images/GoldCoin.png');
+  --background-image-bronze-coin: url('../images/BronzeCoin.png');
+  --background-image-silver-coin: url('../images/SilverCoin.png');
+}
