@@ -116,7 +116,7 @@ export default function Home() {
             }} className='hover:border-2 border-yellow-300 h-10 w-10 lg:h-13 lg:w-13 rounded-full cursor-pointer absolute translate-y-94.5 lg:translate-y-113 translate-x-13 lg:translate-x-15'></div>
             
           <div onClick={() => {
-            router.push(`/SinglePlayer/${noOfPeople}`)
+            router.push(`/SinglePlayer/${noOfPeople}&${botsEnabled}`)
           }} className='absolute hover:border-2 border-yellow-300 h-12 lg:h-13.5 w-28 lg:w-33.5 rounded-3xl lg:rounded-3xl cursor-pointer translate-x-26.5 lg:translate-x-32 translate-y-93 lg:translate-y-112'></div> 
         </div>}
 

@@ -4,5 +4,14 @@
   --background-image-gold-coin: url('../images/GoldCoin.png');
   --background-image-bronze-coin: url('../images/BronzeCoin.png');
   --background-image-silver-coin: url('../images/SilverCoin.png');
+  --background-image-map-background: url('../images/mapBg.png');
+  --font-myfont: "MyFont", sans-serif;
   --spacing-6-5 : 1.625rem;
+}
+
+@font-face {
+  font-family: "MyFont";
+  src: url("/fonts/TAILEB.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
