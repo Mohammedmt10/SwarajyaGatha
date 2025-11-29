@@ -1,0 +1,332 @@
+[
+  {
+    "eventNo": "1",
+    "year": "1630",
+    "eco" : "+",
+    "title": "Birth of Shivaji Maharaj",
+    "location": "Shivneri Fort",
+    "details": {
+      "keyFigures": "Shahaji Bhosale (father), Jijabai Bhosale (mother).",
+      "narrative": "A hero is born! Chhatrapati Shivaji Maharaj is born on the high hill fort of Shivneri. Shivaji was born on February 19, 1630, at the hill-fort of Shivneri, near Junnar (Pune district). His father, Shahaji, was a prominent general serving the Deccan Sultanates, and his mother, Jijabai, was a deeply religious and independent woman."
+    }
+  },
+  {
+    "eventNo": "2",
+    "year": "1640",
+    "eco" : "+",
+    "title": "Marriage with Saibai",
+    "location": "Lal Mahal, Pune",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Saibai Nimbalkar, Jijabai.",
+      "narrative": "A royal wedding! Shivaji gets married to his first wife, Saibai, at his childhood home, the Lal Mahal. At the age of 10, Shivaji was married to Saibai, who was from the powerful Nimbalkar family of Phaltan. The wedding took place in Lal Mahal, Pune. This was a political alliance, common for noble families, to strengthen Shahaji's and Shivaji's influence. Saibai would become his first wife and the mother of his heir, Sambhaji."
+    }
+  },
+  {
+    "eventNo": "3",
+    "year": "1645",
+    "eco" : "+",
+    "title": "Oath of Swarajya",
+    "location": "Raireshwar Temple",
+    "details": {
+      "keyFigures": "Shivaji Maharaj (then 15 years old), Yesaji Kank, Baji Pasalkar, Tanaji Malusare, and other trusted friends (Mavlas).",
+      "narrative": "The dream begins! A young Shivaji and his friends secretly promise to build their own free kingdom (Swarajya). In a secret meeting at the Raireshwar Temple near Pune, the teenage Shivaji and his closest companions pricked their thumbs and took a blood oath. They swore to establish 'Hindavi Swarajya' (self-rule of the people), independent of the oppressive foreign rule of the Sultanates."
+    }
+  },
+  {
+    "eventNo": "4",
+    "year": "1645",
+    "eco" : "",
+    "title": "Ranje Patil's justice",
+    "location": "Ranje Village (near Pune)",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, a village Patil (chief) from Ranje.",
+      "narrative": "A fair king! Shivaji shows his commitment to justice by punishing a village chief who was mistreating his people. This was one of Shivaji's first acts of civil administration. A Patil from Ranje village, misusing his power, harassed the local people. To establish that his Swarajya would be built on fair justice, Shivaji made an example of him, punishing him severely. This act, while harsh, sent a clear message that law and order would be respected, and the common people would be protected."
+    }
+  },
+  {
+    "eventNo": "5",
+    "year": "1646",
+    "eco" : "",
+    "title": "Torna merges in Swarajya",
+    "location": "Torna Fort",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Inaytdar (Adilshahi fort commander).",
+      "narrative": "First victory! Shivaji captures his very first fort, Torna. Inside, his men find hidden treasure to help build Swarajya! Shivaji, at 16, targeted the poorly maintained Adilshahi fort of Torna. He and his Mavlas convinced the fort's commander to hand it over. While repairing the fort's walls, his men discovered several large pots filled with ancient gold treasure (mohurs). Shivaji declared this was a divine blessing from the goddess Bhavani for Swarajya. He used this newfound wealth to build a new fort, Rajgad, which became his first capital."
+    }
+  },
+  {
+    "eventNo": "6",
+    "year": "1647",
+    "eco" : "",
+    "title": "Kondhana merges Swarajya",
+    "location": "Kondhana Fort (Sinhagad)",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Bapuji Mudgal Deshpande (Maratha sardar), Siddi Amber (Adilshahi fort commander).",
+      "narrative": "Shivaji cleverly convinces the fort's commander to hand over the mighty Kondhana fort without a major battle. Unlike Torna, Kondhana (later Sinhagad) was a major, well-defended fort. Shivaji wanted it to secure Pune. Instead of a bloody battle, he used diplomacy. He tasked Bapuji Mudgal Deshpande with negotiating with the Adilshahi commander. Through a combination of persuasion, guarantees, and possibly bribery, Bapuji Mudgal convinced the commander to hand over the fort peacefully, a massive strategic victory."
+    }
+  },
+  {
+    "eventNo": "7",
+    "year": "1648",
+    "eco" : "",
+    "title": "Shahajiraje arrested",
+    "location": "Near Jinji (South India)",
+    "details": {
+      "keyFigures": "Shahaji Bhosale, Mohammed Adil Shah (Sultan of Bijapur), Baji Ghorpade (Adilshahi sardar).",
+      "narrative": "Trouble! Shivaji's father, Shahajiraje, is arrested by the rival Adilshahi sultan far in the south. The Adilshahi court was alarmed by Shivaji's capture of forts. To stop him, Sultan Mohammed Adil Shah ordered the arrest of his father, Shahaji, who was then serving the Adilshahi in the south. Shahaji was treacherously arrested by a fellow Maratha sardar, Baji Ghorpade, and brought to Bijapur in chains. This was a crisis designed to force Shivaji to surrender."
+    }
+  },
+  {
+    "eventNo": "8",
+    "year": "1648",
+    "eco" : "",
+    "title": "Battle of Purandar",
+    "location": "Purandar Fort / Saswad",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Fateh Khan (Adilshahi General), Baji Pasalkar (Maratha commander).",
+      "narrative": "A fierce battle! Shivaji defends Purandar fort. His brave commander, Baji Pasalkar, fights hard but is lost in the fight. After arresting Shahaji, the Adil Shah sent General Fateh Khan with a large army to attack Shivaji directly. A fierce battle was fought in the foothills of Purandar fort, near Saswad. Baji Pasalkar, one of Shivaji's oldest and most respected commanders, led the Maratha charge. He fought with great valor but was killed in the battle. Though the Marathas lost a great warrior, they successfully defeated and repelled Fateh Khan's army."
+    }
+  },
+  {
+    "eventNo": "9",
+    "year": "1656",
+    "eco" : "",
+    "title": "Jawali was won",
+    "location": "Jawali (Satara region)",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Chandrarao More (Feudal lord of Jawali).",
+      "narrative": "Shivaji wins the dense and strategic forest of Jawali from the More family, opening a path to the sea. The valley of Jawali was a strategic jungle region ruled by the powerful More family, who were vassals of Bijapur. After the death of the ruling Chandrarao More, Shivaji intervened in a succession dispute. When the new rulers defied him, Shivaji launched a swift and brutal campaign, conquering the valley. This victory was crucial: it gave him control of a huge territory, a path to the Konkan coast, and the loyalty of many of Jawali's skilled soldiers."
+    }
+  },
+  {
+    "eventNo": "10",
+    "year": "1656",
+    "eco" : "",
+    "title": "Construction of Pratapgad",
+    "location": "Pratapgad",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Moropant Pingle (Chief Engineer/Peshwa).",
+      "narrative": "After winning Jawali, Shivaji builds a new, powerful fortress on a high hill: Pratapgad, the \"Fort of Valour\". Immediately after conquering Jawali, Shivaji recognized the strategic importance of a high hill overlooking the valley. He commissioned the construction of a new fort on this site, naming it Pratapgad. This fort would famously become the site of his meeting with Afzal Khan."
+    }
+  },
+  {
+    "eventNo": "11",
+    "year": "1656",
+    "eco" : "",
+    "title": "Raigad in Swarajya",
+    "location": "Raigad Fort",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Chandrarao More family.",
+      "narrative": "Another key fort! Shivaji captures Raigad (then called Rairi), which will one day become his grand capital. The fort of Rairi, as it was then known, was also under the control of the More family of Jawali. After the conquest of Jawali, this formidable and virtually impregnable flat-topped mountain came under Shivaji's control. He saw its potential and later developed it into his grand capital, renaming it Raigad (\"King's Fort\")."
+    }
+  },
+  {
+    "eventNo": "12",
+    "year": "1657",
+    "eco" : "",
+    "title": "Sambhaji Raje's birth!",
+    "location": "Purandar Fort",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Saibai (mother), Sambhaji Raje (son).",
+      "narrative": "A son is born! Shivaji's first son and future heir, Sambhaji, is born at Purandar Fort. On May 14, 1657, Shivaji's first son and heir, Sambhaji, was born on Purandar fort. This was a joyous occasion, securing the line of succession for the new kingdom."
+    }
+  },
+  {
+    "eventNo": "13",
+    "year": "1659",
+    "eco" : "",
+    "title": "Afzal Khan's attack on temples",
+    "location": "Tuljapur & Pandharpur",
+    "details": {
+      "keyFigures": "Afzal Khan (Adilshahi General), Shivaji Maharaj.",
+      "narrative": "A new enemy, the giant general Afzal Khan, tries to scare Shivaji by attacking holy temples on his march. To terrorize Shivaji and his populace, Khan, a known zealot, deliberately desecrated holy Hindu sites. He destroyed the revered temples of Bhavani at Tuljapur and Vithoba at Pandharpur."
+    }
+  },
+  {
+    "eventNo": "14",
+    "year": "1659",
+    "eco" : "",
+    "title": "Death of Saibai",
+    "location": "Rajgad Fort",
+    "details": {
+      "keyFigures": "Saibai, Shivaji Maharaj.",
+      "narrative": "A sad day. Shivaji's beloved wife, Maharani Saibai, passes away at the capital, Rajgad Fort. Amidst the terrifying Afzal Khan crisis, Shivaji suffered a huge personal loss. His first wife, Saibai, who had been ill for some time, passed away at Rajgad fort on September 5, 1659."
+    }
+  },
+  {
+    "eventNo": "15",
+    "year": "1659",
+    "eco" : "",
+    "title": "Afzal Khan's Killing",
+    "location": "Pratapgad Fort",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Afzal Khan.",
+      "narrative": "The showdown! Shivaji bravely defeats the giant Afzal Khan in a famous meeting at the base of Pratapgad fort. This event occurred on November 10, 1659. With Afzal Khan's army completely destroyed, there was no Adilshahi resistance left. Shivaji's forces instantly recaptured all the territory Khan had just taken."
+    }
+  },
+  {
+    "eventNo": "16",
+    "year": "1660",
+    "eco" : "",
+    "title": "Shaista Khan entered Pune",
+    "location": "Pune (Lal Mahal)",
+    "details": {
+      "keyFigures": "Shaista Khan (Mughal General, Aurangzeb's uncle), Shivaji Maharaj.",
+      "narrative": "A new threat! The Mughal general Shaista Khan invades with a huge army and takes over Shivaji's home in Pune. The Mughals, now alarmed by Shivaji's power, launched a massive invasion from the north. Shaista Khan, with an enormous army, marched into Swarajya, captured Pune on May 9, 1660, and, in a symbolic act of dominance, took over Shivaji's childhood home, Lal Mahal, as his personal residence."
+    }
+  },
+  {
+    "eventNo": "17",
+    "year": "1660",
+    "eco" : "",
+    "title": "The Great Escape",
+    "location": "Panhala -> Pavan Khind -> Vishalgad",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Siddi Jauhar, Shiva Kashid, Bajiprabhu Deshpande.",
+      "narrative": "Trapped! Shivaji is surrounded by Siddi Jauhar at Panhala fort. He makes a daring escape in the pouring rain. As Shaista Khan attacked from the north, the Adilshahi sent a huge army under General Siddi Jauhar from the south. Jauhar besieged Shivaji at Panhala fort. After months, Shivaji slipped out on a dark, rainy night using a decoy."
+    }
+  },
+  {
+    "eventNo": "18",
+    "year": "1660",
+    "eco" : "",
+    "title": "Sacrifice of Shivaji Kashid",
+    "location": "(Near Panhala)",
+    "details": {
+      "keyFigures": "Shiva Kashid (Barber and Decoy), Shivaji Maharaj.",
+      "narrative": "A brave sacrifice! A barber named Shiva Kashid, who looked just like Shivaji, pretends to be the king and gets captured to buy time for the real Shivaji to escape. He used a decoy, Shiva Kashid, a barber who looked just like him, to get \"captured\" by the enemy, causing temporary celebration and confusion, allowing Shivaji to slip away."
+    }
+  },
+  {
+    "eventNo": "19",
+    "year": "1660",
+    "eco" : "",
+    "title": "Bajiprabhu bravely held the pass",
+    "location": "Pavan Khind (Ghod Khind)",
+    "details": {
+      "keyFigures": "Bajiprabhu Deshpande, Shivaji Maharaj.",
+      "narrative": "The Last Stand! Brave Bajiprabhu Deshpande and 300 men block the narrow Pavan Khind pass, fighting to the last breath until Shivaji is safe in Vishalgad fort. The enemy gave chase to the narrow Ghod Khind (Pavan Khind) pass. Here, the loyal Bajiprabhu Deshpande and 300 men made a heroic last stand, holding the pass for hours. Bajiprabhu fought until he heard the cannon signal confirming Shivaji had safely reached Vishalgad."
+    }
+  },
+  {
+    "eventNo": "20",
+    "year": "1661",
+    "eco" : "",
+    "title": "Shaista Khan wounded in Pune",
+    "location": "Lal Mahal, Pune",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Shaista Khan.",
+      "narrative": "Surprise attack! Shivaji and his men sneak into Lal Mahal at night. Shaista Khan is shocked and escapes, but loses his fingers in the fight! This was the legendary \"surgical strike\" at Lal Mahal, Pune. Shivaji, with 400 men, snuck into the city disguised as a wedding procession. He infiltrated the palace, and his men created chaos. Shivaji himself stormed Shaista Khan's bedchamber and swung his sword, cutting off the general's fingers as he fled out a window."
+    }
+  },
+  {
+    "eventNo": "21",
+    "year": "1664",
+    "eco" : "",
+    "title": "Surat loot",
+    "location": "Surat",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Inayat Khan (Mughal Governor of Surat).",
+      "narrative": "A bold move! Shivaji marches to the rich Mughal port city of Surat and brings back its treasure to fund his kingdom. In a move of incredible audacity, Shivaji and his army traveled hundreds of kilometers in secret to attack Surat, the wealthiest port city of the Mughal Empire. The governor fled, and for six days, Shivaji looted the city's vast treasures, estimated at over one crore rupees."
+    }
+  },
+  {
+    "eventNo": "22",
+    "year": "1664",
+    "eco" : "",
+    "title": "Death of Shahaji Raje",
+    "location": "Hodigere (Karnataka)",
+    "details": {
+      "keyFigures": "Shahaji Bhosale.",
+      "narrative": "Sad news. Shivaji's father, Shahajiraje, passes away in a hunting accident far in the south. While on a hunting expedition in Hodigere (Karnataka), Shahaji Raje fell from his horse and died. This was a personal blow to Shivaji, but it also politically freed him. He was no longer just the son of a Bijapuri sardar; he was now a fully independent ruler in his own right."
+    }
+  },
+  {
+    "eventNo": "23",
+    "year": "1665",
+    "eco" : "",
+    "title": "Campaign to end Swarajya",
+    "location": "Purandar Fort",
+    "details": {
+      "keyFigures": "Aurangzeb, Mirza Raja Jai Singh, Diler Khan.",
+      "narrative": "The biggest siege yet! The powerful Mughal generals Diler Khan and Jai Singh surround Purandar fort with a massive army. Furious after the Surat loot and the Shaista Khan incident, Aurangzeb sent his top general, the brilliant and ruthless Rajput chief Mirza Raja Jai Singh, along with his fierce commander Diler Khan, with a massive, disciplined army. Their one and only mission: to completely \"end Swarajya\" and capture Shivaji."
+    }
+  },
+  {
+    "eventNo": "24",
+    "year": "1665",
+    "eco" : "",
+    "title": "Treaty of Purandar",
+    "location": "Purandar Fort",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Mirza Raja Jai Singh, Diler Khan, Murarbaji Deshpande.",
+      "narrative": "A difficult choice! After a long siege by the huge Mughal army, Shivaji makes a peace treaty with Mirza Raja Jai Singh, agreeing to give up 23 forts to protect his people. Jai Singh systematically captured smaller Maratha forts and besieged Purandar. The Maratha commander, Murarbaji Deshpande, offered a legendary defense and made a suicidal charge onto Diler Khan's force. With his best commander dead, Shivaji had no choice but to surrender."
+    }
+  },
+  {
+    "eventNo": "25",
+    "year": "1666",
+    "eco" : "",
+    "title": "Visit to Agra",
+    "location": "Agra",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Aurangzeb, Ram Singh.",
+      "narrative": "A trap! Shivaji travels to the Mughal court to meet Emperor Aurangzeb. Instead of being honored, he is disrespected and placed under house arrest. Jai Singh persuaded Shivaji to visit Aurangzeb's court in Agra. Instead of being honored, he was made to stand in the row of 5,000-rank mansabdars, behind men he had previously defeated. Feeling humiliated, Shivaji protested and was placed under house arrest."
+    }
+  },
+  {
+    "eventNo": "26",
+    "year": "1666",
+    "eco" : "",
+    "title": "The Great Escape",
+    "location": "Agra",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Sambhaji, Hiroji Farzand.",
+      "narrative": "The great escape! Shivaji and his young son Sambhaji cleverly escape from their prison in Agra. They hide in large baskets meant for sweets and travel for weeks in disguise, finally reaching their home fort of Rajgad. Shivaji pretended to be ill and began sending out large baskets of sweets for charity. One evening, he and his son Sambhaji hid inside the baskets and escaped. They disguised themselves as sadhus and took a long route home."
+    }
+  },
+  {
+    "eventNo": "27",
+    "year": "1670",
+    "eco" : "",
+    "title": "Battle of Sinhagad",
+    "location": "Sinhagad (Kondhana)",
+    "details": {
+      "keyFigures": "Tanaji Malusare, Udaybhan Rathod, Suryaji Malusare.",
+      "narrative": "\"The Lion\" (Sinha) Tanaji Malusare leads a daring night attack, climbing a steep cliff to recapture the fort. The fort is won, but Tanaji is lost in the battle. Shivaji renames it \"Sinhagad\" in his honor. Tanaji Malusare postponed his son's wedding to recapture Kondhana. He and his men climbed a steep cliff at night. A brutal battle erupted, and Tanaji fought a fierce duel with the fort commander Udaybhan Rathod. Both were killed, but the Marathas won the fort."
+    }
+  },
+  {
+    "eventNo": "28",
+    "year": "1674",
+    "eco" : "",
+    "title": "The Coronation",
+    "location": "Raigad Fort",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Jijabai, Gagabhatt.",
+      "narrative": "A kingdom is born! Shivaji Maharaj is formally crowned \"Chhatrapati\" (King) in a grand ceremony at his capital, Raigad Fort. This marks the official start of the Maratha Empire (Swarajya). The grand ceremony was held at Raigad Fort, presided over by the scholar Gagabhatt. Shivaji was declared to be of a high-caste Kshatriya lineage. He sat on a golden throne, was anointed with holy water, and minted his own coins."
+    }
+  },
+  {
+    "eventNo": "29",
+    "year": "1677",
+    "eco" : "",
+    "title": "Southern Campaign",
+    "location": "Gingee & Vellore (South India)",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Qutb Shah, Ekoji (Vyankoji).",
+      "narrative": "Expanding the dream! Shivaji leads a great campaign far into the south, winning strategic forts like Gingee and Vellore in modern-day Tamil Nadu, spreading Swarajya's reach. This was Shivaji's last and greatest military expedition. He allied with the Qutb Shah of Golconda and marched deep into South India, capturing massive forts and meeting his step-brother Ekoji."
+    }
+  },
+  {
+    "eventNo": "30",
+    "year": "1680",
+    "eco" : "",
+    "title": "The King's Passing",
+    "location": "Raigad Fort",
+    "details": {
+      "keyFigures": "Shivaji Maharaj, Soyarabai, Sambhaji.",
+      "narrative": "A legacy lives on. After a brief illness, Chhatrapati Shivaji Maharaj passes away at his capital, Raigad Fort. He leaves behind a strong, independent kingdom built on courage and justice. In late March 1680, Shivaji fell ill with a high fever and dysentery. On April 3, 1680, Chhatrapati Shivaji Maharaj passed away at Raigad Fort."
+    }
+  }
+]

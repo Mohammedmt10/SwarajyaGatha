@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@heyputer/puter.js": "^2.1.6",
     "next": "16.0.1",
     "postcss": "^8.5.6",
     "react": "19.2.0",

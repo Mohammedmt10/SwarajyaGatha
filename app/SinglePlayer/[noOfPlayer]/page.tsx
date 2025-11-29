@@ -7,6 +7,7 @@ import { useState , useMemo } from "react";
 import { useParams } from "next/navigation";
 import FlashCard from "@/app/components/flashCard";
 import { useEffect } from "react";
+import eventDetails from "../../../eventDetails.json"
 
 export default function GameScreen() {
   const params = useParams()
@@ -15,28 +16,35 @@ export default function GameScreen() {
   const [botTurn , setBotTurn] = useState(false)
   //@ts-ignore
   const [isBot , ] = useState(params.noOfPlayer ? params.noOfPlayer?.split("%26")[1] == "true" : false)
-  const playerInfo = useMemo(() => {
+  const [playerInfo, setPlayerInfo] = useState(() => {
   let list = Array.from({ length: noOfPlayer }, (_, i) => ({
-      player: i + 1,
-      eventNo: 1,
-      isBot: false
-    }));
-
-    // Fill the rest with bots until there are 4 total
-    if (isBot && list.length < 4) {
-      const botsToAdd = 4 - list.length;
-      for (let i = 0; i < botsToAdd; i++) {
-        list.push({
-          player: list.length + 1,
-          eventNo: 1,
-          isBot: true
-        });
-      }
+    player: i + 1,
+    eventNo: 1,
+    isBot: false, 
+    eco : {
+      gold : 2,
+      silver : 5,
+      bronze : 10,
     }
+  }));
+  if (isBot && list.length < 4) {
+    const botsToAdd = 4 - list.length;
+    for (let i = 0; i < botsToAdd; i++)
+      list.push({
+        player: list.length + 1, 
+        eventNo: 1, 
+        isBot: true , 
+        eco : {
+          gold : 2 , 
+          silver : 5 , 
+          bronze : 10
+        } });
+  }
+  return list;
+});
 
-    return list;  // always 4 when isBot is true
-  }, [noOfPlayer, isBot]);
-  const [flashCard, setFlashCard]= useState(false)
+
+  const [flashCard, setFlashCard]= useState(true)
   const getInitialShells = (count : any) => {
   const shells = [];
     for (let i = 1; i <= count; i++) {
@@ -70,13 +78,30 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
     const found = pShells.find(p => p.p === playerIndex);
     return found ? found.shells : [true, true, true, true];
   }
-  const noOfShells = (arr : any) => {
-    var trueCount = arr.filter(Boolean).length
-    if (!playerInfo[currPlayer - 1]) return;  // bot turn, stop
-    playerInfo[currPlayer - 1].eventNo += trueCount;
+  const noOfShells = (arr: boolean[]) => {
+  const trueCount = arr.filter(Boolean).length;
+  if (!playerInfo[currPlayer - 1]) return;
 
-    if (trueCount >= 1) setFlashCard(c => !c)
+  let player = playerInfo[currPlayer - 1];
+  const current = player.eventNo;
+  const nextPosition = current + trueCount;
+
+  const nextCheckpoint = Math.ceil(current / 6) * 6;
+  const nextCP = nextCheckpoint === current ? current + 6 : nextCheckpoint;
+
+
+  if (nextPosition >= nextCP) {
+    player.eventNo = nextCP; 
+    setFlashCard(c => !c);
+  } else {
+    player.eco.gold = player.eco.gold + (eventDetails[player.eventNo].eco == "+" ? 1 : -1) 
+    player.eventNo = nextPosition;
+    setEventDetailsNo(playerInfo[currPlayer - 1].eventNo - 1)
+    if (trueCount >= 1) setFlashCard(c => !c);
   }
+
+};
+
   const [rotateShell , setRotateShell] = useState(0)
   useEffect(() => {
   if (!botTurn || flashCard) return;
@@ -84,29 +109,27 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
   const timer = setTimeout(() => {
     const botPlayers = playerInfo.filter(p => p.isBot);
     const bot = playerInfo[currPlayer - 1];
-if (!bot?.isBot) return;  // not bot turn → do nothing
+if (!bot?.isBot) return;
 
 const botIndex = bot.player;
     randomShell();
     setCurrPlayer(prev => {
                 const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
                 if (isBot && playerInfo[next - 1].isBot) {
-                  setBotTurn(true);
-                  
+                  setBotTurn(true)
                 }
-                    return next;
-                  });        // back to Player 1
-    setBotTurn(false);
+                  return next;
+                });  
     setRotateShell(botIndex)
     setTimeout(() => setRotateShell(0) , 800);
   }, 900);
 
   return () => clearTimeout(timer);
-}, [botTurn, flashCard]);
-
-  return (
+}, [botTurn, flashCard , currPlayer]);
+const [eventDetailsNo , setEventDetailsNo] = useState(playerInfo[currPlayer - 1].eventNo - 1)
+return (
     <div>
-      {/* {flashCard && <FlashCard setFlashCard={setFlashCard} />} */}
+      {flashCard && <FlashCard flashCard={flashCard} setFlashCard={setFlashCard} eventDetailsNo={eventDetailsNo} />}
       <div className="h-screen w-screen border-2 overflow-auto overflow-y-hidden flex select-none">
       
       <div className="h-screen bg-[#990000] border-2 p-1 pb-2 w-85">
@@ -146,18 +169,18 @@ const botIndex = bot.player;
                 <div className="h-9 w-10 bg-bronze-coin bg-cover"></div>
               </div>
               <div className="flex justify-around mt-2">
-                <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">1</div>
-                <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">2</div>
-                <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">3</div>
+                <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[0].eco.gold}</div>
+                <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[0].eco.silver}</div>
+                <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[0].eco.bronze}</div>
               </div>
             </div>
           </div>
         </div>}
         {(noOfPlayer >= 2 || isBot) && <div>
           <div className="flex justify-evenly mt-10">
-            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">1</div>
-            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">2</div>
-            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">3</div>
+            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[1].eco.gold}</div>
+            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[1].eco.silver}</div>
+            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[1].eco.bronze}</div>
           </div>
             <div className="flex justify-evenly mt-2">
               <div className="h-10 w-9.5 bg-gold-coin bg-cover"></div>
@@ -241,16 +264,16 @@ const botIndex = bot.player;
                 <div className="h-9 w-10 bg-bronze-coin bg-cover"></div>
             </div>
             <div className="flex justify-around mt-2">
-              <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">1</div>
-              <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">2</div>
-              <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">3</div>
+            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[2].eco.gold}</div>
+            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[2].eco.silver}</div>
+            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[2].eco.bronze}</div>
             </div>
           </div>}
           {(noOfPlayer >= 4 || isBot) && <div>
             <div className="flex justify-around">
-              <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">1</div>
-              <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">2</div>
-              <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">3</div>
+            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[3].eco.gold}</div>
+            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[3].eco.silver}</div>
+            <div className="border-2 px-3.5 bg-white border-[#9b0403] rounded-lg">{playerInfo[3].eco.bronze}</div>
             </div>
             <div className="flex justify-around mt-2">
                 <div className="h-10 w-9.5 bg-gold-coin bg-cover"></div>

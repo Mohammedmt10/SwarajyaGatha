@@ -65,7 +65,7 @@ export default function Map({
                 {[ 2 , 3 , 4 , 5 , 6, 7 , 8].map((no) => (
                     <div key={no} className="grid grid-cols-2 grid-rows-2 gap-2">
                 <div className="h-9 bg-[#063f33] shadow-[inset_0_1px_8px_rgba(0,0,0,0.6)]">
-                        <div id={`event${no}`} className="border-2 border-[#e69f1f] bg-[#c47a01] h-9.5 w-9.5 translate-x-5 translate-y-4 rounded">
+                        <div id={`event${no}`} className={`${no%6 == 0 ? "bg-radial from-[#990000] to-[#e4ae5d]" : "" } border-2 border-[#e69f1f] bg-[#c47a01] h-9.5 w-9.5 translate-x-5 translate-y-4 rounded`}>
                             <div className="items-center">
                             {pawnInfo.map(({ player, eventNo }) => (
                                 eventNo == no && <div key={player - 1} style={{ paddingLeft: eventCounts[eventNo] > 1 ? `${player * 3}px` : "0px" }}  className={`relative justify-around`}>
@@ -108,7 +108,7 @@ export default function Map({
             {[11 , 10 , 9].map((no) => (
                 <div key={no} className="grid grid-cols-2 grid-rows-2 gap-2">
                 <div className="h-9 bg-[#063f33]">
-                    <div id={`event${no}`} className="border-2 border-[#e69f1f] bg-[#c47a01] rounded-md h-10 w-10 translate-x-3 translate-y-4.5">
+                    <div id={`event${no}`} className="border-2 border-[#e69f1f] bg-[#c47a01] rounded-md h-10 w-10 translate-x-2 translate-y-3">
                         <div className="items-center">
                            {pawnInfo.map(({ player, eventNo }) => (
                                 eventNo == no && <div key={player - 1} style={{ paddingLeft: eventCounts[eventNo] > 1 ? `${player * 3}px` : "0px" }}  className={`relative justify-around`}>
@@ -149,7 +149,7 @@ export default function Map({
     <div className="flex flex-row-reverse bg-[#c36d08] rounded-tr-2xl rounded-bl-2xl pl-1 py-1">
         <div className="grid grid-cols-2 grid-rows-2 p-2 pr-0 gap-2">
         <div className="h-9 bg-[#063f33] shadow-[inset_0_1px_8px_rgba(0,0,0,0.6)]">
-                <div id={`event12`} className="border-2 border-[#e69f1f] bg-[#c47a01] rounded-md h-10 w-10 translate-x-4 translate-y-4.5">
+                <div id={`event12`} className={`bg-radial from-[#990000] to-[#e4ae5d] border-2 border-[#e69f1f] bg-[#c47a01] rounded-md h-10 w-10 translate-x-4 translate-y-4.5`}>
                         <div className="items-center">
                             {pawnInfo.map(({ player, eventNo }) => (
                                 eventNo == 12 && <div key={player - 1} style={{ paddingLeft: eventCounts[eventNo] > 1 ? `${player * 3}px` : "0px" }}  className={`relative justify-around`}>
@@ -188,7 +188,7 @@ export default function Map({
         {[ 13 , 14 , 15 , 16 , 17 , 18 , 19].map((no) => (
             <div key={no} className="grid grid-cols-2 grid-rows-2 p-2 gap-2">
             <div className="h-9 bg-[#063f33] shadow-[inset_0_1px_8px_rgba(0,0,0,0.6)]">
-                <div id={`event${no}`} className="border-2 border-[#e69f1f] bg-[#c47a01] rounded-md h-10 w-10 translate-x-5.5 translate-y-4.5">
+                <div id={`event${no}`} className={`${no%6 == 0 ? "bg-radial from-[#990000] to-[#e4ae5d]" : "" } border-2 border-[#e69f1f] bg-[#c47a01] rounded-md h-10 w-10 translate-x-5.5 translate-y-4.5`}>
                         <div className="items-center">
                             {pawnInfo.map(({ player, eventNo }) => (
                                 eventNo == no && <div key={player - 1} style={{ paddingLeft: eventCounts[eventNo] > 1 ? `${player * 3}px` : "0px" }}  className={`relative justify-around`}>
@@ -271,10 +271,10 @@ export default function Map({
     </div>
     <div className="grid grid-cols-9 grid-rows-1 bg-[#c36d08] pt-1 px-1 rounded-r-xl rounded-tl-xl translate-x-8
     ">
-        {[22 , 23 , 24 , 25 , 26 , 27 , 28 , 29 ].map((no) => (
+        {[22 , 23 , 24 , 25 , 26 , 27 , 28 , 29].map((no) => (
         <div key={no} className="grid grid-cols-2 grid-rows-2 p-2 pb-0 gap-2">
         <div className={`${no == 30 ? "h-11 w-11" : "h-10 w-10"} bg-[#063f33] shadow-[inset_0_1px_8px_rgba(0,0,0,0.6)]`}>
-                <div id={`event${no}`} className="border-2 border-[#e69f1f] bg-[#c47a01] rounded-md h-10 w-10 translate-x-5 translate-y-4.5">
+                <div id={`event${no}`} className={`${no%6 == 0 ? "bg-radial from-[#990000] to-[#e4ae5d]" : "" } border-2 border-[#e69f1f] bg-[#c47a01] rounded-md h-10 w-10 translate-x-5 translate-y-4.5`}>
                         <div className="items-center">
                             {pawnInfo.map(({ player, eventNo }) => (
                                 eventNo == no && <div key={player - 1} style={{ paddingLeft: eventCounts[eventNo] > 1 ? `${player * 3}px` : "0px" }}  className={`relative justify-around`}>
@@ -312,7 +312,7 @@ export default function Map({
         </div>))}
         <div className="grid grid-cols-2 grid-rows-2 gap-2 mt-2 mr-2">
                 <div className="h-11 bg-[#063f33] shadow-[inset_0_1px_8px_rgba(0,0,0,0.6)]">
-                        <div id={`event30`} className="border-2 border-[#e69f1f] bg-[#c47a01] h-11 w-11 translate-x-4.5 translate-y-3.5 rounded">
+                        <div id={`event30`} className={`${30%6 == 0 ? "bg-radial from-[#990000] to-[#e4ae5d]" : "" } border-2 border-[#e69f1f] bg-[#c47a01] h-11 w-11 translate-x-4.5 translate-y-3.5 rounded`}>
                             <div className="items-center">
                             {pawnInfo.map(({ player, eventNo }) => (
                                 eventNo >= 30 && <div key={player - 1} style={{ paddingLeft: eventCounts[eventNo] > 1 ? `${player * 3}px` : "0px" }}  className={`relative justify-around`}>

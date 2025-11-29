@@ -32,6 +32,8 @@ export default function GameScreen() {
   const rotateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const [flashCard, setFlashCard] = useState(false);
+  const [flashCardDetailsNo, setFlashCardDetailsNo] = useState<number>(0);
+
   const roomId = "default-room";
 
   /* ---------------- WebSocket Connection ---------------- */
@@ -52,30 +54,54 @@ export default function GameScreen() {
       if (msg.type === "state") {
         const newState: GameState = msg.state;
 
-        // Shell animation
-        setGameState((prev) => {
-          if (
-            newState.lastRollPlayer &&
-            newState.lastRollPlayer !== prev.lastRollPlayer
-          ) {
-            if (rotateTimeoutRef.current) clearTimeout(rotateTimeoutRef.current);
-            setRotateShell(newState.lastRollPlayer);
-            rotateTimeoutRef.current = setTimeout(() => setRotateShell(0), 900);
-          }
-          return newState;
-        });
-
-        // 🔥 FlashCard for EVERYONE (not only the roller)
-        const shells =
-          newState.pShells.find((p) => p.p === newState.lastRollPlayer)?.shells ?? [];
-        const trueCount = shells.filter(Boolean).length;
-        const rollChanged =
-          newState.lastRollPlayer !== gameState.lastRollPlayer &&
-          newState.lastRollPlayer !== null;
-
-        if (rollChanged && trueCount > 0) {
-          setFlashCard(true);
+        /* 🔥 Always spin shells whenever a roll happens */
+        if (newState.lastRollPlayer) {
+          if (rotateTimeoutRef.current) clearTimeout(rotateTimeoutRef.current);
+          setRotateShell(newState.lastRollPlayer);
+          rotateTimeoutRef.current = setTimeout(() => setRotateShell(0), 900);
         }
+
+        /* 🔥 Checkpoint logic (ported from single-player) */
+        if (newState.lastRollPlayer !== null) {
+          const last = newState.lastRollPlayer;
+          const shellsForLast =
+            newState.pShells.find((p) => p.p === last)?.shells ?? [];
+          const trueCount = shellsForLast.filter(Boolean).length;
+
+          if (trueCount > 0) {
+            const idx = last - 1;
+            const player = newState.playerInfo[idx];
+
+            if (player) {
+              // movedPosition = what server sent after applying simple move
+              const movedPosition = player.eventNo;
+
+              // infer previous position (before this roll)
+              const prevPosition = Math.max(1, movedPosition - trueCount);
+
+              const current = prevPosition;
+              const nextPosition = current + trueCount; // == movedPosition
+
+              const nextCheckpoint = Math.ceil(current / 6) * 6;
+              const nextCP =
+                nextCheckpoint === current ? current + 6 : nextCheckpoint;
+
+              if (nextPosition >= nextCP) {
+                // crossed checkpoint → snap to checkpoint
+                player.eventNo = nextCP;
+              } else {
+                // normal move (already at nextPosition)
+                player.eventNo = nextPosition;
+              }
+
+              // FLASHCARD: use final eventNo (index = eventNo - 1)
+              setFlashCardDetailsNo(player.eventNo - 1);
+              setFlashCard(true);
+            }
+          }
+        }
+
+        setGameState(newState);
       }
 
       if (msg.type === "error") {
@@ -116,8 +142,13 @@ export default function GameScreen() {
   /* ---------------- Rendering ---------------- */
   return (
     <div>
-      {/* 🔥 FLASHCARD POPUP (full screen) */}
-      {flashCard && <FlashCard setFlashCard={setFlashCard} />}
+      {/* FLASHCARD POPUP */}
+      {flashCard && (
+        <FlashCard
+          setFlashCard={setFlashCard}
+          eventDetailsNo={flashCardDetailsNo}
+        />
+      )}
 
       <div className="h-screen w-screen border-2 overflow-auto overflow-y-hidden flex select-none">
         {/* LEFT (Player 1 & 2) */}
