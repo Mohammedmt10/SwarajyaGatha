@@ -7,7 +7,7 @@
     "location": "Shivneri Fort",
     "details": {
       "keyFigures": "Shahaji Bhosale (father), Jijabai Bhosale (mother).",
-      "narrative": "A hero is born! Chhatrapati Shivaji Maharaj is born on the high hill fort of Shivneri. Shivaji was born on February 19, 1630, at the hill-fort of Shivneri, near Junnar (Pune district). His father, Shahaji, was a prominent general serving the Deccan Sultanates, and his mother, Jijabai, was a deeply religious and independent woman."
+      "narrative": "A hero is born! Chhatrapati Shivaji Maharaj was born on the high hill fort of Shivneri. Shivaji was born on February 19, 1630, at the hill-fort of Shivneri, near Junnar (Pune district). His father, Shahaji, was a prominent general serving the Deccan Sultanates, and his mother, Jijabai, was a deeply religious and independent woman."
     }
   },
   {
@@ -35,7 +35,7 @@
   {
     "eventNo": "4",
     "year": "1645",
-    "eco" : "",
+    "eco" : "+",
     "title": "Ranje Patil's justice",
     "location": "Ranje Village (near Pune)",
     "details": {
@@ -46,7 +46,7 @@
   {
     "eventNo": "5",
     "year": "1646",
-    "eco" : "",
+    "eco" : "+",
     "title": "Torna merges in Swarajya",
     "location": "Torna Fort",
     "details": {
@@ -57,7 +57,7 @@
   {
     "eventNo": "6",
     "year": "1647",
-    "eco" : "",
+    "eco" : "+",
     "title": "Kondhana merges Swarajya",
     "location": "Kondhana Fort (Sinhagad)",
     "details": {
@@ -68,7 +68,7 @@
   {
     "eventNo": "7",
     "year": "1648",
-    "eco" : "",
+    "eco" : "-",
     "title": "Shahajiraje arrested",
     "location": "Near Jinji (South India)",
     "details": {
@@ -79,7 +79,7 @@
   {
     "eventNo": "8",
     "year": "1648",
-    "eco" : "",
+    "eco" : "null",
     "title": "Battle of Purandar",
     "location": "Purandar Fort / Saswad",
     "details": {
@@ -90,7 +90,7 @@
   {
     "eventNo": "9",
     "year": "1656",
-    "eco" : "",
+    "eco" : "+",
     "title": "Jawali was won",
     "location": "Jawali (Satara region)",
     "details": {
@@ -101,7 +101,7 @@
   {
     "eventNo": "10",
     "year": "1656",
-    "eco" : "",
+    "eco" : "+",
     "title": "Construction of Pratapgad",
     "location": "Pratapgad",
     "details": {
@@ -112,7 +112,7 @@
   {
     "eventNo": "11",
     "year": "1656",
-    "eco" : "",
+    "eco" : "+",
     "title": "Raigad in Swarajya",
     "location": "Raigad Fort",
     "details": {
@@ -123,18 +123,18 @@
   {
     "eventNo": "12",
     "year": "1657",
-    "eco" : "",
+    "eco" : "+",
     "title": "Sambhaji Raje's birth!",
     "location": "Purandar Fort",
     "details": {
       "keyFigures": "Shivaji Maharaj, Saibai (mother), Sambhaji Raje (son).",
-      "narrative": "A son is born! Shivaji's first son and future heir, Sambhaji, is born at Purandar Fort. On May 14, 1657, Shivaji's first son and heir, Sambhaji, was born on Purandar fort. This was a joyous occasion, securing the line of succession for the new kingdom."
+      "narrative": "A son is born! Shivaji's first son and future heir, Sambhaji, is born at Purandar Fort. On May 14, 1657, Shivaji's first son and heir, Sambhaji, was born in Purandar fort. This was a joyous occasion, securing the line of succession for the new kingdom."
     }
   },
   {
     "eventNo": "13",
     "year": "1659",
-    "eco" : "",
+    "eco" : "-",
     "title": "Afzal Khan's attack on temples",
     "location": "Tuljapur & Pandharpur",
     "details": {
@@ -145,7 +145,7 @@
   {
     "eventNo": "14",
     "year": "1659",
-    "eco" : "",
+    "eco" : "-",
     "title": "Death of Saibai",
     "location": "Rajgad Fort",
     "details": {
@@ -156,7 +156,7 @@
   {
     "eventNo": "15",
     "year": "1659",
-    "eco" : "",
+    "eco" : "+",
     "title": "Afzal Khan's Killing",
     "location": "Pratapgad Fort",
     "details": {
@@ -167,7 +167,7 @@
   {
     "eventNo": "16",
     "year": "1660",
-    "eco" : "",
+    "eco" : "-",
     "title": "Shaista Khan entered Pune",
     "location": "Pune (Lal Mahal)",
     "details": {
@@ -178,7 +178,7 @@
   {
     "eventNo": "17",
     "year": "1660",
-    "eco" : "",
+    "eco" : "+",
     "title": "The Great Escape",
     "location": "Panhala -> Pavan Khind -> Vishalgad",
     "details": {
@@ -189,7 +189,7 @@
   {
     "eventNo": "18",
     "year": "1660",
-    "eco" : "",
+    "eco" : "-",
     "title": "Sacrifice of Shivaji Kashid",
     "location": "(Near Panhala)",
     "details": {
@@ -200,7 +200,7 @@
   {
     "eventNo": "19",
     "year": "1660",
-    "eco" : "",
+    "eco" : "null",
     "title": "Bajiprabhu bravely held the pass",
     "location": "Pavan Khind (Ghod Khind)",
     "details": {
@@ -211,7 +211,7 @@
   {
     "eventNo": "20",
     "year": "1661",
-    "eco" : "",
+    "eco" : "+",
     "title": "Shaista Khan wounded in Pune",
     "location": "Lal Mahal, Pune",
     "details": {
@@ -222,7 +222,7 @@
   {
     "eventNo": "21",
     "year": "1664",
-    "eco" : "",
+    "eco" : "+",
     "title": "Surat loot",
     "location": "Surat",
     "details": {
@@ -233,7 +233,7 @@
   {
     "eventNo": "22",
     "year": "1664",
-    "eco" : "",
+    "eco" : "-",
     "title": "Death of Shahaji Raje",
     "location": "Hodigere (Karnataka)",
     "details": {
@@ -244,7 +244,7 @@
   {
     "eventNo": "23",
     "year": "1665",
-    "eco" : "",
+    "eco" : "-",
     "title": "Campaign to end Swarajya",
     "location": "Purandar Fort",
     "details": {
@@ -255,7 +255,7 @@
   {
     "eventNo": "24",
     "year": "1665",
-    "eco" : "",
+    "eco" : "-",
     "title": "Treaty of Purandar",
     "location": "Purandar Fort",
     "details": {
@@ -266,7 +266,7 @@
   {
     "eventNo": "25",
     "year": "1666",
-    "eco" : "",
+    "eco" : "-",
     "title": "Visit to Agra",
     "location": "Agra",
     "details": {
@@ -277,7 +277,7 @@
   {
     "eventNo": "26",
     "year": "1666",
-    "eco" : "",
+    "eco" : "+",
     "title": "The Great Escape",
     "location": "Agra",
     "details": {
@@ -288,7 +288,7 @@
   {
     "eventNo": "27",
     "year": "1670",
-    "eco" : "",
+    "eco" : "null",
     "title": "Battle of Sinhagad",
     "location": "Sinhagad (Kondhana)",
     "details": {
@@ -299,7 +299,7 @@
   {
     "eventNo": "28",
     "year": "1674",
-    "eco" : "",
+    "eco" : "+",
     "title": "The Coronation",
     "location": "Raigad Fort",
     "details": {
@@ -310,7 +310,7 @@
   {
     "eventNo": "29",
     "year": "1677",
-    "eco" : "",
+    "eco" : "+",
     "title": "Southern Campaign",
     "location": "Gingee & Vellore (South India)",
     "details": {
@@ -321,7 +321,7 @@
   {
     "eventNo": "30",
     "year": "1680",
-    "eco" : "",
+    "eco" : "-",
     "title": "The King's Passing",
     "location": "Raigad Fort",
     "details": {

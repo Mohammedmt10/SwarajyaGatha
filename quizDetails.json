@@ -1,0 +1,1697 @@
+[
+  {
+    "eventNo": "1",
+    "year": "1630",
+    "title": "Birth of Shivaji Maharaj",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "On what date and at which fort was Shivaji Maharaj born?",
+        "options": {
+          "A": "February 19, 1630, at Shivneri Fort",
+          "B": "1640, at Lal Mahal, Pune",
+          "C": "1645, at Raireshwar Temple",
+          "D": "1657, at Purandar Fort"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 2,
+        "question": "Who were Shivaji's parents?",
+        "options": {
+          "A": "Shivaji and Saibai Nimbalkar",
+          "B": "Yesaji Kank and Baji Pasalkar",
+          "C": "Shahaji Bhosale and Jijabai Bhosale",
+          "D": "Sambhaji Mohite and Soyarabai"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "Shivaji's father, Shahaji, was a prominent general serving whom?",
+        "options": {
+          "A": "The Mughal Empire",
+          "B": "The Deccan Sultanates",
+          "C": "The Maratha Empire",
+          "D": "The More family of Jawali"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 4,
+        "question": "Near which modern-day district/town is Shivneri fort located?",
+        "options": {
+          "A": "Junnar (Pune district)",
+          "B": "Agra",
+          "C": "Bijapur",
+          "D": "Gingee (South India)"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 5,
+        "question": "How is Shivaji's mother, Jijabai, described in the text?",
+        "options": {
+          "A": "A member of the Nimbalkar family",
+          "B": "Deeply religious and independent",
+          "C": "Ill for some time before her passing",
+          "D": "Wanting her son Rajaram to be the next king"
+        },
+        "correctAnswer": "B"
+      }
+    ]
+  },
+  {
+    "eventNo": "2",
+    "year": "1640",
+    "title": "Marriage with Saibai",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "At what age did Shivaji get married to Saibai?",
+        "options": {
+          "A": "15",
+          "B": "16",
+          "C": "10",
+          "D": "12"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 2,
+        "question": "Where did the wedding ceremony take place?",
+        "options": {
+          "A": "Shivneri Fort",
+          "B": "Raireshwar Temple",
+          "C": "Raigad Fort",
+          "D": "Lal Mahal, Pune"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "qId": 3,
+        "question": "Saibai was from which powerful family?",
+        "options": {
+          "A": "Bhosale",
+          "B": "Nimbalkar",
+          "C": "More",
+          "D": "Ghorpade"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 4,
+        "question": "Besides being a common practice, what was a primary purpose of this marriage?",
+        "options": {
+          "A": "A political alliance to strengthen influence",
+          "B": "To gain wealth to build Rajgad fort",
+          "C": "To end a long war with the Nimbalkar family",
+          "D": "To fulfill a divine prophecy"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 5,
+        "question": "Saibai would later become the mother of which famous heir?",
+        "options": {
+          "A": "Rajaram",
+          "B": "Shahaji",
+          "C": "Sambhaji",
+          "D": "Tanaji"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  },
+  {
+    "eventNo": "3",
+    "year": "1645",
+    "title": "Oath of Swarajya",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "How old was Shivaji when he took the Oath of Swarajya?",
+        "options": {
+          "A": "10",
+          "B": "15",
+          "C": "16",
+          "D": "20"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 2,
+        "question": "At which temple did Shivaji and his friends take their secret oath?",
+        "options": {
+          "A": "Raireshwar Temple",
+          "B": "Tuljapur Temple",
+          "C": "Pandharpur Temple",
+          "D": "Shivneri Temple"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 3,
+        "question": "Name two of the trusted friends (Mavlas) mentioned as being present at the oath.",
+        "options": {
+          "A": "Tanaji Malusare and Suryaji Malusare",
+          "B": "Diler Khan and Jai Singh",
+          "C": "Yesaji Kank and Baji Pasalkar",
+          "D": "Sambhaji Mohite and Baji Ghorpade"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 4,
+        "question": "What was the specific name of the self-rule they swore to establish?",
+        "options": {
+          "A": "'Dakshin Digvijay'",
+          "B": "'Rajyabhishek Shaka'",
+          "C": "'Maratha Samrajya'",
+          "D": "'Hindavi Swarajya'"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "qId": 5,
+        "question": "How did Shivaji and his companions seal their oath?",
+        "options": {
+          "A": "They signed a formal treaty",
+          "B": "They pricked their thumbs and took a blood oath",
+          "C": "They minted new coins in their own name",
+          "D": "They built a new fort and named it Swarajya"
+        },
+        "correctAnswer": "B"
+      }
+    ]
+  },
+  {
+    "eventNo": "4",
+    "year": "1645",
+    "title": "Ranje Patil's justice",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "This event was one of Shivaji's first acts of what?",
+        "options": {
+          "A": "Military conquest",
+          "B": "Naval warfare",
+          "C": "Civil administration",
+          "D": "Foreign diplomacy"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 2,
+        "question": "What crime was the Patil (chief) of Ranje village committing?",
+        "options": {
+          "A": "He was secretly spying for the Adilshahi",
+          "B": "He was refusing to pay taxes to Swarajya",
+          "C": "He was harassing and mistreating the local people",
+          "D": "He was building his own illegal fortress"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "Why did Shivaji punish the Patil so severely?",
+        "options": {
+          "A": "To steal the Patil's wealth for his treasury",
+          "B": "To make an example of him and establish fair justice",
+          "C": "To impress the Mughal Emperor",
+          "D": "To test his new army's strength"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 4,
+        "question": "What clear message did this act of justice send?",
+        "options": {
+          "A": "That Shivaji was now the most powerful sardar",
+          "B": "That only Shivaji's friends would be protected",
+          "C": "That law and order would be respected",
+          "D": "That the Adilshahi's rule was over"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 5,
+        "question": "Who did this act signal would be protected under Swarajya?",
+        "options": {
+          "A": "The common people",
+          "B": "The rich merchants",
+          "C": "The Mughal generals",
+          "D": "The Adilshahi commanders"
+        },
+        "correctAnswer": "A"
+      }
+    ]
+  },
+  {
+    "eventNo": "5",
+    "year": "1646",
+    "title": "Torna merges in Swarajya",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "At what age did Shivaji capture his first fort, Torna?",
+        "options": {
+          "A": "15",
+          "B": "16",
+          "C": "18",
+          "D": "10"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 2,
+        "question": "How did Shivaji and his Mavlas acquire the fort from the Adilshahi commander?",
+        "options": {
+          "A": "By laying siege for 56 days",
+          "B": "By a daring night-time cliff assault",
+          "C": "They convinced the commander to hand it over",
+          "D": "They fought a large battle at the foothills"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "What did Shivaji's men discover while repairing the fort's walls?",
+        "options": {
+          "A": "Several large pots filled with ancient gold treasure",
+          "B": "Secret escape tunnels to Raigad",
+          "C": "An alliance letter between the commander and the Mughals",
+          "D": "The English cannons used at Panhala"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 4,
+        "question": "What did Shivaji declare this discovery to be?",
+        "options": {
+          "A": "A trap laid by the Adilshahi",
+          "B": "A divine blessing from the goddess Bhavani",
+          "C": "The hidden treasury of the More family",
+          "D": "Enough money to fund the loot of Surat"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 5,
+        "question": "What did Shivaji use this newfound wealth to do?",
+        "options": {
+          "A": "Build a new fort, Rajgad, which became his first capital",
+          "B": "Pay Baji Ghorpade to release his father",
+          "C": "Bribe the commander of Kondhana",
+          "D": "Fund his trip to Agra to meet Aurangzeb"
+        },
+        "correctAnswer": "A"
+      }
+    ]
+  },
+  {
+    "eventNo": "6",
+    "year": "1647",
+    "title": "Kondhana merges Swarajya",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "What was Kondhana fort later renamed to?",
+        "options": {
+          "A": "Sinhagad",
+          "B": "Rajgad",
+          "C": "Raigad",
+          "D": "Pratapgad"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 2,
+        "question": "How did Shivaji's method for acquiring Kondhana differ from his capture of Torna?",
+        "options": {
+          "A": "He had to fight a fierce battle, unlike Torna",
+          "B": "He used diplomacy and negotiation instead of a major battle",
+          "C": "He had to climb a steep cliff at night",
+          "D": "He found hidden treasure, which he did not at Torna"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 3,
+        "question": "Who was the Maratha sardar tasked with negotiating the handover?",
+        "options": {
+          "A": "Baji Pasalkar",
+          "B": "Kavji Malhar",
+          "C": "Bapuji Mudgal Deshpande",
+          "D": "Moropant Pingle"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 4,
+        "question": "Who was the Adilshahi commander of Kondhana?",
+        "options": {
+          "A": "Siddi Amber",
+          "B": "Inaytdar",
+          "C": "Miyan Rahim Muhammad",
+          "D": "Balaji Haibatrao"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 5,
+        "question": "According to the text, what combination of methods did Bapuji Mudgal use?",
+        "options": {
+          "A": "A surprise attack, a naval blockade, and a cannon barrage",
+          "B": "A secret oath, a duel, and a last stand",
+          "C": "Persuasion, guarantees, and possibly bribery",
+          "D": "A decoy, a night march, and a surprise raid"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  },
+  {
+    "eventNo": "7",
+    "year": "1648",
+    "title": "Shahajiraje arrested",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Why did the Adilshahi court order Shahaji's arrest?",
+        "options": {
+          "A": "They were alarmed by Shivaji's capture of forts",
+          "B": "Shahaji had allied with the Mughals",
+          "C": "Shahaji had refused to pay taxes to Bijapur",
+          "D": "He had lost the Battle of Purandar"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 2,
+        "question": "Which fellow Maratha sardar treacherously arrested Shahaji?",
+        "options": {
+          "A": "Sambhaji Mohite",
+          "B": "Chandrarao More",
+          "C": "Baji Ghorpade",
+          "D": "Bapuji Mudgal Deshpande"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "Where was Shahaji serving the Adilshahi when he was arrested?",
+        "options": {
+          "A": "In Pune, protecting Lal Mahal",
+          "B": "In the south (near Jinji)",
+          "C": "In Jawali",
+          "D": "In the Mughal court at Agra"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 4,
+        "question": "What was the Adilshahi court trying to force Shivaji to do by arresting his father?",
+        "options": {
+          "A": "Surrender",
+          "B": "Pay a large ransom",
+          "C": "Join the Adilshahi army",
+          "D": "Attack the Mughals"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 5,
+        "question": "To which city was Shahaji brought in chains?",
+        "options": {
+          "A": "Agra",
+          "B": "Golconda",
+          "C": "Junnar",
+          "D": "Bijapur"
+        },
+        "correctAnswer": "D"
+      }
+    ]
+  },
+  {
+    "eventNo": "8",
+    "year": "1648",
+    "title": "Battle of Purandar",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Which Adilshahi General led the attack on Shivaji after Shahaji's arrest?",
+        "options": {
+          "A": "Afzal Khan",
+          "B": "Fateh Khan",
+          "C": "Shaista Khan",
+          "D": "Siddi Jauhar"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 2,
+        "question": "Where was the fierce battle fought?",
+        "options": {
+          "A": "In the Konkan, near Kalyan",
+          "B": "At Pavan Khind",
+          "C": "In the foothills of Purandar fort, near Saswad",
+          "D": "Inside the walls of Torna fort"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "Who was Baji Pasalkar, and what role did he play in the battle?",
+        "options": {
+          "A": "A spy who infiltrated Fateh Khan's army",
+          "B": "The commander who negotiated the surrender of the fort",
+          "C": "One of Shivaji's oldest commanders, who led the Maratha charge",
+          "D": "The man who treacherously arrested Shahaji"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 4,
+        "question": "What was the outcome of the battle for Baji Pasalkar?",
+        "options": {
+          "A": "He was captured and taken to Bijapur",
+          "B": "He was killed in the battle",
+          "C": "He successfully repelled the army and was promoted",
+          "D": "He defected to the Adilshahi side"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 5,
+        "question": "What was the overall outcome of the battle against Fateh Khan's army?",
+        "options": {
+          "A": "The Marathas were defeated and lost Purandar fort",
+          "B": "The Marathas successfully defeated and repelled the army",
+          "C": "A peace treaty was signed, and Shahaji was released",
+          "D": "The battle was a draw, and both sides retreated"
+        },
+        "correctAnswer": "B"
+      }
+    ]
+  },
+  {
+    "eventNo": "9",
+    "year": "1656",
+    "title": "Jawali was won",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Who ruled the strategic jungle region of Jawali?",
+        "options": {
+          "A": "The More family",
+          "B": "The Nimbalkar family",
+          "C": "The Ghorpade family",
+          "D": "The Mohite family"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 2,
+        "question": "The More family were vassals of which sultanate?",
+        "options": {
+          "A": "The Mughals",
+          "B": "The Qutb Shah of Golconda",
+          "C": "The Siddi of Janjira",
+          "D": "Bijapur (Adilshahi)"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "qId": 3,
+        "question": "How did Shivaji get involved in Jawali's affairs?",
+        "options": {
+          "A": "He was invited to negotiate a peace treaty",
+          "B": "He intervened in a succession dispute",
+          "C": "The More family attacked his territory first",
+          "D": "He married into the More family"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 4,
+        "question": "What did Shivaji do when the new rulers of Jawali defied him?",
+        "options": {
+          "A": "He launched a swift and brutal campaign",
+          "B": "He offered them his services, like he did the Mughals",
+          "C": "He arrested them, like he did Sambhaji Mohite",
+          "D": "He retreated and built Pratapgad"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 5,
+        "question": "This victory was crucial because it gave Shivaji a path to where?",
+        "options": {
+          "A": "The Mughal capital of Agra",
+          "B": "The Adilshahi capital of Bijapur",
+          "C": "The Konkan coast",
+          "D": "The southern city of Gingee"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  },
+  {
+    "eventNo": "10",
+    "year": "1656",
+    "title": "Construction of Pratapgad",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Why did Shivaji decide to build a fort at this specific location?",
+        "options": {
+          "A": "It was on a high hill overlooking the newly conquered Jawali valley",
+          "B": "It was the birthplace of his mother, Jijabai",
+          "C": "It was where he had found the hidden treasure",
+          "D": "It was the only place the Mughals had not attacked"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 2,
+        "question": "What did Shivaji name the new fort, and what does the name mean?",
+        "options": {
+          "A": "Raigad (\"King's Fort\")",
+          "B": "Sinhagad (\"Lion's Fort\")",
+          "C": "Pratapgad (\"Fort of Valour\")",
+          "D": "Rajgad (\"King's Rule Fort\")"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "Who was the Chief Engineer (or Peshwa) commissioned for the construction?",
+        "options": {
+          "A": "Gagabhatt",
+          "B": "Tanaji Malusare",
+          "C": "Baji Pasalkar",
+          "D": "Moropant Pingle"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "qId": 4,
+        "question": "The construction of this fort was an immediate follow-up to what victory?",
+        "options": {
+          "A": "The conquering of Jawali",
+          "B": "The defeat of Fateh Khan",
+          "C": "The raid on Surat",
+          "D": "The escape from Panhala"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 5,
+        "question": "This fort would famously become the site of what future event?",
+        "options": {
+          "A": "His coronation",
+          "B": "His meeting with Afzal Khan",
+          "C": "His son Sambhaji's birth",
+          "D": "His escape in a fruit basket"
+        },
+        "correctAnswer": "B"
+      }
+    ]
+  },
+  {
+    "eventNo": "11",
+    "year": "1656",
+    "title": "Raigad in Swarajya",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "What was Raigad fort's original name?",
+        "options": {
+          "A": "Kondhana",
+          "B": "Rairi",
+          "C": "Torna",
+          "D": "Subhanmangal"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 2,
+        "question": "Which family controlled Rairi fort before Shivaji?",
+        "options": {
+          "A": "The Mohite family",
+          "B": "The Nimbalkar family",
+          "C": "The More family",
+          "D": "The Ghorpade family"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "How did Rairi fort come under Shivaji's control?",
+        "options": {
+          "A": "It was handed over peacefully after negotiations",
+          "B": "It was captured as part of the conquest of Jawali",
+          "C": "It was given to him by the Adil Shah",
+          "D": "He had to climb its steep cliffs in a daring night attack"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 4,
+        "question": "What did Shivaji later develop this fort into?",
+        "options": {
+          "A": "His grand capital",
+          "B": "A prison for his enemies",
+          "C": "The site of his first major victory",
+          "D": "A naval base"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 5,
+        "question": "What does the new name \"Raigad\" mean?",
+        "options": {
+          "A": "\"Fort of Valour\"",
+          "B": "\"Lion's Fort\"",
+          "C": "\"King's Fort\"",
+          "D": "\"Victory Fort\""
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  },
+  {
+    "eventNo": "12",
+    "year": "1657",
+    "title": "Sambhaji Raje's birth!",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "On what date was Sambhaji born?",
+        "options": {
+          "A": "February 19, 1630",
+          "B": "September 5, 1659",
+          "C": "April 5, 1663",
+          "D": "May 14, 1657"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "qId": 2,
+        "question": "At which fort was Sambhaji born?",
+        "options": {
+          "A": "Shivneri Fort",
+          "B": "Purandar Fort",
+          "C": "Rajgad Fort",
+          "D": "Raigad Fort"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 3,
+        "question": "Who was Sambhaji's mother?",
+        "options": {
+          "A": "Jijabai",
+          "B": "Saibai",
+          "C": "Soyarabai",
+          "D": "A member of the More family"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 4,
+        "question": "What was the significance of Sambhaji's birth for the new kingdom?",
+        "options": {
+          "A": "It secured the line of succession",
+          "B": "It ended the war with the Mughals",
+          "C": "It fulfilled the oath of Swarajya",
+          "D": "It brought in a large dowry"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 5,
+        "question": "What was Sambhaji's relationship to Shivaji?",
+        "options": {
+          "A": "His father",
+          "B": "His step-brother",
+          "C": "His childhood friend",
+          "D": "His first son and heir"
+        },
+        "correctAnswer": "D"
+      }
+    ]
+  },
+  {
+    "eventNo": "13",
+    "year": "1659",
+    "title": "Afzal Khan's attack on temples",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Why did Afzal Khan deliberately desecrate holy Hindu sites?",
+        "options": {
+          "A": "To find hidden treasure",
+          "B": "To terrorize Shivaji and his populace",
+          "C": "He was following orders from the Mughal Emperor",
+          "D": "He was looking for Shivaji, who was hiding in a temple"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 2,
+        "question": "Which two revered temples did Afzal Khan destroy?",
+        "options": {
+          "A": "Raireshwar and Shivneri",
+          "B": "Kashi Vishwanath and Mathura",
+          "C": "Bhavani at Tuljapur and Vithoba at Pandharpur",
+          "D": "Gingee and Vellore"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "Which forts did Afzal Khan's army easily recapture?",
+        "options": {
+          "A": "Raigad and Rajgad",
+          "B": "Purandar and Kondhana",
+          "C": "Supe, Shirwal, and Saswad",
+          "D": "Shivneri and Torna"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 4,
+        "question": "Why did Shivaji refuse to fight Afzal Khan on the open plains?",
+        "options": {
+          "A": "He was afraid of Afzal Khan's reputation",
+          "B": "He knew his smaller army would lose an open-field battle",
+          "C": "His mother Jijabai told him not to",
+          "D": "He was waiting for reinforcements from his father"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 5,
+        "question": "Where did Shivaji strategically retreat to?",
+        "options": {
+          "A": "The dense and fortified Pratapgad",
+          "B": "The impregnable Raigad fort",
+          "C": "The southern fort of Gingee",
+          "D": "His childhood home, Lal Mahal"
+        },
+        "correctAnswer": "A"
+      }
+    ]
+  },
+  {
+    "eventNo": "14",
+    "year": "1659",
+    "title": "Death of Saibai",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Who was Saibai?",
+        "options": {
+          "A": "Shivaji's mother",
+          "B": "Shivaji's first wife",
+          "C": "Shivaji's sister",
+          "D": "The wife of Sambhaji"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 2,
+        "question": "At which fort did Saibai pass away?",
+        "options": {
+          "A": "Pratapgad",
+          "B": "Purandar",
+          "C": "Rajgad fort",
+          "D": "Shivneri"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "On what date did Saibai pass away?",
+        "options": {
+          "A": "September 5, 1659",
+          "B": "May 14, 1657",
+          "C": "April 3, 1680",
+          "D": "November 10, 1659"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 4,
+        "question": "According to the text, Saibai had been in what condition for some time?",
+        "options": {
+          "A": "Held prisoner by Afzal Khan",
+          "B": "Living in the south with Shahaji",
+          "C": "Ill",
+          "D": "In charge of the treasury at Raigad"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 5,
+        "question": "Shivaji's personal loss occurred amidst which terrifying crisis?",
+        "options": {
+          "A": "The Afzal Khan crisis",
+          "B": "The siege of Panhala",
+          "C": "The campaign of Shaista Khan",
+          "D": "The house arrest in Agra"
+        },
+        "correctAnswer": "A"
+      }
+    ]
+  },
+  {
+    "eventNo": "15",
+    "year": "1659",
+    "title": "Afzal Khan's Killing",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "On what date and at what location was Afzal Khan killed?",
+        "options": {
+          "A": "November 10, 1659, at Pratapgad",
+          "B": "December 28, 1659, at Kolhapur",
+          "C": "September 5, 1659, at Rajgad",
+          "D": "1660, at Lal Mahal"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 2,
+        "question": "What was the immediate military result of Afzal Khan's army being destroyed?",
+        "options": {
+          "A": "Shivaji's forces instantly recaptured all the territory Khan had just taken",
+          "B": "The Mughals invaded from the north",
+          "C": "Shivaji was forced to sign the Treaty of Purandar",
+          "D": "Shivaji's father was immediately arrested in Bijapur"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 3,
+        "question": "What major Adilshahi fort near Kolhapur did Shivaji's forces capture on Nov 28, 1659?",
+        "options": {
+          "A": "Purandar",
+          "B": "Panhala",
+          "C": "Vishalgad",
+          "D": "Subhanmangal"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 4,
+        "question": "Who was the Adilshahi general sent to stop Shivaji after the capture of Panhala?",
+        "options": {
+          "A": "Siddi Jauhar",
+          "B": "Khawas Khan",
+          "C": "Baji Ghorpade",
+          "D": "Rustam Zaman"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "qId": 5,
+        "question": "What was the result of the Battle of Kolhapur (Dec 28, 1659)?",
+        "options": {
+          "A": "Shivaji was defeated and forced to retreat to Panhala",
+          "B": "Shivaji completely outmaneuvered and routed Rustam Zaman's army",
+          "C": "The battle was a draw, and a truce was called",
+          "D": "Rustam Zaman captured Shivaji and sent him to Bijapur"
+        },
+        "correctAnswer": "B"
+      }
+    ]
+  },
+  {
+    "eventNo": "16",
+    "year": "1660",
+    "title": "Shaista Khan entered Pune",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Why did the Mughals launch a massive invasion in 1660?",
+        "options": {
+          "A": "They were alarmed by Shivaji's power",
+          "B": "Shivaji had failed to pay them taxes",
+          "C": "The Adil Shah had asked for their help",
+          "D": "Shivaji had stolen treasure from Torna"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 2,
+        "question": "Who was Shaista Khan in relation to Emperor Aurangzeb?",
+        "options": {
+          "A": "His son",
+          "B": "His top Rajput general",
+          "C": "His uncle",
+          "D": "His father-in-law"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "On what date did Shaista Khan capture Pune?",
+        "options": {
+          "A": "November 10, 1659",
+          "B": "May 9, 1660",
+          "C": "July 1660",
+          "D": "April 5, 1663"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 4,
+        "question": "What symbolic act of dominance did Shaista Khan perform upon arriving in Pune?",
+        "options": {
+          "A": "He destroyed the Raireshwar Temple",
+          "B": "He took over Shivaji's childhood home, Lal Mahal",
+          "C": "He arrested Jijabai",
+          "D": "He recaptured Torna fort"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 5,
+        "question": "Where did Shaista Khan establish his personal residence?",
+        "options": {
+          "A": "In a new military camp outside the city",
+          "B": "Atop Purandar fort",
+          "C": "In Lal Mahal",
+          "D": "At Shivneri fort"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  },
+  {
+    "eventNo": "17",
+    "year": "1660",
+    "title": "The Great Escape",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Which Adilshahi General besieged Shivaji at Panhala fort?",
+        "options": {
+          "A": "Siddi Jauhar",
+          "B": "Shaista Khan",
+          "C": "Afzal Khan",
+          "D": "Rustam Zaman"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 2,
+        "question": "Which foreign merchants aided Siddi Jauhar with powerful cannons?",
+        "options": {
+          "A": "English factors from Rajapur",
+          "B": "Portuguese from Goa",
+          "C": "Dutch from Surat",
+          "D": "French from Pondicherry"
+        },
+        "correctAnswer": "A"
+      }
+    ]
+  },
+  {
+    "eventNo": "18",
+    "year": "1660",
+    "title": "Sacrifice of Shivaji Kashid",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Who was Shiva Kashid, and what was his role in the escape?",
+        "options": {
+          "A": "A commander who held a pass; he died fighting",
+          "B": "A barber who looked like Shivaji; he acted as a decoy",
+          "C": "An attendant who helped Shivaji escape from Agra",
+          "D": "The commander of Vishalgad who let Shivaji in"
+        },
+        "correctAnswer": "B"
+      }
+    ]
+  },
+  {
+    "eventNo": "19",
+    "year": "1660",
+    "title": "Bajiprabhu bravely held the pass",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Who was Bajiprabhu Deshpande, and what was his role in the escape?",
+        "options": {
+          "A": "A commander who made a heroic last stand at Pavan Khind",
+          "B": "A look-alike who acted as a decoy",
+          "C": "A diplomat who negotiated a truce with Siddi Jauhar",
+          "D": "The man who supplied the English cannons"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 2,
+        "question": "Bajiprabhu fought until he heard what signal, confirming Shivaji was safe?",
+        "options": {
+          "A": "A cannon signal from Vishalgad",
+          "B": "A trumpet call from Shivaji",
+          "C": "The ringing of a temple bell",
+          "D": "A messenger on horseback"
+        },
+        "correctAnswer": "A"
+      }
+    ]
+  },
+  {
+    "eventNo": "20",
+    "year": "1661",
+    "title": "Shaista Khan wounded in Pune",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "What is the correct date for this famous \"surgical strike\"?",
+        "options": {
+          "A": "May 9, 1660",
+          "B": "February 1661",
+          "C": "April 5, 1663",
+          "D": "January 1664"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 2,
+        "question": "How did Shivaji and his 400 men sneak into Pune?",
+        "options": {
+          "A": "Disguised as a wedding procession",
+          "B": "Through a secret tunnel from Purandar",
+          "C": "By bribing the Mughal guards",
+          "D": "During a cannon barrage on Chakan fort"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 3,
+        "question": "What special knowledge did Shivaji use to infiltrate the Lal Mahal?",
+        "options": {
+          "A": "He had maps stolen by his spies",
+          "B": "He had grown up there and knew every secret passage",
+          "C": "He was told the layout by a Mughal deserter",
+          "D": "He interrogated Firangoji Narsala for the plans"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 4,
+        "question": "What injury did Shaista Khan sustain during the attack?",
+        "options": {
+          "A": "He was killed in his bedchamber",
+          "B": "He lost his fingers as he fled",
+          "C": "He broke his leg jumping from the window",
+          "D": "He was taken prisoner by Shivaji"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 5,
+        "question": "What was the consequence for Shaista Khan after this humiliation?",
+        "options": {
+          "A": "He was recalled by Aurangzeb",
+          "B": "He signed a peace treaty with Shivaji",
+          "C": "He defected to the Adilshahi",
+          "D": "He captured Raigad fort in revenge"
+        },
+        "correctAnswer": "A"
+      }
+    ]
+  },
+  {
+    "eventNo": "21",
+    "year": "1664",
+    "title": "Surat loot",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "What was Surat's significance to the Mughal Empire?",
+        "options": {
+          "A": "It was their wealthiest port city",
+          "B": "It was their military capital",
+          "C": "It was where Aurangzeb was born",
+          "D": "It was the location of their main treasury"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 2,
+        "question": "What did the Mughal Governor of Surat, Inayat Khan, do when Shivaji attacked?",
+        "options": {
+          "A": "He fought a brave duel with Shivaji",
+          "B": "He paid a large ransom to save the city",
+          "C": "He fled",
+          "D": "He trapped Shivaji inside the city"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "For how many days was the city looted?",
+        "options": {
+          "A": "One",
+          "B": "Six",
+          "C": "Ten",
+          "D": "Fifty-six"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 4,
+        "question": "What was the estimated value of the treasure taken?",
+        "options": {
+          "A": "300,000 hun",
+          "B": "200 horses",
+          "C": "Over one crore rupees",
+          "D": "All the English cannons"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 5,
+        "question": "Who did Shivaji famously spare during this loot?",
+        "options": {
+          "A": "The Mughal Governor and his soldiers",
+          "B": "Only the wealthy merchants",
+          "C": "Churches, missionaries, and common people",
+          "D": "The English and Dutch factors"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  },
+  {
+    "eventNo": "22",
+    "year": "1664",
+    "title": "Death of Shahaji Raje",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "How and where did Shahaji Raje die?",
+        "options": {
+          "A": "He was killed in battle at Gingee",
+          "B": "He died of illness at Bijapur",
+          "C": "He fell from his horse during a hunt in Hodigere (Karnataka)",
+          "D": "He was executed by Baji Ghorpade"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 2,
+        "question": "How did his father's death \"politically free\" Shivaji?",
+        "options": {
+          "A": "He inherited all of Shahaji's wealth",
+          "B": "He was no longer just the son of a Bijapuri sardar, but a fully independent ruler",
+          "C": "He could now ally with the Mughals, which his father had forbidden",
+          "D": "The Adil Shah surrendered all of Shahaji's lands to him"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 3,
+        "question": "Prior to this, Shivaji was still considered the son of a... what?",
+        "options": {
+          "A": "Mughal mansabdar",
+          "B": "Rebel",
+          "C": "Bijapuri sardar",
+          "D": "Simple farmer"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 4,
+        "question": "What was Shahaji doing when the fatal accident occurred?",
+        "options": {
+          "A": "He was on a hunting expedition",
+          "B": "He was inspecting a fort",
+          "C": "He was leading his army in a parade",
+          "D": "He was traveling to meet Shivaji"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 5,
+        "question": "In which modern-day state is Hodigere located?",
+        "options": {
+          "A": "Maharashtra",
+          "B": "Tamil Nadu",
+          "C": "Karnataka",
+          "D": "Uttar Pradesh"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  },
+  {
+    "eventNo": "23",
+    "year": "1665",
+    "title": "Campaign to end Swarajya",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "What two events infuriated Aurangzeb and led to this campaign?",
+        "options": {
+          "A": "The escape from Panhala and the victory at Umberkhand",
+          "B": "The capture of Jawali and the building of Pratapgad",
+          "C": "The Surat loot and the Shaista Khan incident",
+          "D": "The arrest of Baji Ghorpade and the defeat of Khawas Khan"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 2,
+        "question": "Who was the \"brilliant and ruthless Rajput chief\" sent as the top Mughal general?",
+        "options": {
+          "A": "Shaista Khan",
+          "B": "Mirza Raja Jai Singh",
+          "C": "Diler Khan",
+          "D": "Udaybhan Rathod"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 3,
+        "question": "Who was Diler Khan?",
+        "options": {
+          "A": "The Mughal Emperor",
+          "B": "The governor of Surat",
+          "C": "A fierce Mughal general, second-in-command to Jai Singh",
+          "D": "The Maratha commander of Purandar"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 4,
+        "question": "What was the one and only mission of this massive, disciplined army?",
+        "options": {
+          "A": "To completely \"end Swarajya\" and capture Shivaji",
+          "B": "To negotiate a treaty for 23 forts",
+          "C": "To loot the treasury at Raigad",
+          "D": "To recapture the port of Surat"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 5,
+        "question": "This campaign would lead directly to which two major events?",
+        "options": {
+          "A": "The Battle of Sinhagad and the Coronation",
+          "B": "The Siege of Panhala and the escape to Vishalgad",
+          "C": "The Siege of Purandar and the Treaty of Purandar",
+          "D": "The visit to Agra and the attack on Lal Mahal"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  },
+  {
+    "eventNo": "24",
+    "year": "1665",
+    "title": "Treaty of Purandar",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "What was Mirza Raja Jai Singh's flawless strategy?",
+        "options": {
+          "A": "A direct assault on Raigad",
+          "B": "A naval blockade of the Konkan coast",
+          "C": "Systematically capturing smaller forts, ravaging the countryside, and besieging Purandar",
+          "D": "Luring Shivaji into a trap at Umberkhand"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 2,
+        "question": "Who was Murarbaji Deshpande?",
+        "options": {
+          "A": "The Maratha fort-keeper (Killedar) of Purandar",
+          "B": "The Mughal general who laid siege to Purandar",
+          "C": "The diplomat who negotiated the treaty",
+          "D": "The childhood friend of Shivaji who died at Sinhagad"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 3,
+        "question": "Describe Murarbaji's \"Last Stand.\"",
+        "options": {
+          "A": "He held the Pavan Khind pass with 300 men",
+          "B": "He disguised himself as Shivaji to be captured",
+          "C": "He and 700 men made a suicidal charge onto Diler Khan's 5,000-strong force",
+          "D": "He defended the fort for 56 days before being captured"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 4,
+        "question": "How many forts did Shivaji have to surrender as part of the treaty?",
+        "options": {
+          "A": "12",
+          "B": "23",
+          "C": "35",
+          "D": "5,000"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 5,
+        "question": "What did Shivaji have to promise to help the Mughals with?",
+        "options": {
+          "A": "Their war against Bijapur",
+          "B": "Their capture of Golconda",
+          "C": "Their conflict with the English",
+          "D": "Their naval raids on pilgrim ships"
+        },
+        "correctAnswer": "A"
+      }
+    ]
+  },
+  {
+    "eventNo": "25",
+    "year": "1666",
+    "title": "Visit to Agra",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Why did Jai Singh persuade Shivaji to visit Aurangzeb's court?",
+        "options": {
+          "A": "To be executed for his crimes",
+          "B": "To be formally inducted as a high-ranking Mughal noble (mansabdar)",
+          "C": "To sign the Treaty of Purandar",
+          "D": "To form an alliance against the Adil Shah"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 2,
+        "question": "What \"intentional slight\" in the Diwan-i-Aam caused Shivaji's outburst?",
+        "options": {
+          "A": "He was forced to bow nine times",
+          "B": "He was made to stand in the row of 5,000-rank mansabdars, behind men he had defeated",
+          "C": "He was not offered any sweets or fruits",
+          "D": "Aurangzeb refused to look at him"
+        },
+        "correctAnswer": "B"
+      }
+    ]
+  },
+  {
+    "eventNo": "26",
+    "year": "1666",
+    "title": "The Great Escape",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "What plan did Shivaji devise to escape house arrest?",
+        "options": {
+          "A": "He and Sambhaji dug a tunnel out of the mansion",
+          "B": "He started a fire and slipped out in the chaos",
+          "C": "He pretended to be ill and began sending out large baskets of sweets, eventually hiding inside two of them",
+          "D": "He disguised himself and Sambhaji as Mughal guards and walked out the front gate"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 2,
+        "question": "Who was Hiroji Farzand and what was his role in the escape?",
+        "options": {
+          "A": "He was the guard who let Shivaji go",
+          "B": "He was the one who drove the basket cart",
+          "C": "He was an attendant who lay on Shivaji's bed, wearing his ring, to fool the guards",
+          "D": "He was a sadhu who guided Shivaji back to Rajgad"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "How did Shivaji and Sambhaji travel home to avoid capture?",
+        "options": {
+          "A": "They took a direct route on the fastest horses",
+          "B": "They disguised themselves as sadhus (holy men) and took a long, roundabout route",
+          "C": "They were hidden in a merchant caravan",
+          "D": "They traveled by sea on a Maratha naval ship"
+        },
+        "correctAnswer": "B"
+      }
+    ]
+  },
+  {
+    "eventNo": "27",
+    "year": "1670",
+    "title": "Battle of Sinhagad",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "Who was the fierce Rajput warrior appointed by the Mughals to command Kondhana?",
+        "options": {
+          "A": "Mirza Raja Jai Singh",
+          "B": "Diler Khan",
+          "C": "Ram Singh",
+          "D": "Udaybhan Rathod"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "qId": 2,
+        "question": "What personal event did Tanaji Malusare postpone to take on this mission?",
+        "options": {
+          "A": "His son's wedding",
+          "B": "His own coronation",
+          "C": "His retirement",
+          "D": "A pilgrimage to Kashi"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 3,
+        "question": "What was Tanaji's daring plan to attack the \"impregnable\" fort?",
+        "options": {
+          "A": "To besiege it for 56 days",
+          "B": "To negotiate a peaceful handover with Udaybhan",
+          "C": "To attack at night by scaling the fort's steepest, least-guarded cliff",
+          "D": "To use English cannons to blow up the main gate"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 4,
+        "question": "What happened during the duel between Tanaji and Udaybhan Rathod?",
+        "options": {
+          "A": "Tanaji's shield broke, and both men were killed in the struggle",
+          "B": "Tanaji captured Udaybhan and took him to Raigad",
+          "C": "Udaybhan surrendered after his shield broke",
+          "D": "Tanaji was wounded but survived after Suryaji saved him"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 5,
+        "question": "What did Shivaji famously say, and what did he rename the fort?",
+        "options": {
+          "A": "\"The dream begins!\"; renamed it Rajgad",
+          "B": "\"A difficult choice!\"; renamed it Purandar",
+          "C": "\"Gad aala, pan Sinha gela!\"; renamed it Sinhagad",
+          "D": "\"First victory!\"; renamed it Pratapgad"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  },
+  {
+    "eventNo": "28",
+    "year": "1674",
+    "title": "The Coronation",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "What was the primary reason a formal coronation was needed?",
+        "options": {
+          "A": "To celebrate his 50th birthday",
+          "B": "To establish his legal right to rule as a sovereign king",
+          "C": "To fulfill a promise to his father, Shahaji",
+          "D": "To finalize the peace treaty with the Mughals"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 2,
+        "question": "Who was Gagabhatt, and what was his role?",
+        "options": {
+          "A": "The Mughal general who attended as a guest",
+          "B": "The architect who designed the golden throne",
+          "C": "A renowned scholar from Kashi who presided over the ceremony",
+          "D": "Shivaji's childhood friend who placed the crown on his head"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "Why was it important for Shivaji to be declared of a high-caste Kshatriya lineage?",
+        "options": {
+          "A": "It was essential for a Hindu coronation",
+          "B": "It allowed him to marry Saibai",
+          "C": "It was a condition for his alliance with Golconda",
+          "D": "It was required to build a navy"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 4,
+        "question": "What title was Shivaji formally given?",
+        "options": {
+          "A": "Mansabdar",
+          "B": "Shakakarta",
+          "C": "Chhatrapati",
+          "D": "All of the above"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 5,
+        "question": "Name two things Shivaji did to mark the start of his new era (Rajyabhishek Shaka).",
+        "options": {
+          "A": "He built Pratapgad and Raigad",
+          "B": "He looted Surat and attacked pilgrim ships",
+          "C": "He signed the Treaty of Purandar and visited Agra",
+          "D": "He minted his own coins and started a new calendar"
+        },
+        "correctAnswer": "D"
+      }
+    ]
+  },
+  {
+    "eventNo": "29",
+    "year": "1677",
+    "title": "Southern Campaign",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "With which Sultan did Shivaji form a \"clever alliance\" for this campaign?",
+        "options": {
+          "A": "The Adil Shah of Bijapur",
+          "B": "The Qutb Shah of Golconda",
+          "C": "The Mughal Emperor Aurangzeb",
+          "D": "The Siddi of Janjira"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 2,
+        "question": "Name the two \"impregnable\" forts in modern-day Tamil Nadu that Shivaji captured.",
+        "options": {
+          "A": "Purandar and Kondhana",
+          "B": "Panhala and Vishalgad",
+          "C": "Gingee and Vellore",
+          "D": "Junnar and Ahmednagar"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 3,
+        "question": "Who was Ekoji (Vyankoji), and why did Shivaji end up in a brief battle with him?",
+        "options": {
+          "A": "He was a Mughal general who ambushed Shivaji",
+          "B": "He was the Sultan of Golconda's son",
+          "C": "He was Shivaji's step-brother who refused to share their father's lands",
+          "D": "He was a Maratha commander who betrayed Shivaji"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 4,
+        "question": "What was the strategic masterstroke of this campaign?",
+        "options": {
+          "A": "It forced Aurangzeb to recall Jai Singh",
+          "B": "It captured the man who arrested his father, Baji Ghorpade",
+          "C": "It extended Swarajya's influence to the deep south and created a \"second front\"",
+          "D": "It gave him the wealth needed for his coronation"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 5,
+        "question": "Where did Shivaji travel to in order to form his alliance with the Qutb Shah?",
+        "options": {
+          "A": "Hyderabad",
+          "B": "Agra",
+          "C": "Bijapur",
+          "D": "Gingee"
+        },
+        "correctAnswer": "A"
+      }
+    ]
+  },
+  {
+    "eventNo": "30",
+    "year": "1680",
+    "title": "The King's Passing",
+    "questions": [
+      {
+        "qId": 1,
+        "question": "What \"bitter family dispute\" troubled Shivaji's final years?",
+        "options": {
+          "A": "A dispute with his step-brother Ekoji over their father's lands",
+          "B": "A dispute between his son Sambhaji and his wife Soyarabai over the succession",
+          "C": "A dispute with Tanaji Malusare over the mission to Sinhagad",
+          "D": "A dispute with his father, Shahaji, over allying with the Mughals"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "qId": 2,
+        "question": "When and where did Chhatrapati Shivaji Maharaj pass away?",
+        "options": {
+          "A": "April 3, 1680, at Raigad Fort",
+          "B": "1674, during his coronation",
+          "C": "1666, in Agra",
+          "D": "1660, during the siege of Panhala"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 3,
+        "question": "What illness did he fall ill with after a festival?",
+        "options": {
+          "A": "A high fever and \"bloody flux\" (dysentery)",
+          "B": "A cannonball wound",
+          "C": "A hunting accident",
+          "D": "A broken heart after Tanaji's death"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "qId": 4,
+        "question": "What is the \"most common historical consensus\" for the cause of his death?",
+        "options": {
+          "A": "Poisoning by Soyarabai",
+          "B": "A curse from Afzal Khan",
+          "C": "A severe infectious disease like dysentery",
+          "D": "Wounds sustained in the battle with Ekoji"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "qId": 5,
+        "question": "What immediate crisis did his death create?",
+        "options": {
+          "A": "A Mughal invasion led by Aurangzeb",
+          "B": "A power vacuum and succession crisis",
+          "C": "The collapse of the Maratha navy",
+          "D": "The Adil Shah recaptured all the southern forts"
+        },
+        "correctAnswer": "B"
+      }
+    ]
+  }
+]

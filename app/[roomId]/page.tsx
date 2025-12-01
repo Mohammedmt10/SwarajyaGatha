@@ -145,6 +145,7 @@ export default function GameScreen() {
       {/* FLASHCARD POPUP */}
       {flashCard && (
         <FlashCard
+          flashCard={flashCard}
           setFlashCard={setFlashCard}
           eventDetailsNo={flashCardDetailsNo}
         />

@@ -8,8 +8,11 @@ import { useParams } from "next/navigation";
 import FlashCard from "@/app/components/flashCard";
 import { useEffect } from "react";
 import eventDetails from "../../../eventDetails.json"
+import QuizCard from "@/app/components/quizCard";
 
 export default function GameScreen() {
+  
+
   const params = useParams()
   const Players = params.noOfPlayer ? params.noOfPlayer[0]?.split("%26")[0] : 1
   const [noOfPlayer , ] = useState(Number(Players))
@@ -25,7 +28,8 @@ export default function GameScreen() {
       gold : 2,
       silver : 5,
       bronze : 10,
-    }
+    },
+    visited : [0]
   }));
   if (isBot && list.length < 4) {
     const botsToAdd = 4 - list.length;
@@ -38,7 +42,9 @@ export default function GameScreen() {
           gold : 2 , 
           silver : 5 , 
           bronze : 10
-        } });
+        },
+        visited : [0]
+      });
   }
   return list;
 });
@@ -83,6 +89,7 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
   if (!playerInfo[currPlayer - 1]) return;
 
   let player = playerInfo[currPlayer - 1];
+  if(player.eventNo >= 30) return ;
   const current = player.eventNo;
   const nextPosition = current + trueCount;
 
@@ -90,15 +97,38 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
   const nextCP = nextCheckpoint === current ? current + 6 : nextCheckpoint;
 
 
+  player.visited.push(nextPosition - 1)
+  const newVisited = player.visited
   if (nextPosition >= nextCP) {
-    player.eventNo = nextCP; 
-    setFlashCard(c => !c);
+    setPlayerInfo(prev =>
+      prev.map(p  =>
+        p.player === currPlayer ? { ...p, eventNo: nextCP , visited : newVisited } : p
+    )
+  );
+  setEventDetailsNo(nextCP - 1);
+  setQuiz(c => !c)
+
+    setFlashCard(true);
   } else {
-    player.eco.gold = player.eco.gold + (eventDetails[player.eventNo].eco == "+" ? 1 : -1) 
-    player.eventNo = nextPosition;
-    setEventDetailsNo(playerInfo[currPlayer - 1].eventNo - 1)
-    if (trueCount >= 1) setFlashCard(c => !c);
-  }
+    setPlayerInfo(prev =>
+    prev.map(p =>
+      p.player === currPlayer
+        ? {
+            ...p,
+            eventNo: nextPosition,
+            eco: {
+              ...p.eco,
+              gold: p.eco.gold + (eventDetails[p.eventNo].eco  === "+" && nextPosition != current ? 2 : (eventDetails[p.eventNo].eco == "-" && nextPosition != current ? -2  : -1)),
+            },
+            visited : newVisited
+          }
+        : p
+    )
+  );
+
+  setEventDetailsNo(nextPosition - 1);
+  if (trueCount >= 1) setFlashCard(true);
+}
 
 };
 
@@ -120,27 +150,60 @@ const botIndex = bot.player;
                 }
                   return next;
                 });  
+    if(bot.eventNo >= 30) return
     setRotateShell(botIndex)
     setTimeout(() => setRotateShell(0) , 800);
   }, 900);
 
   return () => clearTimeout(timer);
 }, [botTurn, flashCard , currPlayer]);
+
 const [eventDetailsNo , setEventDetailsNo] = useState(playerInfo[currPlayer - 1].eventNo - 1)
+
+const handleQuizReward = (playerIndex: number, type : string , coins: number) => {
+  if(type == "gold") {
+    setPlayerInfo(prev =>
+      prev.map(p =>
+        p.player === playerIndex
+          ? { ...p, eco: { ...p.eco, gold: p.eco.gold + coins } }
+          : p
+      )
+    );
+  } else if(type == "silver") {
+    setPlayerInfo(prev =>
+      prev.map(p =>
+        p.player === playerIndex
+          ? { ...p, eco: { ...p.eco, silver: p.eco.silver + coins } }
+          : p
+      )
+    );
+  } else if(type == "bronze") {
+    setPlayerInfo(prev =>
+      prev.map(p =>
+        p.player === playerIndex
+          ? { ...p, eco: { ...p.eco, bronze: p.eco.bronze + coins } }
+          : p
+      )
+    );
+  }
+};
+const [quiz , setQuiz] = useState(false)
+console.log(eventDetailsNo)
 return (
     <div>
       {flashCard && <FlashCard flashCard={flashCard} setFlashCard={setFlashCard} eventDetailsNo={eventDetailsNo} />}
+      {quiz && !flashCard && <QuizCard eventNo={eventDetailsNo} onReward={handleQuizReward} setQuiz={setQuiz} currPlayer={currPlayer} visited={playerInfo[currPlayer -1].visited} />}
       <div className="h-screen w-screen border-2 overflow-auto overflow-y-hidden flex select-none">
       
       <div className="h-screen bg-[#990000] border-2 p-1 pb-2 w-85">
         <div className="h-full mx-10 px-10 bg-linear-to-b from-[#d98911] to-[#ffcf6f] border-2 float-start flex flex-col justify-around">
         {(noOfPlayer >= 1 || isBot) && <div className={`border-2 h-fit p-2.5 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 1 ? "pointer-events-none" : ""}`} onClick={() => {
+                if(playerInfo[0].eventNo >= 30) return
                 setRotateShell(1);
                 setTimeout(() => setRotateShell(0),1000)
                 randomShell();
                 setCurrPlayer(prev => {
                 const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
-                console.log(playerInfo[next-1].isBot)
                 if (isBot && playerInfo[next - 1].isBot) {
                   setBotTurn(true);
                 }
@@ -188,11 +251,11 @@ return (
               <div className="h-9 w-10 bg-bronze-coin bg-cover"></div>
             </div>
           <div className={`border-2 h-fit p-3 mt-2 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 2 ? "pointer-events-none" : ""}`} onClick={() => {
+                if(playerInfo[1].eventNo >= 30) return
                 setRotateShell(2);
                 randomShell();
                 setCurrPlayer(prev => {
                 const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
-                console.log(playerInfo[next-1].isBot)
                 if (isBot && playerInfo[next - 1].isBot) {
                   setBotTurn(true);
                 }
@@ -229,11 +292,11 @@ return (
           <div className="h-screen  px-10 float-start flex flex-col justify-around">
           {(noOfPlayer >= 3 || isBot) && <div>
             <div className={`border-2 h-fit p-3 mt-2 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 3 ? "pointer-events-none" : ""}`} onClick={() => {
+              if(playerInfo[2].eventNo >= 30) return
               setRotateShell(3);
               randomShell();
               setCurrPlayer(prev => {
                 const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
-                console.log(playerInfo[next-1].isBot)
                 if (isBot && playerInfo[next - 1].isBot) {
                   setBotTurn(true);
                 }
@@ -281,6 +344,7 @@ return (
                 <div className="h-9 w-10 bg-bronze-coin bg-cover"></div>
             </div>
             <div className={`border-2 h-fit p-3 mt-2 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 4 ? "pointer-events-none" : ""}`} onClick={() => {
+                  if(playerInfo[3].eventNo >= 30) return
                   setRotateShell(4);
                   randomShell();
                   setTimeout(() => setRotateShell(0),1000)

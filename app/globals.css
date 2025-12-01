@@ -5,6 +5,7 @@
   --background-image-bronze-coin: url('../images/BronzeCoin.png');
   --background-image-silver-coin: url('../images/SilverCoin.png');
   --background-image-map-background: url('../images/mapBg.png');
+  --background-image-quiz-background: url('../images/QuizBackground.png');
   --font-myfont: "MyFont", sans-serif;
   --spacing-6-5 : 1.625rem;
 }
