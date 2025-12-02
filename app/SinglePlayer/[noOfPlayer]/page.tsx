@@ -84,6 +84,7 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
     const found = pShells.find(p => p.p === playerIndex);
     return found ? found.shells : [true, true, true, true];
   }
+  const [quiz , setQuiz] = useState(false)
   const noOfShells = (arr: boolean[]) => {
   const trueCount = arr.filter(Boolean).length;
   if (!playerInfo[currPlayer - 1]) return;
@@ -105,10 +106,10 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
         p.player === currPlayer ? { ...p, eventNo: nextCP , visited : newVisited } : p
     )
   );
-  setEventDetailsNo(nextCP - 1);
-  setQuiz(c => !c)
-
-    setFlashCard(true);
+    setEventDetailsNo(nextCP - 1);
+    setQuiz(true)
+    if(quiz) return
+    if(!quiz) setFlashCard(true);
   } else {
     setPlayerInfo(prev =>
     prev.map(p =>
@@ -125,16 +126,36 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
         : p
     )
   );
+setCurrPlayer(prev => {
+    const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
+    if (isBot && playerInfo[next - 1].isBot) {
+      setBotTurn(true);
+    } else {
+      setBotTurn(false);
+    }
+    return next;
+  });
 
   setEventDetailsNo(nextPosition - 1);
-  if (trueCount >= 1) setFlashCard(true);
-}
-
+  if (trueCount >= 1 && !quiz) setFlashCard(true);
+  } 
+};
+const handleQuizClose = () => {
+  setQuiz(false);
+  setCurrPlayer(prev => {
+    const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
+    if (isBot && playerInfo[next - 1].isBot) {
+      setBotTurn(true);
+    } else {
+      setBotTurn(false);
+    }
+    return next;
+  }); // small delay feels natural
 };
 
   const [rotateShell , setRotateShell] = useState(0)
   useEffect(() => {
-  if (!botTurn || flashCard) return;
+  if (!botTurn || flashCard || quiz) return;
 
   const timer = setTimeout(() => {
     const botPlayers = playerInfo.filter(p => p.isBot);
@@ -142,21 +163,14 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
 if (!bot?.isBot) return;
 
 const botIndex = bot.player;
-    randomShell();
-    setCurrPlayer(prev => {
-                const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
-                if (isBot && playerInfo[next - 1].isBot) {
-                  setBotTurn(true)
-                }
-                  return next;
-                });  
+    randomShell(); 
     if(bot.eventNo >= 30) return
     setRotateShell(botIndex)
     setTimeout(() => setRotateShell(0) , 800);
   }, 900);
 
   return () => clearTimeout(timer);
-}, [botTurn, flashCard , currPlayer]);
+}, [botTurn, flashCard , currPlayer , quiz]);
 
 const [eventDetailsNo , setEventDetailsNo] = useState(playerInfo[currPlayer - 1].eventNo - 1)
 
@@ -187,12 +201,19 @@ const handleQuizReward = (playerIndex: number, type : string , coins: number) =>
     );
   }
 };
-const [quiz , setQuiz] = useState(false)
-console.log(eventDetailsNo)
+
 return (
     <div>
       {flashCard && <FlashCard flashCard={flashCard} setFlashCard={setFlashCard} eventDetailsNo={eventDetailsNo} />}
-      {quiz && !flashCard && <QuizCard eventNo={eventDetailsNo} onReward={handleQuizReward} setQuiz={setQuiz} currPlayer={currPlayer} visited={playerInfo[currPlayer -1].visited} />}
+      {quiz && !flashCard && <QuizCard 
+      eventNo={eventDetailsNo} 
+      onReward={handleQuizReward} 
+      setQuiz={setQuiz} 
+      currPlayer={currPlayer -1} 
+      isBot={playerInfo[currPlayer - 1].isBot} 
+      visited={playerInfo[currPlayer -1].visited}
+      handleQuizClose={handleQuizClose}
+      />}
       <div className="h-screen w-screen border-2 overflow-auto overflow-y-hidden flex select-none">
       
       <div className="h-screen bg-[#990000] border-2 p-1 pb-2 w-85">
@@ -202,13 +223,6 @@ return (
                 setRotateShell(1);
                 setTimeout(() => setRotateShell(0),1000)
                 randomShell();
-                setCurrPlayer(prev => {
-                const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
-                if (isBot && playerInfo[next - 1].isBot) {
-                  setBotTurn(true);
-                }
-                    return next;
-                  });
               }}>
             <div className="h-35 w-35 rounded-2xl border-3 border-[#d75a00] mx-auto shadow-[inset_0px_0px_15px_rgba(0,0,0,0.6)] bg-radial from-[#e1731d] via-50% via-[#e4ae5d] to-[#e4ae5d]">
               <div className="grid grid-cols-2 grid-rows-2 h-full w-full cursor-pointer">
@@ -254,13 +268,6 @@ return (
                 if(playerInfo[1].eventNo >= 30) return
                 setRotateShell(2);
                 randomShell();
-                setCurrPlayer(prev => {
-                const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
-                if (isBot && playerInfo[next - 1].isBot) {
-                  setBotTurn(true);
-                }
-                    return next;
-                  });
                 setTimeout(() => setRotateShell(0),1000)
               }}>
             <div className="h-35 w-35 rounded-2xl border-3 border-[#d75a00] mx-auto shadow-[inset_0px_0px_15px_rgba(0,0,0,0.6)] bg-radial from-[#e1731d] via-50% via-[#e4ae5d] to-[#e4ae5d]">
@@ -295,13 +302,6 @@ return (
               if(playerInfo[2].eventNo >= 30) return
               setRotateShell(3);
               randomShell();
-              setCurrPlayer(prev => {
-                const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
-                if (isBot && playerInfo[next - 1].isBot) {
-                  setBotTurn(true);
-                }
-                    return next;
-                  });
                   setTimeout(() => setRotateShell(0),1000)
                 }}>
               <div className="h-35 w-35 rounded-2xl border-3 border-[#d75a00] mx-auto shadow-[inset_0px_0px_15px_rgba(0,0,0,0.6)] bg-radial from-[#e1731d] via-50% via-[#e4ae5d] to-[#e4ae5d]">
@@ -347,6 +347,7 @@ return (
                   if(playerInfo[3].eventNo >= 30) return
                   setRotateShell(4);
                   randomShell();
+ if(quiz) return;
                   setTimeout(() => setRotateShell(0),1000)
                   setCurrPlayer(prev => {
                       const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
