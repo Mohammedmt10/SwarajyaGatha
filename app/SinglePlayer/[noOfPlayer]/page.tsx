@@ -137,11 +137,11 @@ setCurrPlayer(prev => {
   });
 
   setEventDetailsNo(nextPosition - 1);
-  if (trueCount >= 1 && !quiz) setFlashCard(true);
+  if (trueCount >= 1 && !quiz) setTimeout(() => setFlashCard(true) , 800);
   } 
 };
 const handleQuizClose = () => {
-  setQuiz(false);
+  setTimeout(() => setQuiz(false) , 1000)
   setCurrPlayer(prev => {
     const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
     if (isBot && playerInfo[next - 1].isBot) {

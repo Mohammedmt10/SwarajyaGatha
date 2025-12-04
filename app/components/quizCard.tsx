@@ -38,7 +38,6 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
         const botAnswer = (options : string[]) => {
         if(!isBot || !question) return
         let answer = options[Math.floor(Math.random() * options.length)]
-        console.log("answer:" , answer ," correct answer:" , question.correctAnswer)
         const isCorrect = answer === question.correctAnswer;
             switch (answer) {
                 case "A": setBackgroundA(isCorrect ? "correct" : "incorrect"); break;
@@ -50,11 +49,11 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
                 handleQuizClose()
             }
             if(!isCorrect) {
-                setTimeout(() => botAnswer(options.filter((a) => a != answer)), 400)
+                setTimeout(() => botAnswer(options.filter((a) => a != answer)), 1000)
             }
         }
         
-        setTimeout(() => botAnswer(options) , 300)
+        setTimeout(() => botAnswer(options) , 10000)
 
     } , [isBot , question , currPlayer])
 
