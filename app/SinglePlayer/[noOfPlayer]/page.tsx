@@ -126,6 +126,9 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
         : p
     )
   );
+  if(nextPosition == nextCP) {
+    return
+  }
 setCurrPlayer(prev => {
     const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
     if (isBot && playerInfo[next - 1].isBot) {
@@ -175,10 +178,8 @@ const botIndex = bot.player;
 const [eventDetailsNo , setEventDetailsNo] = useState(playerInfo[currPlayer - 1].eventNo - 1)
 
 const handleQuizReward = (playerIndex: number, type : string , coins: number) => {
-  console.log("Rewarding", currPlayer, type, coins);
   if(type == "gold") {
-    console.log("g")
-    return setPlayerInfo(prev =>
+    setPlayerInfo(prev =>
       prev.map(p =>
         p.player === playerIndex
           ? { ...p, eco: { ...p.eco, gold: p.eco.gold + coins } }
@@ -186,8 +187,7 @@ const handleQuizReward = (playerIndex: number, type : string , coins: number) =>
       )
     );
   } else if(type == "silver") {
-    console.log("s")
-    return setPlayerInfo(prev =>
+    setPlayerInfo(prev =>
       prev.map(p =>
         p.player === playerIndex
           ? { ...p, eco: { ...p.eco, silver: p.eco.silver + coins } }
@@ -195,8 +195,7 @@ const handleQuizReward = (playerIndex: number, type : string , coins: number) =>
       )
     );
   } else if(type == "bronze") {
-    console.log("bronze")
-    return setPlayerInfo(prev =>
+    setPlayerInfo(prev =>
       prev.map(p =>
         p.player === playerIndex
           ? { ...p, eco: { ...p.eco, bronze: p.eco.bronze + coins } }
@@ -213,7 +212,7 @@ return (
       eventNo={eventDetailsNo} 
       onReward={handleQuizReward} 
       setQuiz={setQuiz} 
-      currPlayer={currPlayer -1} 
+      currPlayer={currPlayer} 
       isBot={playerInfo[currPlayer - 1].isBot} 
       visited={playerInfo[currPlayer -1].visited}
       handleQuizClose={handleQuizClose}
@@ -353,6 +352,15 @@ return (
                   randomShell();
  if(quiz) return;
                   setTimeout(() => setRotateShell(0),1000)
+                  setCurrPlayer(prev => {
+                      const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
+
+                      if (isBot && playerInfo[next - 1].isBot) {
+                        setBotTurn(true);
+                      }
+
+                      return next;
+                  });
                   
                 }}>
               <div className="h-35 w-35 rounded-2xl border-3 border-[#d75a00] mx-auto shadow-[inset_0px_0px_15px_rgba(0,0,0,0.6)] bg-radial from-[#e1731d] via-50% via-[#e4ae5d] to-[#e4ae5d]">

@@ -16,7 +16,6 @@ interface IQuestion {
 
 export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , visited , isBot , handleQuizClose } : { eventNo : number, onReward : any , setQuiz : any , currPlayer : number , visited : number[] , isBot : boolean , handleQuizClose : any}) {
     
-
     const [question , setQuestion]  = useState<IQuestion | null>(null);
     
     const [backgroundA , setBackgroundA] = useState("not attempted")
@@ -46,10 +45,11 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
                 case "D": setBackgroundD(isCorrect ? "correct" : "incorrect"); break;
             }
             if(isCorrect) {
-                if(tries == 0) setTimeout(() => onReward(currPlayer , "gold" , 1) , 0)
-                if(tries == 1) setTimeout(() => onReward(currPlayer , "silver" , 1) , 0)
-                else setTimeout(() => onReward(currPlayer , "bronze" , 2) , 0)
-                setTries(c => c + 1)
+                if(tries == 0) setTimeout(() => onReward(currPlayer + 1 , "gold" , 1), 0)     // ✅ FIX
+                else if(tries == 1) setTimeout(() => onReward(currPlayer + 1 , "silver" , 1), 0)
+                else setTimeout(() => onReward(currPlayer + 1 , "bronze" , 2), 0)
+                
+                setTries(c => c + 1)   // ✅ FIX: no reset
                 handleQuizClose()
             }
             if(!isCorrect) {
@@ -75,15 +75,10 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
         
         if("A" == correctAnswer) {
             setBackgroundA("correct")
-            if(tries == 0) {
-                console.log("hi")
-                setTimeout(() => onReward(currPlayer , "gold" , 1) , 0)
-            }
-            else if(tries == 1) {
-                setTimeout(() => onReward(currPlayer , "silver" , 1) , 0)
-            } else {
-                setTimeout(() => onReward(currPlayer , "bronze" , 2) , 0)
-            }
+            if(tries == 0) setTimeout(() => onReward(currPlayer + 1 , "gold" , 1), 0)   // FIX applied here too
+            else if(tries == 1) setTimeout(() => onReward(currPlayer + 1 , "silver" , 1), 0)
+            else setTimeout(() => onReward(currPlayer + 1 , "bronze" , 2), 0)
+            setTries(c => c + 1)
             handleQuizClose()
         } else {
             setBackgroundA("incorrect")
@@ -97,16 +92,11 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
         
         if("B" == correctAnswer) {
             setBackgroundB("correct")
-            if(tries == 0) {
-                setTimeout(() => onReward(currPlayer , "gold" , 1) , 0)
-            }
-            else if(tries == 1) {
-                setTimeout(() => onReward(currPlayer , "silver" , 1) , 0)
-            } else {
-                setTimeout(() => onReward(currPlayer , "bronze" , 2) , 0)
-            }
+            if(tries == 0) setTimeout(() => onReward(currPlayer + 1 , "gold" , 1), 0)
+            else if(tries == 1) setTimeout(() => onReward(currPlayer + 1 , "silver" , 1), 0)
+            else setTimeout(() => onReward(currPlayer + 1 , "bronze" , 2), 0)
+            setTries(c => c + 1)
             handleQuizClose()
-            
         } else {
             setBackgroundB("incorrect")
             setTries(c => c + 1)
@@ -121,15 +111,10 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
         
         if("C" == correctAnswer) {
             setBackgroundC("correct")
-            if(tries == 0) {
-                setTimeout(() => onReward(currPlayer , "gold" , 1) , 0)
-            }
-            else if(tries == 1) {
-                setTimeout(() => onReward(currPlayer , "silver" , 1) , 0)
-            } else {
-                setTimeout(() => onReward(currPlayer , "bronze" , 2) , 0)
-            }
-            
+            if(tries == 0) setTimeout(() => onReward(currPlayer + 1 , "gold" , 1), 0)
+            else if(tries == 1) setTimeout(() => onReward(currPlayer + 1 , "silver" , 1), 0)
+            else setTimeout(() => onReward(currPlayer + 1 , "bronze" , 2), 0)
+            setTries(c => c + 1)
             handleQuizClose()
         } else {
             setBackgroundC("incorrect")
@@ -143,15 +128,10 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
         
         if("D" == correctAnswer) {
             setBackgroundD("correct")
-            if(tries == 0) {
-                setTimeout(() => onReward(currPlayer , "gold" , 1) , 0)
-            }
-            else if(tries == 1) {
-                setTimeout(() => onReward(currPlayer , "silver" , 1) , 0)
-            } else {
-                setTimeout(() => onReward(currPlayer , "bronze" , 2) , 0)
-            }
-            
+            if(tries == 0) setTimeout(() => onReward(currPlayer + 1 , "gold" , 1), 0)
+            else if(tries == 1) setTimeout(() => onReward(currPlayer + 1 , "silver" , 1), 0)
+            else setTimeout(() => onReward(currPlayer + 1 , "bronze" , 2), 0)
+            setTries(c => c + 1)
             handleQuizClose()
         } else {
             setBackgroundD("incorrect")
