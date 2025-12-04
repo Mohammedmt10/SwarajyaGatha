@@ -2,6 +2,7 @@
   {
     "eventNo": "1",
     "year": "1630",
+    "imgUrl": "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/Shivneri_fort2.jpg",
     "eco" : "+",
     "title": "Birth of Shivaji Maharaj",
     "location": "Shivneri Fort",
@@ -13,6 +14,7 @@
   {
     "eventNo": "2",
     "year": "1640",
+    "imgUrl":"https://punetourism.co.in/images//tourist-places/lal-mahal-pune/lal-mahal-pune-india-tourism-photo-gallery.jpg",  
     "eco" : "+",
     "title": "Marriage with Saibai",
     "location": "Lal Mahal, Pune",
@@ -24,6 +26,7 @@
   {
     "eventNo": "3",
     "year": "1645",
+    "imgUrl" : "https://live.staticflickr.com/5595/14923833595_8e1ff682d1.jpg",
     "eco" : "+",
     "title": "Oath of Swarajya",
     "location": "Raireshwar Temple",
@@ -35,6 +38,7 @@
   {
     "eventNo": "4",
     "year": "1645",
+    "imgUrl" : "N/A",
     "eco" : "+",
     "title": "Ranje Patil's justice",
     "location": "Ranje Village (near Pune)",
@@ -46,6 +50,7 @@
   {
     "eventNo": "5",
     "year": "1646",
+    "imgUrl" : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Sharp_torna.jpg/960px-Sharp_torna.jpg",
     "eco" : "+",
     "title": "Torna merges in Swarajya",
     "location": "Torna Fort",
@@ -57,6 +62,7 @@
   {
     "eventNo": "6",
     "year": "1647",
+    "imgUrl" : "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/Sinhagad-Fort-1.jpg",
     "eco" : "+",
     "title": "Kondhana merges Swarajya",
     "location": "Kondhana Fort (Sinhagad)",
@@ -68,6 +74,7 @@
   {
     "eventNo": "7",
     "year": "1648",
+    "imgUrl" : "N/A",
     "eco" : "-",
     "title": "Shahajiraje arrested",
     "location": "Near Jinji (South India)",
@@ -79,6 +86,7 @@
   {
     "eventNo": "8",
     "year": "1648",
+    "imgUrl" : "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/purandar.jpg",
     "eco" : "null",
     "title": "Battle of Purandar",
     "location": "Purandar Fort / Saswad",
@@ -90,6 +98,7 @@
   {
     "eventNo": "9",
     "year": "1656",
+    "imgUrl" : "N/A",
     "eco" : "+",
     "title": "Jawali was won",
     "location": "Jawali (Satara region)",
@@ -101,6 +110,7 @@
   {
     "eventNo": "10",
     "year": "1656",
+    "imgUrl" : "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/Pratapgad-1.jpg",
     "eco" : "+",
     "title": "Construction of Pratapgad",
     "location": "Pratapgad",
@@ -112,6 +122,7 @@
   {
     "eventNo": "11",
     "year": "1656",
+    "imgUrl" : "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/Raigad_Fort.jpg",
     "eco" : "+",
     "title": "Raigad in Swarajya",
     "location": "Raigad Fort",
@@ -123,6 +134,7 @@
   {
     "eventNo": "12",
     "year": "1657",
+    "imgUrl" : "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/purandar.jpg",
     "eco" : "+",
     "title": "Sambhaji Raje's birth!",
     "location": "Purandar Fort",
@@ -134,6 +146,7 @@
   {
     "eventNo": "13",
     "year": "1659",
+    "imgUrl" : "N/A",
     "eco" : "-",
     "title": "Afzal Khan's attack on temples",
     "location": "Tuljapur & Pandharpur",
@@ -145,6 +158,7 @@
   {
     "eventNo": "14",
     "year": "1659",
+    "imgUrl" : "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpquGgNh3tnRtOYtNOtuCH-8aK1NC9c0dhFqVzuhdFVM-bL2TyrUOjhuVHkaslDMpB_WlmqjNf4Jx1Ey1jpPmcfQB74oEkV9vgoHk7BxhyphenhyphenEyu_dDjl7a_fHwCQuDegd4KBZrsuY9BcVldp/s1600/rajgad.jpg",
     "eco" : "-",
     "title": "Death of Saibai",
     "location": "Rajgad Fort",
@@ -156,6 +170,7 @@
   {
     "eventNo": "15",
     "year": "1659",
+    "imgUrl" : "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/Pratapgad-1.jpg",
     "eco" : "+",
     "title": "Afzal Khan's Killing",
     "location": "Pratapgad Fort",
@@ -167,6 +182,7 @@
   {
     "eventNo": "16",
     "year": "1660",
+    "imgUrl" : "https://punetourism.co.in/images//tourist-places/lal-mahal-pune/lal-mahal-pune-india-tourism-photo-gallery.jpg",
     "eco" : "-",
     "title": "Shaista Khan entered Pune",
     "location": "Pune (Lal Mahal)",
@@ -178,6 +194,7 @@
   {
     "eventNo": "17",
     "year": "1660",
+    "imgUrl" : "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/Panhala-Fort-1.jpg",
     "eco" : "+",
     "title": "The Great Escape",
     "location": "Panhala -> Pavan Khind -> Vishalgad",
@@ -189,6 +206,7 @@
   {
     "eventNo": "18",
     "year": "1660",
+    "imgUrl" : "N/A",
     "eco" : "-",
     "title": "Sacrifice of Shivaji Kashid",
     "location": "(Near Panhala)",
@@ -200,6 +218,7 @@
   {
     "eventNo": "19",
     "year": "1660",
+    "imgUrl" : "N/A",
     "eco" : "null",
     "title": "Bajiprabhu bravely held the pass",
     "location": "Pavan Khind (Ghod Khind)",
@@ -211,6 +230,7 @@
   {
     "eventNo": "20",
     "year": "1661",
+    "imgUrl" : "https://punetourism.co.in/images//tourist-places/lal-mahal-pune/lal-mahal-pune-india-tourism-photo-gallery.jpg",
     "eco" : "+",
     "title": "Shaista Khan wounded in Pune",
     "location": "Lal Mahal, Pune",
@@ -222,6 +242,7 @@
   {
     "eventNo": "21",
     "year": "1664",
+    "imgUrl" : "N/A",
     "eco" : "+",
     "title": "Surat loot",
     "location": "Surat",
@@ -233,6 +254,7 @@
   {
     "eventNo": "22",
     "year": "1664",
+    "imgUrl" : "N/A",
     "eco" : "-",
     "title": "Death of Shahaji Raje",
     "location": "Hodigere (Karnataka)",
@@ -244,6 +266,7 @@
   {
     "eventNo": "23",
     "year": "1665",
+    "imgUrl" : "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/purandar.jpg",
     "eco" : "-",
     "title": "Campaign to end Swarajya",
     "location": "Purandar Fort",
@@ -255,6 +278,7 @@
   {
     "eventNo": "24",
     "year": "1665",
+    "imgUrl" : "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/purandar.jpg",
     "eco" : "-",
     "title": "Treaty of Purandar",
     "location": "Purandar Fort",
@@ -266,6 +290,7 @@
   {
     "eventNo": "25",
     "year": "1666",
+    "imgUrl" : "N/A",
     "eco" : "-",
     "title": "Visit to Agra",
     "location": "Agra",
@@ -277,6 +302,7 @@
   {
     "eventNo": "26",
     "year": "1666",
+    "imgUrl" : "N/A",
     "eco" : "+",
     "title": "The Great Escape",
     "location": "Agra",
@@ -289,6 +315,7 @@
     "eventNo": "27",
     "year": "1670",
     "eco" : "null",
+    "imgUrl" : "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/Sinhagad-Fort-1.jpg",
     "title": "Battle of Sinhagad",
     "location": "Sinhagad (Kondhana)",
     "details": {
@@ -299,6 +326,7 @@
   {
     "eventNo": "28",
     "year": "1674",
+    "imgUrl" : "https://maharashtratourism.gov.in/wp-content/uploads/2023/10/Raigad_Fort.jpg",
     "eco" : "+",
     "title": "The Coronation",
     "location": "Raigad Fort",
@@ -310,6 +338,7 @@
   {
     "eventNo": "29",
     "year": "1677",
+    "imgUrl" : "N/A",
     "eco" : "+",
     "title": "Southern Campaign",
     "location": "Gingee & Vellore (South India)",
@@ -321,6 +350,7 @@
   {
     "eventNo": "30",
     "year": "1680",
+    "imgUrl" : "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlBExLyRsR8LB1utarUYh_erUenRrHQwyPeD3TreYcqm2ZtNTpwlp6rVACK49RYTcgj1SCDkoKUIoD9DnXBH3HOyc7WKUMBo1stD2WE5UZ92v3FYcemqDq6RQn2LGgFKECi08hsmY4aKRe/s1600/raigad1.jpg",
     "eco" : "-",
     "title": "The King's Passing",
     "location": "Raigad Fort",

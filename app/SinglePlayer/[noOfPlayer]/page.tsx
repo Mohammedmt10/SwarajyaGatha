@@ -175,8 +175,10 @@ const botIndex = bot.player;
 const [eventDetailsNo , setEventDetailsNo] = useState(playerInfo[currPlayer - 1].eventNo - 1)
 
 const handleQuizReward = (playerIndex: number, type : string , coins: number) => {
+  console.log("Rewarding", currPlayer, type, coins);
   if(type == "gold") {
-    setPlayerInfo(prev =>
+    console.log("g")
+    return setPlayerInfo(prev =>
       prev.map(p =>
         p.player === playerIndex
           ? { ...p, eco: { ...p.eco, gold: p.eco.gold + coins } }
@@ -184,7 +186,8 @@ const handleQuizReward = (playerIndex: number, type : string , coins: number) =>
       )
     );
   } else if(type == "silver") {
-    setPlayerInfo(prev =>
+    console.log("s")
+    return setPlayerInfo(prev =>
       prev.map(p =>
         p.player === playerIndex
           ? { ...p, eco: { ...p.eco, silver: p.eco.silver + coins } }
@@ -192,7 +195,8 @@ const handleQuizReward = (playerIndex: number, type : string , coins: number) =>
       )
     );
   } else if(type == "bronze") {
-    setPlayerInfo(prev =>
+    console.log("bronze")
+    return setPlayerInfo(prev =>
       prev.map(p =>
         p.player === playerIndex
           ? { ...p, eco: { ...p.eco, bronze: p.eco.bronze + coins } }
@@ -214,7 +218,7 @@ return (
       visited={playerInfo[currPlayer -1].visited}
       handleQuizClose={handleQuizClose}
       />}
-      <div className="h-screen w-screen border-2 overflow-auto overflow-y-hidden flex select-none">
+      <div className={`h-screen w-screen border-2 overflow-auto overflow-y-hidden flex select-none ${playerInfo[currPlayer - 1].isBot ? "pointer-events-none" : ""}`}>
       
       <div className="h-screen bg-[#990000] border-2 p-1 pb-2 w-85">
         <div className="h-full mx-10 px-10 bg-linear-to-b from-[#d98911] to-[#ffcf6f] border-2 float-start flex flex-col justify-around">
@@ -349,15 +353,6 @@ return (
                   randomShell();
  if(quiz) return;
                   setTimeout(() => setRotateShell(0),1000)
-                  setCurrPlayer(prev => {
-                      const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
-
-                      if (isBot && playerInfo[next - 1].isBot) {
-                        setBotTurn(true);
-                      }
-
-                      return next;
-                  });
                   
                 }}>
               <div className="h-35 w-35 rounded-2xl border-3 border-[#d75a00] mx-auto shadow-[inset_0px_0px_15px_rgba(0,0,0,0.6)] bg-radial from-[#e1731d] via-50% via-[#e4ae5d] to-[#e4ae5d]">
