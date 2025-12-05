@@ -42,7 +42,7 @@ export default function FlashCard({flashCard , setFlashCard, eventDetailsNo }: {
       <div className="cursor-pointer p-5" onClick={() => {
   window.speechSynthesis.cancel(); // stop voice instantly
   setSpeech(false);
-  setFlashCard(false);
+  setFlashCard(false)
 }}
 >
         <CloseIcon />

@@ -32,7 +32,6 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
     } , [])
     
     useEffect(() => {
-        console.log(currPlayer , isBot)
         let options = ["A" , "B" , "C" , "D"]
         const botAnswer = (options : string[]) => {
         if(!isBot || !question) return
@@ -50,7 +49,7 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
                 else setTimeout(() => onReward(currPlayer + 1 , "bronze" , 2), 0)
                 
                 setTries(c => c + 1)   // ✅ FIX: no reset
-                handleQuizClose()
+                setTimeout(() => handleQuizClose() , 1000)
             }
             if(!isCorrect) {
                 setTimeout(() => botAnswer(options.filter((a) => a != answer)), 1000)
@@ -65,19 +64,19 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
 
     return <div className={`h-screen w-screen absolute bg-amber-50/50 z-999 ${isBot ? "pointer-events-none": ""}`}>
         <div className="border-14 shadow-[inset_0px_0px_14vh_rgba(0,0,0,0.6)] border-[#990000] mx-auto w-250 mt-20 h-150 bg-quiz-background bg-size-[150vw_150vh] bg-center bg-[#de9a35]">
-            <div className="min-h-50 mx-15 mt-10 bg-radial-[at_50%_255%] from-[#f6eee1] from-50% to-70% to-[#f3b75e] rounded-2xl border-10 border-[#0a3d2b] shadow-[inset_0px_0px_2vh_rgba(0,0,0,1)] text-2xl text-center pt-5 text-green-800 font-semibold">
+            <div className="min-h-50 mx-15 mt-8 bg-radial-[at_50%_255%] from-[#f6eee1] from-50% to-70% to-[#f3b75e] rounded-2xl border-10 border-[#0a3d2b] shadow-[inset_0px_0px_2vh_rgba(0,0,0,1)] text-2xl text-center pt-5 text-green-800 font-semibold">
                 {question.question}
             </div>
             <div>
-                <div className="flex mx-10 mt-10">
+                <div className="flex mx-10 mt-8">
                     <div className={`${backgroundA == "correct" ? "text-yellow-300 bg-green-600" : backgroundA != "incorrect" ? "to-[#f3b75e] bg-radial-[at_50%_115%]" : "bg-red-500 text-white "} text-shadow-lg cursor-pointer min-h-20 border-6 border-[#0a3d2b] mx-8 w-full rounded-full  from-[#f6eee1] from-30% to-60%  text-center text-lg pt-5 text-green-800  font-medium`} onClick={() => {
         const correctAnswer = question.correctAnswer;
         
         if("A" == correctAnswer) {
             setBackgroundA("correct")
-            if(tries == 0) setTimeout(() => onReward(currPlayer + 1 , "gold" , 1), 0)   // FIX applied here too
-            else if(tries == 1) setTimeout(() => onReward(currPlayer + 1 , "silver" , 1), 0)
-            else setTimeout(() => onReward(currPlayer + 1 , "bronze" , 2), 0)
+            if(tries == 0) setTimeout(() => onReward(currPlayer , "gold" , 1), 0)   // FIX applied here too
+            else if(tries == 1) setTimeout(() => onReward(currPlayer , "silver" , 1), 0)
+            else setTimeout(() => onReward(currPlayer , "bronze" , 2), 0)
             setTries(c => c + 1)
             handleQuizClose()
         } else {
@@ -92,9 +91,9 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
         
         if("B" == correctAnswer) {
             setBackgroundB("correct")
-            if(tries == 0) setTimeout(() => onReward(currPlayer + 1 , "gold" , 1), 0)
-            else if(tries == 1) setTimeout(() => onReward(currPlayer + 1 , "silver" , 1), 0)
-            else setTimeout(() => onReward(currPlayer + 1 , "bronze" , 2), 0)
+            if(tries == 0) setTimeout(() => onReward(currPlayer , "gold" , 1), 0)
+            else if(tries == 1) setTimeout(() => onReward(currPlayer , "silver" , 1), 0)
+            else setTimeout(() => onReward(currPlayer , "bronze" , 2), 0)
             setTries(c => c + 1)
             handleQuizClose()
         } else {
@@ -105,15 +104,15 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
                         {question.options.B}
                     </div>
                 </div>
-                <div className="flex mx-10 mt-10">
+                <div className="flex mx-10 mt-8">
                     <div className={`${backgroundC == "correct" ? "text-yellow-300 bg-green-600" : backgroundC != "incorrect" ? "to-[#f3b75e] bg-radial-[at_50%_115%]" : "bg-red-500 text-white "} text-shadow-lg cursor-pointer min-h-20 border-6 border-[#0a3d2b] mx-8 w-full rounded-full  from-[#f6eee1] from-30% to-60%  text-center text-lg pt-5 text-green-800  font-medium`} onClick={() => {
         const correctAnswer = question.correctAnswer;
         
         if("C" == correctAnswer) {
             setBackgroundC("correct")
-            if(tries == 0) setTimeout(() => onReward(currPlayer + 1 , "gold" , 1), 0)
-            else if(tries == 1) setTimeout(() => onReward(currPlayer + 1 , "silver" , 1), 0)
-            else setTimeout(() => onReward(currPlayer + 1 , "bronze" , 2), 0)
+            if(tries == 0) setTimeout(() => onReward(currPlayer  , "gold" , 1), 0)
+            else if(tries == 1) setTimeout(() => onReward(currPlayer  , "silver" , 1), 0)
+            else setTimeout(() => onReward(currPlayer  , "bronze" , 2), 0)
             setTries(c => c + 1)
             handleQuizClose()
         } else {
@@ -128,9 +127,9 @@ export default function QuizCard({ eventNo , onReward , setQuiz , currPlayer , v
         
         if("D" == correctAnswer) {
             setBackgroundD("correct")
-            if(tries == 0) setTimeout(() => onReward(currPlayer + 1 , "gold" , 1), 0)
-            else if(tries == 1) setTimeout(() => onReward(currPlayer + 1 , "silver" , 1), 0)
-            else setTimeout(() => onReward(currPlayer + 1 , "bronze" , 2), 0)
+            if(tries == 0) setTimeout(() => onReward(currPlayer , "gold" , 1), 0)
+            else if(tries == 1) setTimeout(() => onReward(currPlayer , "silver" , 1), 0)
+            else setTimeout(() => onReward(currPlayer , "bronze" , 2), 0)
             setTries(c => c + 1)
             handleQuizClose()
         } else {

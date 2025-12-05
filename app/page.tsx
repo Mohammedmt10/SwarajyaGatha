@@ -50,13 +50,13 @@ export default function Home() {
         {isMenu && <div onClick={() => {
           SetIsMenu(c => !c);
           SetIsSingleplayer(c => !c)
-        }} className='z-999 border-2 h-12 lg:h-14 absolute w-46 lg:w-56 translate-x-20 translate-y-29 lg:translate-x-24 lg:translate-y-35 bg-transparent cursor-pointer'></div>} 
+        }} className='z-999 h-12 lg:h-14 absolute w-46 lg:w-56 translate-x-20 translate-y-29 lg:translate-x-24 lg:translate-y-35 bg-transparent cursor-pointer'></div>} 
         {isMenu && <div onClick={() => {
           SetIsMenu(c => !c);
           SetIsMultiplayer(c => !c)
-        }} className='z-999 border-2 h-12 lg:h-14 absolute w-45 lg:w-55 translate-x-20 lg:translate-x-24 translate-y-50 lg:translate-y-60 bg-transparent cursor-pointer'></div>} 
-        {isMenu && <div className='z-999 border-2 h-12 lg:h-14 absolute w-30 lg:w-36 translate-x-27 lg:translate-x-33 translate-y-70 lg:translate-y-84 bg-transparent cursor-pointer'></div>} 
-        {isMenu && <div className='z-999 border-2 h-10 lg:h-12 absolute w-15 lg:w-18 translate-x-35 lg:translate-x-42 translate-y-88 lg:translate-y-105 bg-transparent cursor-pointer'></div>}
+        }} className='z-999 h-12 lg:h-14 absolute w-45 lg:w-55 translate-x-20 lg:translate-x-24 translate-y-50 lg:translate-y-60 bg-transparent cursor-pointer'></div>} 
+        {isMenu && <div className='z-999 h-12 lg:h-14 absolute w-30 lg:w-36 translate-x-27 lg:translate-x-33 translate-y-70 lg:translate-y-84 bg-transparent cursor-pointer'></div>} 
+        {isMenu && <div className='z-999 h-10 lg:h-12 absolute w-15 lg:w-18 translate-x-35 lg:translate-x-42 translate-y-88 lg:translate-y-105 bg-transparent cursor-pointer'></div>}
 
         {/* Menu images */}
         {isMenu && <Image 

@@ -90,7 +90,7 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
   if (!playerInfo[currPlayer - 1]) return;
 
   let player = playerInfo[currPlayer - 1];
-  if(player.eventNo >= 30) return ;
+  if(player.eventNo >= 30) return;
   const current = player.eventNo;
   const nextPosition = current + trueCount;
 
@@ -126,18 +126,17 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
         : p
     )
   );
-  if(nextPosition == nextCP) {
-    return
+  if(!quiz) {
+    setCurrPlayer(prev => {
+        const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
+        if (isBot && playerInfo[next - 1].isBot) {
+          setBotTurn(true);
+        } else {
+          setBotTurn(false);
+        }
+        return next;
+      });
   }
-setCurrPlayer(prev => {
-    const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
-    if (isBot && playerInfo[next - 1].isBot) {
-      setBotTurn(true);
-    } else {
-      setBotTurn(false);
-    }
-    return next;
-  });
 
   setEventDetailsNo(nextPosition - 1);
   if (trueCount >= 1 && !quiz) setTimeout(() => setFlashCard(true) , 800);
@@ -352,15 +351,7 @@ return (
                   randomShell();
  if(quiz) return;
                   setTimeout(() => setRotateShell(0),1000)
-                  setCurrPlayer(prev => {
-                      const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
-
-                      if (isBot && playerInfo[next - 1].isBot) {
-                        setBotTurn(true);
-                      }
-
-                      return next;
-                  });
+                  
                   
                 }}>
               <div className="h-35 w-35 rounded-2xl border-3 border-[#d75a00] mx-auto shadow-[inset_0px_0px_15px_rgba(0,0,0,0.6)] bg-radial from-[#e1731d] via-50% via-[#e4ae5d] to-[#e4ae5d]">
