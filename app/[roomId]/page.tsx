@@ -1,13 +1,24 @@
 "use client";
+
 import Map from "@/app/components/map";
 import Image from "next/image";
 import ClosedShell from "../../images/closedShell.png";
 import OpenShell from "../../images/openShell.png";
 import FlashCard from "@/app/components/flashCard";
+import QuizCard from "@/app/components/quizCard";
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 
-type PlayerInfo = { player: number; eventNo: number };
+/* ---------- TYPES ---------- */
+type PlayerInfo = {
+  player: number;
+  eventNo: number;
+  eco?: {
+    gold: number;
+    silver: number;
+    bronze: number;
+  };
+};
 type PShell = { p: number; shells: boolean[] };
 
 type GameState = {
@@ -18,12 +29,14 @@ type GameState = {
 };
 
 export default function GameScreen() {
-  const params = useParams<{ roomId: string }>();
-  const roomId = (params?.roomId || "default-room").toString();
+  const params = useParams();
+  const roomId = params.roomId as string;
 
   const [socket, setSocket] = useState<WebSocket | null>(null);
   const [connected, setConnected] = useState(false);
+
   const [playerIndex, setPlayerIndex] = useState<number | null>(null);
+  const [clientId, setClientId] = useState<string | null>(null);
 
   const [gameState, setGameState] = useState<GameState>({
     currPlayer: 1,
@@ -34,15 +47,45 @@ export default function GameScreen() {
 
   const [rotateShell, setRotateShell] = useState(0);
   const rotateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const playerIndexRef = useRef<number | null>(null);
 
   const [flashCard, setFlashCard] = useState(false);
-  const [flashCardDetailsNo, setFlashCardDetailsNo] = useState<number>(0);
+  const [flashCardDetailsNo, setFlashCardDetailsNo] = useState(0);
 
-  /* ---------------- WebSocket Connection ---------------- */
+  const lastProcessedRollId = useRef(0);
+
+  const [showQuiz, setShowQuiz] = useState(false);
+  const [eventDetailsNo, setEventDetailsNo] = useState(0);
+  // Initialize with some event IDs to allow random quizzes to work
+  const [visited, setVisited] = useState<number[]>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+  /* ---------- SYNC REF ---------- */
   useEffect(() => {
-    const ws = new WebSocket(`ws://localhost:3001?room=${roomId}`);
-    setSocket(ws);
+    playerIndexRef.current = playerIndex;
+  }, [playerIndex]);
 
+  /* ---------- ROOM-SCOPED CLIENT ID ---------- */
+  useEffect(() => {
+    const key = `clientId:${roomId}`;
+    let id = localStorage.getItem(key);
+
+    if (!id) {
+      id = crypto.randomUUID();
+      localStorage.setItem(key, id);
+    }
+
+    setClientId(id);
+  }, [roomId]);
+
+  /* ---------- WEBSOCKET ---------- */
+  useEffect(() => {
+    if (!clientId) return;
+
+    const ws = new WebSocket(
+      `ws://localhost:3001?room=${roomId}&clientId=${clientId}`
+    );
+
+    setSocket(ws);
     ws.onopen = () => setConnected(true);
 
     ws.onmessage = (event) => {
@@ -50,65 +93,76 @@ export default function GameScreen() {
 
       if (msg.type === "init") {
         setPlayerIndex(msg.playerIndex);
+        playerIndexRef.current = msg.playerIndex; // Sync immediately
         setGameState(msg.state);
+        return;
       }
 
       if (msg.type === "state") {
-        const newState: GameState = msg.state;
+        const newState: any = msg.state;
+        const myIndex = playerIndexRef.current;
 
-        /* 🔥 Always spin shells whenever a roll happens */
-        if (newState.lastRollPlayer) {
-          if (rotateTimeoutRef.current) clearTimeout(rotateTimeoutRef.current);
+        // ONLY trigger roll logic if it's a NEW roll
+        const isNewRoll = newState.rollId && newState.rollId !== lastProcessedRollId.current;
+
+        if (isNewRoll && newState.lastRollPlayer) {
+          if (rotateTimeoutRef.current)
+            clearTimeout(rotateTimeoutRef.current);
+
           setRotateShell(newState.lastRollPlayer);
-          rotateTimeoutRef.current = setTimeout(() => setRotateShell(0), 900);
-        }
+          rotateTimeoutRef.current = setTimeout(
+            () => setRotateShell(0),
+            900
+          );
 
-        /* 🔥 Checkpoint logic (ported from single-player) */
-        if (newState.lastRollPlayer !== null) {
-          const last = newState.lastRollPlayer;
-          const shellsForLast =
-            newState.pShells.find((p) => p.p === last)?.shells ?? [];
-          const trueCount = shellsForLast.filter(Boolean).length;
+          // Update processed ID immediately
+          lastProcessedRollId.current = newState.rollId;
 
-          if (trueCount > 0) {
-            const idx = last - 1;
-            const player = newState.playerInfo[idx];
+          // Match single player logic: Quiz/Flashcard triggers
+          if (newState.lastRollPlayer === myIndex) {
+            const shells =
+              newState.pShells.find((p: any) => p.p === myIndex)?.shells ?? [];
+            const moveBy = shells.filter(Boolean).length;
 
-            if (player) {
-              // movedPosition = what server sent after applying simple move
-              const movedPosition = player.eventNo;
+            if (moveBy > 0) {
+              const player = newState.playerInfo[myIndex! - 1];
+              const current = player.eventNo - moveBy; // Previous position
+              const nextPosition = player.eventNo; // Current position after move
 
-              // infer previous position (before this roll)
-              const prevPosition = Math.max(1, movedPosition - trueCount);
-
-              const current = prevPosition;
-              const nextPosition = current + trueCount; // == movedPosition
-
+              // Calculate next checkpoint (same logic as single player)
               const nextCheckpoint = Math.ceil(current / 6) * 6;
-              const nextCP =
-                nextCheckpoint === current ? current + 6 : nextCheckpoint;
+              const nextCP = nextCheckpoint === current ? current + 6 : nextCheckpoint;
 
+              // Update visited array (add the position we just moved to)
+              const newVisited = [...visited, nextPosition - 1];
+              setVisited(newVisited);
+
+              // Check if we crossed a checkpoint
               if (nextPosition >= nextCP) {
-                // crossed checkpoint → snap to checkpoint
-                player.eventNo = nextCP;
+                // At checkpoint: Show FLASHCARD first, then quiz (matching single player)
+                setEventDetailsNo(nextCP - 1);
+                setFlashCardDetailsNo(nextCP - 1);
+                setShowQuiz(true); // Mark that quiz should show after flashcard
+                if (!showQuiz) {
+                  setFlashCard(true); // Show flashcard immediately
+                }
               } else {
-                // normal move (already at nextPosition)
-                player.eventNo = nextPosition;
+                // Normal move: Show flashcard after delay
+                setEventDetailsNo(nextPosition - 1);
+                setFlashCardDetailsNo(nextPosition - 1);
+                setTimeout(() => setFlashCard(true), 800);
               }
-
-              // FLASHCARD: use final eventNo (index = eventNo - 1)
-              setFlashCardDetailsNo(player.eventNo - 1);
-              setFlashCard(true);
             }
           }
         }
 
         setGameState(newState);
       }
+    };
 
-      if (msg.type === "error") {
-        alert(msg.message);
-      }
+    ws.onerror = (err) => {
+      console.error("WS Error:", err);
+      setConnected(false);
     };
 
     ws.onclose = () => {
@@ -117,34 +171,48 @@ export default function GameScreen() {
     };
 
     return () => ws.close();
-  }, [roomId]);
+  }, [clientId, roomId]);
 
-  /* ---------------- Helpers ---------------- */
-  const getShellsFor = (player: number) => {
-    return (
-      gameState.pShells.find((p) => p.p === player)?.shells ?? [
-        true,
-        true,
-        true,
-        true,
-      ]
-    );
+  /* ---------- HELPERS ---------- */
+  const getShellsFor = (player: number) =>
+    gameState.pShells.find((p) => p.p === player)?.shells ?? [
+      true,
+      true,
+      true,
+      true,
+    ];
+
+  const handleQuizClose = () => {
+    // Close quiz and ensure flashcard doesn't reopen
+    setShowQuiz(false);
+    setFlashCard(false);
+  };
+
+  const handleQuizReward = (playerIdx: number, coinType: string, amount: number) => {
+    // Send reward to server for syncing across all clients
+    if (socket && connected) {
+      socket.send(JSON.stringify({
+        type: "rewardCoins",
+        playerIndex: playerIdx,
+        coinType,
+        amount
+      }));
+    }
   };
 
   const handleRoll = (player: number) => {
-    if (!connected) return;
-    if (!socket) return;
+    // ✅ LOGIC GUARDS ONLY — NO CSS BLOCKING
+    if (!connected || !socket) return;
     if (playerIndex !== player) return;
     if (gameState.currPlayer !== player) return;
+
     socket.send(JSON.stringify({ type: "roll" }));
   };
 
   const playerInfo = gameState.playerInfo;
 
-  /* ---------------- Rendering ---------------- */
   return (
     <div>
-      {/* FLASHCARD POPUP */}
       {flashCard && (
         <FlashCard
           flashCard={flashCard}
@@ -153,79 +221,71 @@ export default function GameScreen() {
         />
       )}
 
-      <div className="h-screen w-screen border-2 overflow-auto overflow-y-hidden flex select-none">
-        {/* LEFT (Player 1 & 2) */}
-        <div className="h-screen bg-[#990000] border-2 p-1 pb-2 w-85">
-          <div className="h-full mx-10 px-10 bg-linear-to-b from-[#d98911] to-[#ffcf6f] border-2 float-start flex flex-col justify-around">
-            {playerInfo[0] && (
-              <PlayerBox
-                index={playerInfo[0].player}
-                currPlayer={gameState.currPlayer}
-                rotateShell={rotateShell}
-                getShellsFor={getShellsFor}
-                onClick={() => handleRoll(playerInfo[0].player)}
-                isYou={playerIndex === playerInfo[0].player}
-              />
-            )}
+      {showQuiz && !flashCard && (
+        <QuizCard
+          eventNo={eventDetailsNo}
+          onReward={handleQuizReward}
+          setQuiz={setShowQuiz}
+          currPlayer={playerIndex ?? 1}
+          visited={visited}
+          isBot={false}
+          handleQuizClose={handleQuizClose}
+        />
+      )}
 
-            {playerInfo[1] && (
-              <PlayerBox
-                index={playerInfo[1].player}
-                currPlayer={gameState.currPlayer}
-                rotateShell={rotateShell}
-                getShellsFor={getShellsFor}
-                onClick={() => handleRoll(playerInfo[1].player)}
-                isYou={playerIndex === playerInfo[1].player}
-              />
-            )}
+      <div className={`h-screen w-screen border-2 overflow-auto overflow-y-hidden flex select-none ${showQuiz ? "pointer-events-none" : ""}`}>
+        {/* LEFT */}
+        <div className="h-screen bg-[#990000] border-2 p-1 pb-2 w-85">
+          <div className="h-full mx-10 px-10 bg-linear-to-b from-[#d98911] to-[#ffcf6f] border-2 flex flex-col justify-around">
+            {playerInfo
+              .filter((p) => p.player <= 2)
+              .map((p) => (
+                <PlayerBox
+                  key={p.player}
+                  index={p.player}
+                  currPlayer={gameState.currPlayer}
+                  rotateShell={rotateShell}
+                  getShellsFor={getShellsFor}
+                  onClick={() => handleRoll(p.player)}
+                  isYou={playerIndex === p.player}
+                  eco={p.eco}
+                />
+              ))}
           </div>
         </div>
 
         {/* MAP */}
-        <div className="w-255 bg-cover object-contain bg-center flex justify-around bg-map-background items-center">
+        <div className="w-255 bg-cover bg-center flex justify-around bg-map-background items-center">
           <Map pawnInfo={playerInfo} />
         </div>
 
-        {/* RIGHT (Player 3 & 4) */}
+        {/* RIGHT */}
         <div className="p-2 border-2 h-screen bg-[#990000] w-86">
-          <div className="border-2 bg-linear-to-b from-[#d98911] to-[#ffcf6f] mx-10 float-end h-full mb-2 w-65">
-            <div className="h-screen px-10 float-start flex flex-col justify-around">
-              {playerInfo[2] && (
-                <PlayerBox
-                  index={playerInfo[2].player}
-                  currPlayer={gameState.currPlayer}
-                  rotateShell={rotateShell}
-                  getShellsFor={getShellsFor}
-                  onClick={() => handleRoll(playerInfo[2].player)}
-                  isYou={playerIndex === playerInfo[2].player}
-                />
-              )}
-
-              {playerInfo[3] && (
-                <PlayerBox
-                  index={playerInfo[3].player}
-                  currPlayer={gameState.currPlayer}
-                  rotateShell={rotateShell}
-                  getShellsFor={getShellsFor}
-                  onClick={() => handleRoll(playerInfo[3].player)}
-                  isYou={playerIndex === playerInfo[3].player}
-                />
-              )}
+          <div className="border-2 bg-linear-to-b from-[#d98911] to-[#ffcf6f] mx-10 h-full w-65">
+            <div className="h-screen px-10 flex flex-col justify-around">
+              {playerInfo
+                .filter((p) => p.player > 2)
+                .map((p) => (
+                  <PlayerBox
+                    key={p.player}
+                    index={p.player}
+                    currPlayer={gameState.currPlayer}
+                    rotateShell={rotateShell}
+                    getShellsFor={getShellsFor}
+                    onClick={() => handleRoll(p.player)}
+                    isYou={playerIndex === p.player}
+                    eco={p.eco}
+                  />
+                ))}
             </div>
           </div>
         </div>
-      </div>
-
-      {/* DEBUG FOOTER */}
-      <div className="fixed bottom-2 left-2 text-xs bg-black/60 text-white px-2 py-1 rounded">
-        {connected ? "WS: connected" : "WS: disconnected"} | You:{" "}
-        {playerIndex ?? "-"} | Turn: {gameState.currPlayer}
       </div>
     </div>
   );
 }
 
-/* ---------------- Player UI Component ---------------- */
+/* ---------- PLAYER BOX (FIXED) ---------- */
 function PlayerBox({
   index,
   currPlayer,
@@ -233,6 +293,7 @@ function PlayerBox({
   getShellsFor,
   onClick,
   isYou,
+  eco,
 }: {
   index: number;
   currPlayer: number;
@@ -240,20 +301,30 @@ function PlayerBox({
   getShellsFor: (p: number) => boolean[];
   onClick: () => void;
   isYou?: boolean;
+  eco?: { gold: number; silver: number; bronze: number };
 }) {
+  const canRoll = isYou && currPlayer === index;
+
   return (
     <div
-      className={`relative z-50 border-2 h-fit p-2.5 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer
-        ${currPlayer !== index ? "pointer-events-none opacity-70" : ""}
+      className={`relative z-[100] border-2 h-fit p-2.5 rounded-3xl border-[#fe6c07] select-none cursor-pointer
+        ${canRoll ? "bg-green-400" : "bg-[#f3b75e] opacity-70"}
         ${isYou ? "ring-4 ring-green-500" : ""}`}
-      onClick={onClick}
+      onClick={() => {
+        if (!canRoll) return;
+        onClick();
+      }}
     >
       <div className="h-35 w-35 rounded-2xl border-3 border-[#d75a00] mx-auto shadow-[inset_0px_0px_15px_rgba(0,0,0,0.6)] bg-radial from-[#e1731d] via-50% via-[#e4ae5d] to-[#e4ae5d]">
         <div className="grid grid-cols-2 grid-rows-2 h-full w-full">
           {getShellsFor(index).map((v, i) => (
-            <div key={i} className="flex items-center">
+            <div
+              key={i}
+              className="flex items-center"
+            >
               <Image
-                className={`p-2 ${rotateShell === index ? "animate-spin" : ""}`}
+                className={`p-2 ${rotateShell === index ? "animate-spin" : ""
+                  }`}
                 src={v ? OpenShell : ClosedShell}
                 alt="Shell"
               />
@@ -261,9 +332,25 @@ function PlayerBox({
           ))}
         </div>
       </div>
+
       <p className="text-center text-sm mt-2 font-bold text-white">
         Player {index} {isYou && "(You)"}
       </p>
+
+      {eco && (
+        <div className="mt-2">
+          <div className="flex justify-around">
+            <div className="h-6 w-6 bg-gold-coin bg-cover"></div>
+            <div className="h-6 w-6 bg-silver-coin bg-cover"></div>
+            <div className="h-6 w-6 bg-bronze-coin bg-cover"></div>
+          </div>
+          <div className="flex justify-around mt-1">
+            <div className="border px-2 bg-white border-[#9b0403] rounded text-xs">{eco.gold}</div>
+            <div className="border px-2 bg-white border-[#9b0403] rounded text-xs">{eco.silver}</div>
+            <div className="border px-2 bg-white border-[#9b0403] rounded text-xs">{eco.bronze}</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
