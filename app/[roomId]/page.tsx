@@ -6,6 +6,7 @@ import ClosedShell from "../../images/closedShell.png";
 import OpenShell from "../../images/openShell.png";
 import FlashCard from "@/app/components/flashCard";
 import QuizCard from "@/app/components/quizCard";
+import EndScreen from "@/app/components/endScreen";
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 
@@ -13,7 +14,7 @@ import { useParams } from "next/navigation";
 type PlayerInfo = {
   player: number;
   eventNo: number;
-  eco?: {
+  eco: {
     gold: number;
     silver: number;
     bronze: number;
@@ -58,6 +59,8 @@ export default function GameScreen() {
   const [eventDetailsNo, setEventDetailsNo] = useState(0);
   // Initialize with some event IDs to allow random quizzes to work
   const [visited, setVisited] = useState<number[]>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+  const [gameOver, setGameOver] = useState(false);
 
   /* ---------- SYNC REF ---------- */
   useEffect(() => {
@@ -173,6 +176,14 @@ export default function GameScreen() {
     return () => ws.close();
   }, [clientId, roomId]);
 
+  useEffect(() => {
+    if (gameState.playerInfo.length === 0) return;
+    const allFinished = gameState.playerInfo.every((p) => p.eventNo >= 30);
+    if (allFinished && !gameOver) {
+      setGameOver(true);
+    }
+  }, [gameState.playerInfo, gameOver]);
+
   /* ---------- HELPERS ---------- */
   const getShellsFor = (player: number) =>
     gameState.pShells.find((p) => p.p === player)?.shells ?? [
@@ -213,6 +224,7 @@ export default function GameScreen() {
 
   return (
     <div>
+      {gameOver && <EndScreen players={gameState.playerInfo} />}
       {flashCard && (
         <FlashCard
           flashCard={flashCard}
@@ -254,8 +266,8 @@ export default function GameScreen() {
           </div>
         </div>
 
-        {/* MAP */}
-        <div className="w-255 bg-cover bg-center flex justify-around bg-map-background items-center">
+        {/* MAP WRAPPER */}
+        <div className="flex-1 bg-cover bg-center flex justify-center bg-map-background items-center overflow-hidden">
           <Map pawnInfo={playerInfo} />
         </div>
 
@@ -308,7 +320,7 @@ function PlayerBox({
   return (
     <div
       className={`relative z-[100] border-2 h-fit p-2.5 rounded-3xl border-[#fe6c07] select-none cursor-pointer
-        ${canRoll ? "bg-green-400" : "bg-[#f3b75e] opacity-70"}
+        ${canRoll ? "" : "bg-[#f3b75e] opacity-70"}
         ${isYou ? "ring-4 ring-green-500" : ""}`}
       onClick={() => {
         if (!canRoll) return;

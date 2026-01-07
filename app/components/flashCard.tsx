@@ -73,51 +73,53 @@ export default function FlashCard({
       >
         <CloseIcon />
       </div>
-      <div className="border-16 flex-col overflow-auto mx-auto w-250 h-fit mt-15 rounded-xl border-[#8e0000] bg-[#de9a35] shadow-[inset_0_0px_18px_rgba(0,0,0,0.6)]">
-        <div className="flex">
-          <div className="w-full mx-10">
-            <div className="w-100 mx-auto h-fit py-2 text-red-800 text-2xl rounded-full bg-white border-4 border-[#8e0000] text-center mt-10 shadow-[inset_0_0px_14px_rgba(0,0,0,0.6)]">
+      <div className="border-8 md:border-16 flex flex-col overflow-y-auto mx-auto w-[95vw] md:w-[85vw] lg:w-250 h-fit max-h-[85vh] mt-6 md:mt-15 rounded-xl border-[#8e0000] bg-[#de9a35] shadow-[inset_0_0px_18px_rgba(0,0,0,0.6)] pb-6 md:pb-10">
+        <div className="flex flex-col md:flex-row px-4 md:px-0">
+          <div className="w-full md:w-1/2 md:mx-10 flex flex-col items-center">
+            <div className="w-full md:w-auto md:min-w-[80%] h-fit py-2 px-4 text-red-800 text-lg md:text-xl lg:text-2xl rounded-full bg-white border-4 border-[#8e0000] text-center mt-6 md:mt-10 shadow-[inset_0_0px_14px_rgba(0,0,0,0.6)]">
               <div className="font-semibold text-shadow-lg text-shadow-gray-400">
                 Title :
               </div>
-              <div>{current.title}</div>
+              <div className="break-words">{current.title}</div>
             </div>
-            <div className="w-fit px-10 h-fit border-4 text-red-800 text-2xl text-center border-[#8e0000] bg-white rounded-full mx-auto mt-5 shadow-[inset_0_0px_14px_rgba(0,0,0,0.6)]">
-              <div className="font-semibold text-shadow-lg text-shadow-gray-400">
+            <div className="w-full md:w-auto md:min-w-[80%] px-6 md:px-10 py-2 h-fit border-4 text-red-800 text-lg md:text-xl lg:text-2xl text-center border-[#8e0000] bg-white rounded-full mt-4 md:mt-5 shadow-[inset_0_0px_14px_rgba(0,0,0,0.6)]">
+              <div className="font-semibold text-shadow-lg text-shadow-gray-400 text-sm md:text-base lg:text-xl">
                 Year / Location :
               </div>
-              <div>
+              <div className="break-words">
                 {current.year} / {current.location}
               </div>
             </div>
           </div>
           {current.imgUrl && (
-            <div className="w-full mx-10 ml-2 mt-10 rounded-2xl border-4 h-45 border-[#8e0000] bg-white shadow-[inset_0_0_14px_rgba(0,0,0,0.6)]">
+            <div className="w-full md:w-1/2 mx-auto mt-6 md:mt-10 rounded-2xl border-4 h-40 md:h-45 border-[#8e0000] bg-white shadow-[inset_0_0_14px_rgba(0,0,0,0.6)] flex items-center justify-center overflow-hidden">
               <img
                 src={current.imgUrl}
-                className="h-full mx-auto rounded-xl"
+                className="h-full object-contain rounded-xl"
                 alt={current.title || "Event image"}
               />
             </div>
           )}
         </div>
-        <div className="border-4 px-6 pb-4 pt-4 text-red-800 text-xl rounded-2xl h-full m-7 mx-10 bg-white border-[#8e0000] shadow-[inset_0_0_24px_rgba(0,0,0,0.9)]">
+        <div className="border-4 px-4 md:px-6 pb-4 pt-4 text-red-800 text-sm md:text-lg lg:text-xl rounded-2xl h-fit m-4 md:m-7 md:mx-10 bg-white border-[#8e0000] shadow-[inset_0_0_24px_rgba(0,0,0,0.9)] mt-6">
           <div
-            className="px-3 py-0 pt-2 float-right cursor-pointer"
+            className="px-2 py-0 pt-1 float-right cursor-pointer"
             onClick={() => setSpeech((c) => !c)}
           >
             <SpeakerIcons />
           </div>
-          <div>
+          <div className="mt-2">
             <div className="text-shadow-lg text-shadow-gray-400 font-semibold">
               Key figures :
             </div>
             <div>{current.details.keyFigures}</div>
           </div>
-          <div className="font-semibold text-shadow-lg text-shadow-gray-400">
-            Description :
+          <div className="mt-4">
+            <div className="font-semibold text-shadow-lg text-shadow-gray-400">
+              Description :
+            </div>
+            <div className="leading-relaxed">{current.details.narrative}</div>
           </div>
-          <div>{current.details.narrative}</div>
         </div>
       </div>
     </div>

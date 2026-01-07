@@ -127,7 +127,12 @@ wss.on("connection", (ws, req) => {
 
                 const player = room.state.playerInfo[ws.playerIndex - 1];
                 const current = player.eventNo;
-                const nextPosition = current + moveBy;
+                if (current >= 30) {
+                    console.log(`Player ${ws.playerIndex} already at end.`);
+                    return;
+                }
+                let nextPosition = current + moveBy;
+                if (nextPosition > 30) nextPosition = 30;
 
                 // Calculate checkpoint (same logic as single player)
                 const nextCheckpoint = Math.ceil(current / 6) * 6;
@@ -141,6 +146,9 @@ wss.on("connection", (ws, req) => {
                 } else {
                     finalPosition = nextPosition; // Normal move
                 }
+
+                // Capping final position at 30
+                if (finalPosition > 30) finalPosition = 30;
 
                 // Update position
                 player.eventNo = finalPosition;
