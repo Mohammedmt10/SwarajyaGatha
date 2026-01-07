@@ -1,4 +1,3 @@
-import Pawns from "@/icons/pawns";
 import Image from "next/image";
 import Pawn1 from "../../images/greenPawn.png"
 import Pawn2 from "../../images/YellowPawn.png"

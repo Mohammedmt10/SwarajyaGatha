@@ -72,9 +72,26 @@ export default function Home() {
           className="block lg:hidden"
         />}
         {isMultiplayer && <div>
-          <input type="text" className='absolute translate-y-48.5 lg:translate-y-58 translate-x-17.5 lg:translate-x-20.5 h-7 lg:h-8.5 w-50 lg:w-60.5 outline-0 rounded px-2 z-999' value={result} onChange={(event) => {SetResult(event.currentTarget.value)}} />
-          <div onClick={() => randomString(5)} className='absolute hover:border-2 border-yellow-300 h-9 lg:h-11 w-19 lg:w-22 rounded-xl lg:rounded-2xl cursor-pointer translate-x-31 lg:translate-x-38 translate-y-77 lg:translate-y-92'></div>
-          <div onClick={() => router.push(`/${result}`)} className='absolute hover:border-2 border-yellow-300 h-12 lg:h-13.5 w-28 lg:w-33.5 rounded-3xl lg:rounded-3xl cursor-pointer translate-x-26.5 lg:translate-x-32 translate-y-93 lg:translate-y-112'></div> 
+          <input
+            type="text"
+            className='absolute translate-y-48.5 lg:translate-y-58 translate-x-17.5 lg:translate-x-20.5 h-7 lg:h-8.5 w-50 lg:w-60.5 outline-0 rounded px-2 z-999'
+            value={result}
+            onChange={(event) => {SetResult(event.currentTarget.value)}}
+          />
+          <div
+            onClick={() => randomString(5)}
+            className='absolute hover:border-2 border-yellow-300 h-9 lg:h-11 w-19 lg:w-22 rounded-xl lg:rounded-2xl cursor-pointer translate-x-31 lg:translate-x-38 translate-y-77 lg:translate-y-92'
+          ></div>
+          <div
+            onClick={() => {
+              if (!result.trim()) {
+                randomString(5);
+                return;
+              }
+              router.push(`/${result.trim()}`)
+            }}
+            className='absolute hover:border-2 border-yellow-300 h-12 lg:h-13.5 w-28 lg:w-33.5 rounded-3xl lg:rounded-3xl cursor-pointer translate-x-26.5 lg:translate-x-32 translate-y-93 lg:translate-y-112'
+          ></div> 
           <div onClick={() => {
             SetIsMenu(c => !c)
             SetIsMultiplayer(c => !c)

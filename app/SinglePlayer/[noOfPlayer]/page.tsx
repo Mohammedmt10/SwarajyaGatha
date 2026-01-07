@@ -3,22 +3,30 @@ import Map from "@/app/components/map";
 import Image from "next/image";
 import ClosedShell from "../../../images/closedShell.png"
 import OpenShell from "../../../images/openShell.png"
-import { useState , useMemo } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import FlashCard from "@/app/components/flashCard";
 import { useEffect } from "react";
 import eventDetails from "../../../eventDetails.json"
 import QuizCard from "@/app/components/quizCard";
+import EndScreen from "@/app/components/endScreen";
 
 export default function GameScreen() {
-  
+  const params = useParams<{ noOfPlayer: string }>();
 
-  const params = useParams()
-  const Players = params.noOfPlayer ? params.noOfPlayer[0]?.split("%26")[0] : 1
-  const [noOfPlayer , ] = useState(Number(Players))
+  const rawParam = params?.noOfPlayer ?? "1&false";
+  const decodedParam = decodeURIComponent(rawParam);
+
+  // Support both "1&true" and legacy "1%26true" style values
+  const separator = decodedParam.includes("&") ? "&" : "%26";
+  const [playersPart, botPart] = decodedParam.split(separator);
+
+  const initialPlayers = Number(playersPart || 1) || 1;
+  const initialIsBot = botPart === "true";
+
+  const [noOfPlayer] = useState(initialPlayers);
   const [botTurn , setBotTurn] = useState(false)
-  //@ts-ignore
-  const [isBot , ] = useState(params.noOfPlayer ? params.noOfPlayer?.split("%26")[1] == "true" : false)
+  const [isBot] = useState(initialIsBot);
   const [playerInfo, setPlayerInfo] = useState(() => {
   let list = Array.from({ length: noOfPlayer }, (_, i) => ({
     player: i + 1,
@@ -62,7 +70,9 @@ export default function GameScreen() {
      return shells;
    };
 
-const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Players)))
+const [pShells , setPShells] = useState(
+  getInitialShells(isBot ? 4 : noOfPlayer)
+)
   const [currPlayer , setCurrPlayer] = useState(1);
   const randomShell = () => {
     const booleans = [true, false];
@@ -143,7 +153,8 @@ const [pShells , setPShells] = useState(getInitialShells(isBot ? 4 : Number(Play
   } 
 };
 const handleQuizClose = () => {
-  setTimeout(() => setQuiz(false) , 1000)
+  // close quiz immediately after an answer and advance turn deterministically
+  setQuiz(false);
   setCurrPlayer(prev => {
     const next = prev + 1 > playerInfo.length ? 1 : prev + 1;
     if (isBot && playerInfo[next - 1].isBot) {
@@ -152,7 +163,7 @@ const handleQuizClose = () => {
       setBotTurn(false);
     }
     return next;
-  }); // small delay feels natural
+  });
 };
 
   const [rotateShell , setRotateShell] = useState(0)
@@ -204,8 +215,22 @@ const handleQuizReward = (playerIndex: number, type : string , coins: number) =>
   }
 };
 
+const [gameOver, setGameOver] = useState(false);
+const [finalPlayers, setFinalPlayers] = useState(playerInfo);
+
+useEffect(() => {
+  if (playerInfo.length === 0) return;
+  const allFinished = playerInfo.every((p) => p.eventNo >= 30);
+  if (allFinished && !gameOver) {
+    setGameOver(true);
+    setBotTurn(false);
+    setFinalPlayers(playerInfo);
+  }
+}, [playerInfo, gameOver]);
+
 return (
     <div>
+      {gameOver && <EndScreen players={finalPlayers} />}
       {flashCard && <FlashCard flashCard={flashCard} setFlashCard={setFlashCard} eventDetailsNo={eventDetailsNo} />}
       {quiz && !flashCard && <QuizCard 
       eventNo={eventDetailsNo} 
@@ -216,11 +241,11 @@ return (
       visited={playerInfo[currPlayer -1].visited}
       handleQuizClose={handleQuizClose}
       />}
-      <div className={`h-screen w-screen border-2 overflow-auto overflow-y-hidden flex select-none ${playerInfo[currPlayer - 1].isBot ? "pointer-events-none" : ""}`}>
+      <div className={`min-h-screen w-full max-w-screen border-2 flex flex-col lg:flex-row overflow-x-auto overflow-y-auto select-none ${playerInfo[currPlayer - 1].isBot || gameOver ? "pointer-events-none" : ""}`}>
       
-      <div className="h-screen bg-[#990000] border-2 p-1 pb-2 w-85">
-        <div className="h-full mx-10 px-10 bg-linear-to-b from-[#d98911] to-[#ffcf6f] border-2 float-start flex flex-col justify-around">
-        {(noOfPlayer >= 1 || isBot) && <div className={`border-2 h-fit p-2.5 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 1 ? "pointer-events-none" : ""}`} onClick={() => {
+      <div className="bg-[#990000] border-2 p-1 pb-2 w-full lg:w-85 lg:h-screen">
+        <div className="h-full mx-4 lg:mx-10 px-4 lg:px-10 bg-linear-to-b from-[#d98911] to-[#ffcf6f] border-2 float-start flex flex-col justify-around">
+        {(noOfPlayer >= 1 || isBot) && <div className={`border-2 h-fit p-2.5 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 1 || gameOver ? "pointer-events-none" : ""}`} onClick={() => {
                 if(playerInfo[0].eventNo >= 30) return
                 setRotateShell(1);
                 setTimeout(() => setRotateShell(0),1000)
@@ -266,7 +291,7 @@ return (
               <div className="h-9 w-10 bg-silver-coin bg-cover"></div>
               <div className="h-9 w-10 bg-bronze-coin bg-cover"></div>
             </div>
-          <div className={`border-2 h-fit p-3 mt-2 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 2 ? "pointer-events-none" : ""}`} onClick={() => {
+          <div className={`border-2 h-fit p-3 mt-2 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 2 || gameOver ? "pointer-events-none" : ""}`} onClick={() => {
                 if(playerInfo[1].eventNo >= 30) return
                 setRotateShell(2);
                 randomShell();
@@ -293,14 +318,14 @@ return (
 
       </div>
       </div>
-      <div className="w-255 bg-cover object-contain bg-center  flex justify-around bg-map-background items-center">
+      <div className="w-full lg:w-255 bg-cover object-contain bg-center flex justify-around bg-map-background items-center">
           <Map pawnInfo={playerInfo} isBot={isBot} />
       </div>
-      <div className="p-2 border-2 h-screen bg-[#990000] w-86">
-        <div className={` border-2 bg-linear-to-b from-[#d98911] to-[#ffcf6f] mx-10 float-end h-full mb-2 w-65`}>
-          <div className="h-screen  px-10 float-start flex flex-col justify-around">
+      <div className="p-2 border-2 bg-[#990000] w-full lg:w-86 lg:h-screen">
+        <div className={` border-2 bg-linear-to-b from-[#d98911] to-[#ffcf6f] mx-4 lg:mx-10 float-end h-full mb-2 w-full lg:w-65`}>
+          <div className="h-full px-6 lg:px-10 float-start flex flex-col justify-around">
           {(noOfPlayer >= 3 || isBot) && <div>
-            <div className={`border-2 h-fit p-3 mt-2 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 3 ? "pointer-events-none" : ""}`} onClick={() => {
+            <div className={`border-2 h-fit p-3 mt-2 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 3 || gameOver ? "pointer-events-none" : ""}`} onClick={() => {
               if(playerInfo[2].eventNo >= 30) return
               setRotateShell(3);
               randomShell();
@@ -345,7 +370,7 @@ return (
                 <div className="h-9 w-10 bg-silver-coin bg-cover"></div>
                 <div className="h-9 w-10 bg-bronze-coin bg-cover"></div>
             </div>
-            <div className={`border-2 h-fit p-3 mt-2 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 4 ? "pointer-events-none" : ""}`} onClick={() => {
+            <div className={`border-2 h-fit p-3 mt-2 rounded-3xl border-[#fe6c07] bg-[#f3b75e] select-none cursor-pointer ${currPlayer != 4 || gameOver ? "pointer-events-none" : ""}`} onClick={() => {
                   if(playerInfo[3].eventNo >= 30) return
                   setRotateShell(4);
                   randomShell();

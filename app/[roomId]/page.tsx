@@ -5,6 +5,7 @@ import ClosedShell from "../../images/closedShell.png";
 import OpenShell from "../../images/openShell.png";
 import FlashCard from "@/app/components/flashCard";
 import { useEffect, useRef, useState } from "react";
+import { useParams } from "next/navigation";
 
 type PlayerInfo = { player: number; eventNo: number };
 type PShell = { p: number; shells: boolean[] };
@@ -17,6 +18,9 @@ type GameState = {
 };
 
 export default function GameScreen() {
+  const params = useParams<{ roomId: string }>();
+  const roomId = (params?.roomId || "default-room").toString();
+
   const [socket, setSocket] = useState<WebSocket | null>(null);
   const [connected, setConnected] = useState(false);
   const [playerIndex, setPlayerIndex] = useState<number | null>(null);
@@ -33,8 +37,6 @@ export default function GameScreen() {
 
   const [flashCard, setFlashCard] = useState(false);
   const [flashCardDetailsNo, setFlashCardDetailsNo] = useState<number>(0);
-
-  const roomId = "default-room";
 
   /* ---------------- WebSocket Connection ---------------- */
   useEffect(() => {
@@ -115,7 +117,7 @@ export default function GameScreen() {
     };
 
     return () => ws.close();
-  }, []);
+  }, [roomId]);
 
   /* ---------------- Helpers ---------------- */
   const getShellsFor = (player: number) => {
