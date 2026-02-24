@@ -62,7 +62,7 @@ wss.on("connection", (ws, req) => {
     // Check if this client is rejoining
     if (room.clientToPlayer.has(clientId)) {
         playerIndex = room.clientToPlayer.get(clientId);
-        console.log(`Client ${clientId} rejoining as Player ${playerIndex}`);
+        
     } else {
         // New player - find next available slot
         const existingIndices = new Set(room.state.playerInfo.map(p => p.player));
@@ -71,7 +71,6 @@ wss.on("connection", (ws, req) => {
             playerIndex++;
         }
 
-        console.log(`New client ${clientId} joining as Player ${playerIndex}`);
         room.clientToPlayer.set(clientId, playerIndex);
 
         // Create new player data
@@ -109,26 +108,23 @@ wss.on("connection", (ws, req) => {
     ws.on("message", (data) => {
         try {
             const msg = JSON.parse(data);
-            console.log(`Received message type: ${msg.type} from Player ${ws.playerIndex}`);
+            
 
             if (msg.type === "roll") {
                 if (room.state.currPlayer !== ws.playerIndex) {
-                    console.log(`Ignored roll: Turn is ${room.state.currPlayer}, sender is ${ws.playerIndex}`);
+                    
                     return;
                 }
 
-                console.log(`Processing roll for Player ${ws.playerIndex}`);
 
                 const shellObj = room.state.pShells[ws.playerIndex - 1];
                 shellObj.shells = shellObj.shells.map(() => Math.random() > 0.5);
 
                 const moveBy = shellObj.shells.filter(Boolean).length;
-                console.log(`Rolled ${moveBy}`);
 
                 const player = room.state.playerInfo[ws.playerIndex - 1];
                 const current = player.eventNo;
                 if (current >= 30) {
-                    console.log(`Player ${ws.playerIndex} already at end.`);
                     return;
                 }
                 let nextPosition = current + moveBy;
@@ -142,7 +138,6 @@ wss.on("connection", (ws, req) => {
                 let finalPosition;
                 if (nextPosition >= nextCP) {
                     finalPosition = nextCP; // Snap to checkpoint
-                    console.log(`Player ${ws.playerIndex} crossed checkpoint, snapping to ${nextCP}`);
                 } else {
                     finalPosition = nextPosition; // Normal move
                 }
@@ -162,15 +157,12 @@ wss.on("connection", (ws, req) => {
                         if (tileData.eco === "+") {
                             // Positive event: gain 2 gold
                             player.eco.gold += 2;
-                            console.log(`Player ${ws.playerIndex} gained 2 gold from tile ${eventIndex}`);
                         } else if (tileData.eco === "-") {
                             // Negative event: lose 2 gold
                             player.eco.gold -= 2;
-                            console.log(`Player ${ws.playerIndex} lost 2 gold from tile ${eventIndex}`);
                         } else {
                             // Neutral or null: lose 1 gold (movement penalty)
                             player.eco.gold -= 1;
-                            console.log(`Player ${ws.playerIndex} lost 1 gold (movement penalty)`);
                         }
                     } else {
                         // Default: lose 1 gold for movement
@@ -197,7 +189,6 @@ wss.on("connection", (ws, req) => {
                     else if (coinType === "silver") player.eco.silver += amount;
                     else if (coinType === "bronze") player.eco.bronze += amount;
 
-                    console.log(`Player ${playerIndex} received ${amount} ${coinType} coins`);
                     broadcast(room);
                 }
             }
@@ -208,7 +199,6 @@ wss.on("connection", (ws, req) => {
 
     /* ---- LEAVE (REMOVE PLAYER) ---- */
     ws.on("close", () => {
-        console.log(`Client ${ws.clientId} (Player ${ws.playerIndex}) disconnected`);
 
         // Remove from active clients
         room.clients.delete(ws.clientId);
@@ -224,7 +214,6 @@ wss.on("connection", (ws, req) => {
         // Only delete room if no players left
         if (room.state.playerInfo.length === 0) {
             rooms.delete(roomId);
-            console.log(`Room ${roomId} deleted (no players)`);
             return;
         }
 

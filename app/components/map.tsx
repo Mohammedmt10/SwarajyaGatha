@@ -19,9 +19,14 @@ export default function Map({
         const handleResize = () => {
             if (mapRef.current && mapRef.current.parentElement) {
                 const parentWidth = mapRef.current.parentElement.clientWidth;
-                const baseWidth = 880; // Roughly w-220 (220 * 4 = 880px)
-                const newScale = Math.min(1, parentWidth / (baseWidth + 40));
-                setScale(newScale);
+                const parentHeight = mapRef.current.parentElement.clientHeight;
+                const baseWidth = 880;
+                const baseHeight = 600; // Estimated height of the map content
+
+                const scaleW = parentWidth / (baseWidth + 40);
+                const scaleH = parentHeight / (baseHeight + 40);
+
+                setScale(Math.min(scaleW, scaleH, 1));
             }
         };
 
@@ -36,7 +41,7 @@ export default function Map({
         eventCounts[eventNo] = (eventCounts[eventNo] || 0) + 1;
     });
     return (
-        <div ref={mapRef} className="w-full flex justify-center items-center overflow-hidden min-h-[500px]">
+        <div ref={mapRef} className="w-full h-full flex justify-center items-center overflow-hidden">
             <div
                 style={{
                     transform: `scale(${scale})`,

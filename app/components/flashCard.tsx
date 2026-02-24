@@ -73,52 +73,52 @@ export default function FlashCard({
       >
         <CloseIcon />
       </div>
-      <div className="border-8 md:border-16 flex flex-col overflow-y-auto mx-auto w-[95vw] md:w-[85vw] lg:w-250 h-fit max-h-[85vh] mt-6 md:mt-15 rounded-xl border-[#8e0000] bg-[#de9a35] shadow-[inset_0_0px_18px_rgba(0,0,0,0.6)] pb-6 md:pb-10">
-        <div className="flex flex-col md:flex-row px-4 md:px-0">
+      <div className="border-6 md:border-16 flex flex-col mx-auto w-full max-w-[95vw] md:max-w-[85vw] lg:max-w-250 h-auto max-h-[96vh] mt-4 md:mt-15 rounded-xl border-[#8e0000] bg-[#de9a35] shadow-[inset_0_0px_18px_rgba(0,0,0,0.6)] pb-4 md:pb-10 overflow-hidden">
+        <div className="flex flex-col md:flex-row px-2 md:px-0">
           <div className="w-full md:w-1/2 md:mx-10 flex flex-col items-center">
-            <div className="w-full md:w-auto md:min-w-[80%] h-fit py-2 px-4 text-red-800 text-lg md:text-xl lg:text-2xl rounded-full bg-white border-4 border-[#8e0000] text-center mt-6 md:mt-10 shadow-[inset_0_0px_14px_rgba(0,0,0,0.6)]">
-              <div className="font-semibold text-shadow-lg text-shadow-gray-400">
+            <div className="w-full md:w-auto md:min-w-[80%] h-fit py-1.5 px-4 text-red-800 text-sm md:text-xl lg:text-2xl rounded-full bg-white border-3 md:border-4 border-[#8e0000] text-center mt-3 md:mt-10 shadow-[inset_0_0px_14px_rgba(0,0,0,0.6)]">
+              <div className="font-semibold text-shadow-lg text-shadow-gray-400 text-xs md:text-lg">
                 Title :
               </div>
-              <div className="break-words">{current.title}</div>
+              <div className="break-words leading-tight">{current.title}</div>
             </div>
-            <div className="w-full md:w-auto md:min-w-[80%] px-6 md:px-10 py-2 h-fit border-4 text-red-800 text-lg md:text-xl lg:text-2xl text-center border-[#8e0000] bg-white rounded-full mt-4 md:mt-5 shadow-[inset_0_0px_14px_rgba(0,0,0,0.6)]">
-              <div className="font-semibold text-shadow-lg text-shadow-gray-400 text-sm md:text-base lg:text-xl">
+            <div className="w-full md:w-auto md:min-w-[80%] px-4 md:px-10 py-1.5 h-fit border-3 md:border-4 text-red-800 text-sm md:text-xl lg:text-2xl text-center border-[#8e0000] bg-white rounded-full mt-2 md:mt-5 shadow-[inset_0_0px_14px_rgba(0,0,0,0.6)]">
+              <div className="font-semibold text-shadow-lg text-shadow-gray-400 text-[10px] md:text-base lg:text-xl">
                 Year / Location :
               </div>
-              <div className="break-words">
+              <div className="break-words leading-tight">
                 {current.year} / {current.location}
               </div>
             </div>
           </div>
           {current.imgUrl && (
-            <div className="w-full md:w-1/2 mx-auto mt-6 md:mt-10 rounded-2xl border-4 h-40 md:h-45 border-[#8e0000] bg-white shadow-[inset_0_0_14px_rgba(0,0,0,0.6)] flex items-center justify-center overflow-hidden">
+            <div className="w-full md:w-1/2 mx-auto mt-3 md:mt-10 rounded-2xl border-3 md:border-4 h-28 md:h-45 border-[#8e0000] bg-white shadow-[inset_0_0_14px_rgba(0,0,0,0.6)] flex items-center justify-center overflow-hidden">
               <img
                 src={current.imgUrl}
-                className="h-full object-contain rounded-xl"
+                className="h-full object-contain rounded-lg md:rounded-xl"
                 alt={current.title || "Event image"}
               />
             </div>
           )}
         </div>
-        <div className="border-4 px-4 md:px-6 pb-4 pt-4 text-red-800 text-sm md:text-lg lg:text-xl rounded-2xl h-fit m-4 md:m-7 md:mx-10 bg-white border-[#8e0000] shadow-[inset_0_0_24px_rgba(0,0,0,0.9)] mt-6">
+        <div className="border-3 md:border-4 px-3 md:px-6 pb-2 md:pb-4 pt-2 md:pt-4 text-red-800 text-xs md:text-lg lg:text-xl rounded-2xl h-fit m-2 md:m-7 md:mx-10 bg-white border-[#8e0000] shadow-[inset_0_0_24px_rgba(0,0,0,0.9)] mt-3">
           <div
-            className="px-2 py-0 pt-1 float-right cursor-pointer"
+            className="px-1 md:px-2 py-0 pt-0.5 float-right cursor-pointer"
             onClick={() => setSpeech((c) => !c)}
           >
             <SpeakerIcons />
           </div>
-          <div className="mt-2">
-            <div className="text-shadow-lg text-shadow-gray-400 font-semibold">
+          <div className="mt-1 md:mt-2">
+            <div className="text-shadow-lg text-shadow-gray-400 font-semibold text-[10px] md:text-base">
               Key figures :
             </div>
-            <div>{current.details.keyFigures}</div>
+            <div className="leading-snug">{current.details.keyFigures}</div>
           </div>
-          <div className="mt-4">
-            <div className="font-semibold text-shadow-lg text-shadow-gray-400">
+          <div className="mt-2 md:mt-4">
+            <div className="font-semibold text-shadow-lg text-shadow-gray-400 text-[10px] md:text-base">
               Description :
             </div>
-            <div className="leading-relaxed">{current.details.narrative}</div>
+            <div className="leading-tight md:leading-relaxed line-clamp-4 md:line-clamp-none">{current.details.narrative}</div>
           </div>
         </div>
       </div>

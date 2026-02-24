@@ -223,7 +223,7 @@ export default function GameScreen() {
   const playerInfo = gameState.playerInfo;
 
   return (
-    <div>
+    <div className="h-screen w-screen overflow-hidden bg-[#990000]">
       {gameOver && <EndScreen players={gameState.playerInfo} />}
       {flashCard && (
         <FlashCard
@@ -245,10 +245,10 @@ export default function GameScreen() {
         />
       )}
 
-      <div className={`h-screen w-screen border-2 overflow-auto overflow-y-hidden flex select-none ${showQuiz ? "pointer-events-none" : ""}`}>
-        {/* LEFT */}
-        <div className="h-screen bg-[#990000] border-2 p-1 pb-2 w-85">
-          <div className="h-full mx-10 px-10 bg-linear-to-b from-[#d98911] to-[#ffcf6f] border-2 flex flex-col justify-around">
+      <div className={`h-full w-full flex flex-col lg:flex-row select-none ${showQuiz ? "pointer-events-none" : ""}`}>
+        {/* TOP SIDEBAR (Mobile) / LEFT SIDEBAR (Desktop) */}
+        <div className="h-[24vh] lg:h-screen bg-[#990000] border-b-2 lg:border-r-2 p-1 w-full lg:w-64 xl:w-72 shrink-0 transition-all duration-300">
+          <div className="h-full mx-1 lg:mx-4 xl:mx-8 px-2 lg:px-4 py-1.5 lg:py-6 bg-linear-to-b from-[#d98911] to-[#ffcf6f] border-2 flex flex-row lg:flex-col justify-center lg:justify-around items-center lg:items-center gap-2 lg:gap-6 overflow-hidden">
             {playerInfo
               .filter((p) => p.player <= 2)
               .map((p) => (
@@ -266,15 +266,15 @@ export default function GameScreen() {
           </div>
         </div>
 
-        {/* MAP WRAPPER */}
-        <div className="flex-1 bg-cover bg-center flex justify-center bg-map-background items-center overflow-hidden">
+        {/* MAP WRAPPER (Remaining Space) */}
+        <div className="flex-1 relative bg-map-background bg-cover bg-center bg-no-repeat overflow-hidden">
           <Map pawnInfo={playerInfo} />
         </div>
 
-        {/* RIGHT */}
-        <div className="p-2 border-2 h-screen bg-[#990000] w-86">
-          <div className="border-2 bg-linear-to-b from-[#d98911] to-[#ffcf6f] mx-10 h-full w-65">
-            <div className="h-screen px-10 flex flex-col justify-around">
+        {/* BOTTOM SIDEBAR (Mobile) / RIGHT SIDEBAR (Desktop) */}
+        <div className="h-[24vh] lg:h-screen p-1 lg:p-2 border-t-2 lg:border-l-2 bg-[#990000] w-full lg:w-64 xl:w-72 shrink-0 transition-all duration-300">
+          <div className="h-full border-2 bg-linear-to-b from-[#d98911] to-[#ffcf6f] mx-1 lg:mx-4 xl:mx-8 py-1.5 lg:py-6 overflow-hidden">
+            <div className="h-full px-2 lg:px-4 flex flex-row lg:flex-col justify-center lg:justify-around items-center lg:items-center gap-2 lg:gap-6">
               {playerInfo
                 .filter((p) => p.player > 2)
                 .map((p) => (
@@ -319,23 +319,24 @@ function PlayerBox({
 
   return (
     <div
-      className={`relative z-[100] border-2 h-fit p-2.5 rounded-3xl border-[#fe6c07] select-none cursor-pointer
+      className={`relative z-[100] border-2 md:border-3 h-[95%] lg:h-fit p-1.5 md:p-3 rounded-2xl md:rounded-[40px] border-[#fe6c07] select-none cursor-pointer
         ${canRoll ? "" : "bg-[#f3b75e] opacity-70"}
-        ${isYou ? "ring-4 ring-green-500" : ""}`}
+        ${isYou ? "ring-2 md:ring-4 ring-green-500" : ""}
+        w-28 sm:w-36 md:w-44 lg:w-full max-w-[180px] mx-auto transition-transform hover:scale-105 active:scale-95 flex flex-col items-center justify-center lg:justify-between gap-1 lg:gap-2 bg-linear-to-b from-[#e4ae5d] to-[#d98911] shadow-lg`}
       onClick={() => {
         if (!canRoll) return;
         onClick();
       }}
     >
-      <div className="h-35 w-35 rounded-2xl border-3 border-[#d75a00] mx-auto shadow-[inset_0px_0px_15px_rgba(0,0,0,0.6)] bg-radial from-[#e1731d] via-50% via-[#e4ae5d] to-[#e4ae5d]">
-        <div className="grid grid-cols-2 grid-rows-2 h-full w-full">
+      <div className="aspect-square w-[55%] lg:w-full rounded-xl md:rounded-3xl border-2 md:border-4 border-[#d75a00] mx-auto shadow-[inset_0px_0px_8px_rgba(0,0,0,0.6)] md:shadow-[inset_0px_0px_20px_rgba(0,0,0,0.6)] bg-radial from-[#e1731d] via-50% via-[#e4ae5d] to-[#e4ae5d] relative overflow-hidden">
+        <div className="grid grid-cols-2 grid-rows-2 h-full w-full p-1 md:p-2">
           {getShellsFor(index).map((v, i) => (
             <div
               key={i}
-              className="flex items-center"
+              className="flex items-center justify-center"
             >
               <Image
-                className={`p-2 ${rotateShell === index ? "animate-spin" : ""
+                className={`w-[90%] h-[90%] object-contain ${rotateShell === index ? "animate-spin" : ""
                   }`}
                 src={v ? OpenShell : ClosedShell}
                 alt="Shell"
@@ -345,21 +346,23 @@ function PlayerBox({
         </div>
       </div>
 
-      <p className="text-center text-sm mt-2 font-bold text-white">
+      <p className="text-center text-[10px] sm:text-xs md:text-base font-black text-white leading-tight truncate drop-shadow-lg scale-110 lg:scale-100">
         Player {index} {isYou && "(You)"}
       </p>
 
       {eco && (
-        <div className="mt-2">
-          <div className="flex justify-around">
-            <div className="h-6 w-6 bg-gold-coin bg-cover"></div>
-            <div className="h-6 w-6 bg-silver-coin bg-cover"></div>
-            <div className="h-6 w-6 bg-bronze-coin bg-cover"></div>
-          </div>
-          <div className="flex justify-around mt-1">
-            <div className="border px-2 bg-white border-[#9b0403] rounded text-xs">{eco.gold}</div>
-            <div className="border px-2 bg-white border-[#9b0403] rounded text-xs">{eco.silver}</div>
-            <div className="border px-2 bg-white border-[#9b0403] rounded text-xs">{eco.bronze}</div>
+        <div className="w-full px-1">
+          <div className="flex flex-row lg:flex-row justify-around items-center gap-1 lg:gap-2">
+            {[
+              { icon: "bg-gold-coin", val: eco.gold },
+              { icon: "bg-silver-coin", val: eco.silver },
+              { icon: "bg-bronze-coin", val: eco.bronze }
+            ].map((coin, i) => (
+              <div key={i} className="flex flex-row lg:flex-col items-center gap-1 lg:gap-0.5 bg-black/10 lg:bg-transparent px-1.5 lg:px-0 py-0.5 lg:py-0 rounded-full lg:rounded-none">
+                <div className={`h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8 ${coin.icon} bg-cover shrink-0 drop-shadow-md`}></div>
+                <div className="border border-[#9b0403] lg:border-2 bg-white px-1 lg:px-2 rounded-md text-[9px] sm:text-xs font-bold min-w-[16px] lg:min-w-[28px] text-center shadow-md">{coin.val}</div>
+              </div>
+            ))}
           </div>
         </div>
       )}

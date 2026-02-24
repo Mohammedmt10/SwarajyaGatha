@@ -73,14 +73,14 @@ export default function QuizCard({ eventNo, onReward, setQuiz, currPlayer, visit
     }, [isBot, question, currPlayer, onReward, handleQuizClose])
     if (!question) return
 
-    return <div className={`h-screen w-screen absolute bg-amber-50/50 z-999 flex items-center justify-center ${isBot ? "pointer-events-none" : ""}`}>
-        <div className="border-8 md:border-14 shadow-[inset_0px_0px_14vh_rgba(0,0,0,0.6)] border-[#990000] mx-auto w-[95vw] md:w-[85vw] lg:w-250 h-fit md:h-150 bg-quiz-background bg-size-cover bg-center bg-[#de9a35] overflow-y-auto pb-10 rounded-xl">
-            <div className="min-h-32 md:min-h-50 mx-4 md:mx-15 mt-6 md:mt-8 bg-radial-[at_50%_255%] from-[#f6eee1] from-50% to-70% to-[#f3b75e] rounded-2xl border-6 md:border-10 border-[#0a3d2b] shadow-[inset_0px_0px_2vh_rgba(0,0,0,1)] text-lg md:text-xl lg:text-2xl text-center flex items-center justify-center px-4 py-6 text-green-800 font-semibold">
+    return <div className={`h-screen w-screen fixed inset-0 bg-amber-50/50 z-999 flex items-center justify-center p-1 md:p-4 ${isBot ? "pointer-events-none" : ""}`}>
+        <div className="border-4 md:border-14 shadow-[inset_0px_0px_14vh_rgba(0,0,0,0.6)] border-[#990000] mx-auto w-[98vw] md:w-full max-w-4xl h-auto max-h-[98vh] bg-quiz-background bg-size-cover bg-center bg-[#de9a35] pb-4 md:pb-10 rounded-xl flex flex-col overflow-hidden shrink-0">
+            <div className="min-h-20 md:min-h-40 mx-1 md:mx-15 mt-2 md:mt-8 bg-radial-[at_50%_255%] from-[#f6eee1] from-50% to-70% to-[#f3b75e] rounded-2xl border-2 md:border-10 border-[#0a3d2b] shadow-[inset_0px_0px_2vh_rgba(0,0,0,1)] text-sm md:text-xl lg:text-2xl text-center flex items-center justify-center px-2 py-2 md:py-4 text-green-800 font-semibold shrink-0">
                 {question.question}
             </div>
-            <div className="px-4 md:px-0">
-                <div className="flex flex-col md:flex-row mx-2 md:mx-10 mt-6 md:mt-8 gap-4 md:gap-0">
-                    <div className={`${backgroundA == "correct" ? "text-yellow-300 bg-green-600" : backgroundA != "incorrect" ? "to-[#f3b75e] bg-radial-[at_50%_115%]" : "bg-red-500 text-white "} text-shadow-lg cursor-pointer min-h-16 md:min-h-20 border-4 md:border-6 border-[#0a3d2b] md:mx-8 w-full rounded-full from-[#f6eee1] from-30% to-60% text-center text-sm md:text-base lg:text-lg flex items-center justify-center px-4 py-2 text-green-800 font-medium`} onClick={() => {
+            <div className="px-1 md:px-0 flex-1 flex flex-col justify-center overflow-hidden">
+                <div className="flex flex-col md:flex-row mx-1 md:mx-10 mt-2 md:mt-8 gap-2 md:gap-0 shrink-0">
+                    <div className={`${backgroundA == "correct" ? "text-yellow-300 bg-green-600" : backgroundA != "incorrect" ? "to-[#f3b75e] bg-radial-[at_50%_115%]" : "bg-red-500 text-white "} text-shadow-lg cursor-pointer min-h-10 md:min-h-20 border-2 md:border-6 border-[#0a3d2b] md:mx-8 w-full rounded-full from-[#f6eee1] from-30% to-60% text-center text-[10px] md:text-base lg:text-lg flex items-center justify-center px-2 py-1 md:py-2 text-green-800 font-medium`} onClick={() => {
                         const correctAnswer = question.correctAnswer;
 
                         if ("A" == correctAnswer) {
@@ -101,7 +101,7 @@ export default function QuizCard({ eventNo, onReward, setQuiz, currPlayer, visit
                     }}>
                         {question.options.A}
                     </div>
-                    <div className={`${backgroundB == "correct" ? "text-yellow-300 bg-green-600" : backgroundB != "incorrect" ? "to-[#f3b75e] bg-radial-[at_50%_115%]" : "bg-red-500 text-white "} text-shadow-lg cursor-pointer min-h-16 md:min-h-20 border-4 md:border-6 border-[#0a3d2b] md:mx-8 w-full rounded-full from-[#f6eee1] from-30% to-60% text-center text-sm md:text-base lg:text-lg flex items-center justify-center px-4 py-2 text-green-800 font-medium`} onClick={() => {
+                    <div className={`${backgroundB == "correct" ? "text-yellow-300 bg-green-600" : backgroundB != "incorrect" ? "to-[#f3b75e] bg-radial-[at_50%_115%]" : "bg-red-500 text-white "} text-shadow-lg cursor-pointer min-h-10 md:min-h-20 border-2 md:border-6 border-[#0a3d2b] md:mx-8 w-full rounded-full from-[#f6eee1] from-30% to-60% text-center text-[10px] md:text-base lg:text-lg flex items-center justify-center px-2 py-1 md:py-2 text-green-800 font-medium`} onClick={() => {
                         const correctAnswer = question.correctAnswer;
 
                         if ("B" == correctAnswer) {
@@ -123,8 +123,8 @@ export default function QuizCard({ eventNo, onReward, setQuiz, currPlayer, visit
                         {question.options.B}
                     </div>
                 </div>
-                <div className="flex flex-col md:flex-row mx-2 md:mx-10 mt-4 md:mt-8 gap-4 md:gap-0">
-                    <div className={`${backgroundC == "correct" ? "text-yellow-300 bg-green-600" : backgroundC != "incorrect" ? "to-[#f3b75e] bg-radial-[at_50%_115%]" : "bg-red-500 text-white "} text-shadow-lg cursor-pointer min-h-16 md:min-h-20 border-4 md:border-6 border-[#0a3d2b] md:mx-8 w-full rounded-full from-[#f6eee1] from-30% to-60% text-center text-sm md:text-base lg:text-lg flex items-center justify-center px-4 py-2 text-green-800 font-medium`} onClick={() => {
+                <div className="flex flex-col md:flex-row mx-1 md:mx-10 mt-2 md:mt-8 gap-2 md:gap-0 shrink-0">
+                    <div className={`${backgroundC == "correct" ? "text-yellow-300 bg-green-600" : backgroundC != "incorrect" ? "to-[#f3b75e] bg-radial-[at_50%_115%]" : "bg-red-500 text-white "} text-shadow-lg cursor-pointer min-h-10 md:min-h-20 border-2 md:border-6 border-[#0a3d2b] md:mx-8 w-full rounded-full from-[#f6eee1] from-30% to-60% text-center text-[10px] md:text-base lg:text-lg flex items-center justify-center px-2 py-1 md:py-2 text-green-800 font-medium`} onClick={() => {
                         const correctAnswer = question.correctAnswer;
 
                         if ("C" == correctAnswer) {
@@ -145,7 +145,7 @@ export default function QuizCard({ eventNo, onReward, setQuiz, currPlayer, visit
                     }}>
                         {question.options.C}
                     </div>
-                    <div className={`${backgroundD == "correct" ? "text-yellow-300 bg-green-600" : backgroundD != "incorrect" ? "to-[#f3b75e] bg-radial-[at_50%_115%]" : "bg-red-500 text-white "} text-shadow-lg cursor-pointer min-h-16 md:min-h-20 border-4 md:border-6 border-[#0a3d2b] md:mx-8 w-full rounded-full from-[#f6eee1] from-30% to-60% text-center text-sm md:text-base lg:text-lg flex items-center justify-center px-4 py-2 text-green-800 font-medium`} onClick={() => {
+                    <div className={`${backgroundD == "correct" ? "text-yellow-300 bg-green-600" : backgroundD != "incorrect" ? "to-[#f3b75e] bg-radial-[at_50%_115%]" : "bg-red-500 text-white "} text-shadow-lg cursor-pointer min-h-10 md:min-h-20 border-2 md:border-6 border-[#0a3d2b] md:mx-8 w-full rounded-full from-[#f6eee1] from-30% to-60% text-center text-[10px] md:text-base lg:text-lg flex items-center justify-center px-2 py-1 md:py-2 text-green-800 font-medium`} onClick={() => {
                         const correctAnswer = question.correctAnswer;
 
                         if ("D" == correctAnswer) {
