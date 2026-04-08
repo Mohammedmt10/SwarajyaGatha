@@ -6,6 +6,8 @@ const path = require("path");
 const server = http.createServer();
 const wss = new WebSocket.Server({ server });
 
+const PORT = process.env.PORT || 3001;
+
 // Load event details for coin calculations
 const eventDetailsPath = path.join(__dirname, "eventDetails.json");
 const eventDetails = JSON.parse(fs.readFileSync(eventDetailsPath, "utf8"));
@@ -230,6 +232,6 @@ wss.on("connection", (ws, req) => {
     });
 });
 
-server.listen(3001, () =>
+server.listen(PORT, () =>
     console.log("WS server running on ws://localhost:3001")
 );
