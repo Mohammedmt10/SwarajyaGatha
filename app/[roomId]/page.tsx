@@ -85,7 +85,7 @@ export default function GameScreen() {
     if (!clientId) return;
 
     const ws = new WebSocket(
-      `https://swarajyagatha-1.onrender.com?room=${roomId}&clientId=${clientId}`
+      `wss://swarajyagatha-1.onrender.com?room=${roomId}&clientId=${clientId}`
     );
 
     setSocket(ws);
