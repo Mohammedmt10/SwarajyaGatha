@@ -60,7 +60,7 @@ export default function FlashCard({
   }, [speech, flashCard, current]);
 
   return (
-    <div className="h-screen w-screen absolute z-999 bg-amber-50/50 font-sans">
+    <div className="h-screen w-screen justify-center flex-row-reverse flex absolute z-999 bg-amber-50/50 font-sans">
       <div
         className="cursor-pointer p-5"
         onClick={() => {
@@ -73,14 +73,14 @@ export default function FlashCard({
       >
         <CloseIcon />
       </div>
-      <div className="border-6 md:border-16 flex flex-col mx-auto w-full max-w-[95vw] md:max-w-[85vw] lg:max-w-250 h-auto max-h-[96vh] mt-4 md:mt-15 rounded-xl border-[#8e0000] bg-[#de9a35] shadow-[inset_0_0px_18px_rgba(0,0,0,0.6)] pb-4 md:pb-10 overflow-hidden">
+      <div className="border-6 my-auto md:border-16 h-fit flex flex-col mx-auto max-w-[95vw] w-fit md:max-w-[85vw] lg:max-w-250  max-h-[96vh] items-center rounded-xl border-[#8e0000] bg-[#de9a35] shadow-[inset_0_0px_18px_rgba(0,0,0,0.6)] pb-4 md:pb-10 overflow-hidden">
         <div className="flex flex-col md:flex-row px-2 md:px-0">
-          <div className="w-full md:w-1/2 md:mx-10 flex flex-col items-center">
-            <div className="w-full md:w-auto md:min-w-[80%] h-fit py-1.5 px-4 text-red-800 text-sm md:text-xl lg:text-2xl rounded-full bg-white border-3 md:border-4 border-[#8e0000] text-center mt-3 md:mt-10 shadow-[inset_0_0px_14px_rgba(0,0,0,0.6)]">
+          <div className="w-full md:mx-10 flex flex-col items-center">
+            <div className="w-full md:w-auto md:min-w-[80%] h-fit py-1.5 px-6 text-red-800 text-sm md:text-xl lg:text-2xl rounded-full bg-white border-3 md:border-4 border-[#8e0000] text-center mt-3 md:mt-10 shadow-[inset_0_0px_14px_rgba(0,0,0,0.6)]">
               <div className="font-semibold text-shadow-lg text-shadow-gray-400 text-xs md:text-lg">
                 Title :
               </div>
-              <div className="break-words leading-tight">{current.title}</div>
+              <div className="break-words pb-1 leading-tight">{current.title}</div>
             </div>
             <div className="w-full md:w-auto md:min-w-[80%] px-4 md:px-10 py-1.5 h-fit border-3 md:border-4 text-red-800 text-sm md:text-xl lg:text-2xl text-center border-[#8e0000] bg-white rounded-full mt-2 md:mt-5 shadow-[inset_0_0px_14px_rgba(0,0,0,0.6)]">
               <div className="font-semibold text-shadow-lg text-shadow-gray-400 text-[10px] md:text-base lg:text-xl">
@@ -91,15 +91,7 @@ export default function FlashCard({
               </div>
             </div>
           </div>
-          {current.imgUrl && (
-            <div className="w-full md:w-1/2 mx-auto mt-3 md:mt-10 rounded-2xl border-3 md:border-4 h-28 md:h-45 border-[#8e0000] bg-white shadow-[inset_0_0_14px_rgba(0,0,0,0.6)] flex items-center justify-center overflow-hidden">
-              <img
-                src={current.imgUrl}
-                className="h-full object-contain rounded-lg md:rounded-xl"
-                alt={current.title || "Event image"}
-              />
-            </div>
-          )}
+
         </div>
         <div className="border-3 md:border-4 px-3 md:px-6 pb-2 md:pb-4 pt-2 md:pt-4 text-red-800 text-xs md:text-lg lg:text-xl rounded-2xl h-fit m-2 md:m-7 md:mx-10 bg-white border-[#8e0000] shadow-[inset_0_0_24px_rgba(0,0,0,0.9)] mt-3">
           <div

@@ -74,7 +74,7 @@ export default function QuizCard({ eventNo, onReward, setQuiz, currPlayer, visit
     if (!question) return
 
     return <div className={`h-screen w-screen fixed inset-0 bg-amber-50/50 z-999 flex items-center justify-center p-1 md:p-4 ${isBot ? "pointer-events-none" : ""}`}>
-        <div className="border-4 md:border-14 shadow-[inset_0px_0px_14vh_rgba(0,0,0,0.6)] border-[#990000] mx-auto w-[98vw] md:w-full max-w-4xl h-auto max-h-[98vh] bg-quiz-background bg-size-cover bg-center bg-[#de9a35] pb-4 md:pb-10 rounded-xl flex flex-col overflow-hidden shrink-0">
+        <div className="border-4 md:border-14 shadow-[inset_0px_0px_14vh_rgba(0,0,0,0.6)] border-[#990000] mx-auto w-[98vw] md:w-full max-w-4xl h-auto max-h-[98vh] bg-quiz-background bg-[length:250%_auto] bg-center bg-[#de9a35] pb-4 md:pb-10 rounded-xl flex flex-col overflow-hidden shrink-0">
             <div className="min-h-20 md:min-h-40 mx-1 md:mx-15 mt-2 md:mt-8 bg-radial-[at_50%_255%] from-[#f6eee1] from-50% to-70% to-[#f3b75e] rounded-2xl border-2 md:border-10 border-[#0a3d2b] shadow-[inset_0px_0px_2vh_rgba(0,0,0,1)] text-sm md:text-xl lg:text-2xl text-center flex items-center justify-center px-2 py-2 md:py-4 text-green-800 font-semibold shrink-0">
                 {question.question}
             </div>
